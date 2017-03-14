@@ -1,4 +1,5 @@
 # ResearchResource
+[![Build Status](https://travis-ci.org/research-resource/research_resource.svg?branch=master)](https://travis-ci.org/research-resource/research_resource)
 
 To start your Phoenix app:
 
