@@ -1,5 +1,6 @@
 # ResearchResource
 [![Build Status](https://travis-ci.org/research-resource/research_resource.svg?branch=master)](https://travis-ci.org/research-resource/research_resource)
+[![codecov](https://codecov.io/gh/research-resource/research_resource/branch/master/graph/badge.svg)](https://codecov.io/gh/research-resource/research_resource)
 
 To start your Phoenix app:
 
