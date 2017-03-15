@@ -17,6 +17,10 @@ defmodule ResearchResource.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/about", AboutController, :index
+    get "/projects", ProjectsController, :index
+    get "/who", WhoWeAreController, :index
+    get "/faqs", FaqsController, :index
   end
 
   # Other scopes may use custom stacks.

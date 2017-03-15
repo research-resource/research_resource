@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello ResearchResource!</title>
+    <title>Talking Therapies Research Resource</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
@@ -15,11 +15,19 @@
     <div class="container">
       <header class="header">
         <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-          </ul>
+          <div class="dt dt--fixed w-100">
+            <a href="/" class="dtc tc ttu">Home</a>
+            <a href="/about" class="dtc tc ttu">About</a>
+            <a href="/projects" class="dtc tc ttu">Projects</a>
+            <a href="/who" class="dtc tc ttu">Who We Are</a>
+            <a href="/faqs" class="dtc tc ttu">FAQS</a>
+            <div class="dtc tr">
+              <a href="#" class="">Sign Up</a>
+              <span>|</span>
+              <a href="#" class="">Log In</a>
+            </div>
+          </div>
         </nav>
-        <span class="logo"></span>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
