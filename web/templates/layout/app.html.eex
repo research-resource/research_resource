@@ -22,7 +22,7 @@
             <a href="/who" class="dtc tc ttu">Who We Are</a>
             <a href="/faqs" class="dtc tc ttu">FAQS</a>
             <div class="dtc tr">
-              <a href="#" class="">Sign Up</a>
+              <%= link "Sign Up", to: user_path(@conn, :new), class: ""  %>
               <span>|</span>
               <a href="#" class="">Log In</a>
             </div>

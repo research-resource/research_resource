@@ -21,6 +21,8 @@ defmodule ResearchResource.Router do
     get "/projects", ProjectsController, :index
     get "/who", WhoWeAreController, :index
     get "/faqs", FaqsController, :index
+
+    resources "/users", UserController, only: [:show, :new, :create]
   end
 
   # Other scopes may use custom stacks.
