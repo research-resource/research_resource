@@ -7,7 +7,7 @@ defmodule ResearchResource.Repo.Migrations.CreateTable do
       add :first_name, :string
       add :last_name, :string
       add :email, :string
-      add :password, :string
+      add :password_hash, :string
 
       timestamps()
     end
