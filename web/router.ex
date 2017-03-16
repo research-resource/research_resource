@@ -10,9 +10,9 @@ defmodule ResearchResource.Router do
     plug ResearchResource.Auth, repo: ResearchResource.Repo
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
-  end
+  # pipeline :api do
+  #   plug :accepts, ["json"]
+  # end
 
   scope "/", ResearchResource do
     pipe_through :browser # Use the default browser stack

@@ -15,12 +15,14 @@ defmodule ResearchResource.User do
   def changeset(model, params \\ :invalid) do
     model
     |> cast(params, ~w[first_name last_name email])
+    |> validate_required([:first_name, :last_name, :email])
   end
 
   def registration_changeset(model, params) do
     model
     |> changeset(params)
     |> cast(params, ~w(password))
+    |> validate_required([:password])
     |> put_pass_hash()
   end
 
