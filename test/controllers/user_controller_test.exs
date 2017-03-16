@@ -15,7 +15,7 @@ defmodule ResearchResource.UserControllerTest do
       first_name: "User",
       last_name: "Test"
     }
-    user = Repo.get_by!(User, %{email: "me@test.com"})
+    user = Repo.get_by!(User, email: "me@test.com")
     assert user.ttrrid =~ "TTRR"
     assert String.length(user.ttrrid) == 11
     assert redirected_to(conn) == page_path(conn, :index)

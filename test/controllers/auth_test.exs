@@ -1,11 +1,11 @@
 defmodule ResearchResource.AuthTest do
   use ResearchResource.ConnCase
-  alias ResearchResource.Auth
+  alias ResearchResource.{Auth, Router, User}
 
   setup %{conn: conn} do
     conn =
       conn
-      |> bypass_through(ResearchResource.Router, :browser)
+      |> bypass_through(Router, :browser)
       |> get("/")
     {:ok, %{conn: conn}}
   end
@@ -15,7 +15,7 @@ defmodule ResearchResource.AuthTest do
   test "login puts the user in the session", %{conn: conn} do
     login_conn =
       conn
-      |> Auth.login(%ResearchResource.User{id: 123})
+      |> Auth.login(%User{id: 123})
       |> send_resp(:ok, "")
     next_conn = get(login_conn, "/")
     assert get_session(next_conn, :user_id) == 123
