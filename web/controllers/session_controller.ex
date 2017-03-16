@@ -2,7 +2,12 @@ defmodule ResearchResource.SessionController do
   use ResearchResource.Web, :controller
 
   def new(conn, _) do
-    render conn, "new.html"
+    cond do
+      conn.assigns[:current_user] ->
+        redirect(conn, to: page_path(conn, :index))
+      true ->
+        render conn, "new.html"
+    end
   end
 
   def create(conn, %{"session" => %{"email" => email, "password" => pass}}) do
