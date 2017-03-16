@@ -14,7 +14,7 @@ defmodule ResearchResource.User do
 
   def changeset(model, params \\ :invalid) do
     model
-    |> cast(params, ~w[first_name last_name email])
+    |> cast(params, ~w[first_name last_name email ttrrid])
     |> validate_required([:first_name, :last_name, :email])
   end
 

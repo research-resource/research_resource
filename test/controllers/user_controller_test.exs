@@ -1,5 +1,7 @@
 defmodule ResearchResource.UserControllerTest do
   use ResearchResource.ConnCase
+  alias ResearchResource.Repo
+  alias ResearchResource.User
 
   test "GET /users/new", %{conn: conn} do
     conn = get conn, "/users/new"
@@ -13,7 +15,9 @@ defmodule ResearchResource.UserControllerTest do
       first_name: "User",
       last_name: "Test"
     }
-
+    user = Repo.get_by!(User, %{email: "me@test.com"})
+    assert user.ttrrid =~ "TTRR"
+    assert String.length(user.ttrrid) == 11
     assert redirected_to(conn) == page_path(conn, :index)
   end
 
