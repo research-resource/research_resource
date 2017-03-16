@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="">
       <header class="header">
         <nav role="navigation">
           <div class="dt dt--fixed w-100">
@@ -21,11 +21,19 @@
             <a href="/projects" class="dtc tc ttu">Projects</a>
             <a href="/who" class="dtc tc ttu">Who We Are</a>
             <a href="/faqs" class="dtc tc ttu">FAQS</a>
+            <%= if @current_user do %>
+              <div class="dtc tr">
+                <span><%=String.capitalize @current_user.first_name%></span>
+                <span>|</span>
+                <a href="#" class="">My Account</a>
+              </div>
+            <% else %>
             <div class="dtc tr">
               <%= link "Sign Up", to: user_path(@conn, :new), class: ""  %>
               <span>|</span>
-              <a href="#" class="">Log In</a>
+              <%= link "Log In", to: session_path(@conn, :new), class: ""  %>
             </div>
+            <% end %>
           </div>
         </nav>
       </header>

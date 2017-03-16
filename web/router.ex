@@ -7,6 +7,7 @@ defmodule ResearchResource.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug ResearchResource.Auth, repo: ResearchResource.Repo
   end
 
   pipeline :api do
@@ -23,6 +24,7 @@ defmodule ResearchResource.Router do
     get "/faqs", FaqsController, :index
 
     resources "/users", UserController, only: [:show, :new, :create]
+    resources "/sessions", SessionController, only: [:new, :create, :delete]
   end
 
   # Other scopes may use custom stacks.
