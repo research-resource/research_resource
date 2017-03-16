@@ -1,0 +1,24 @@
+<h1>Create User</h1>
+<%= form_for @changeset, user_path(@conn, :create), fn f -> %>
+  <div class="">
+    <%= text_input f, :first_name, placeholder: "first name", class: "" %>
+    <%= error_tag f, :first_name %>
+  </div>
+
+  <div class="">
+    <%= text_input f, :last_name, placeholder: "last name", class: "" %>
+    <%= error_tag f, :last_name %>
+  </div>
+
+  <div class="">
+    <%= email_input f, :email, placeholder: "email", class: "" %>
+    <%= error_tag f, :email %>
+  </div>
+
+  <div class="">
+    <%= password_input f, :password, placeholder: "password", class: "" %>
+    <%= error_tag f, :password %>
+  </div>
+
+  <%= submit "Sign Up", class: "" %>
+<% end %>

@@ -26,6 +26,7 @@ defmodule ResearchResource.ConnCase do
       import Ecto.Query
 
       import ResearchResource.Router.Helpers
+      import ResearchResource.TestHelpers
 
       # The default endpoint for testing
       @endpoint ResearchResource.Endpoint

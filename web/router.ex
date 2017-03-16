@@ -7,11 +7,12 @@ defmodule ResearchResource.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug ResearchResource.Auth, repo: ResearchResource.Repo
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
-  end
+  # pipeline :api do
+  #   plug :accepts, ["json"]
+  # end
 
   scope "/", ResearchResource do
     pipe_through :browser # Use the default browser stack
@@ -21,6 +22,9 @@ defmodule ResearchResource.Router do
     get "/projects", ProjectsController, :index
     get "/who", WhoWeAreController, :index
     get "/faqs", FaqsController, :index
+
+    resources "/users", UserController, only: [:show, :new, :create]
+    resources "/sessions", SessionController, only: [:new, :create, :delete]
   end
 
   # Other scopes may use custom stacks.
