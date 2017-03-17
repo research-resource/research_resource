@@ -16,7 +16,8 @@ config :research_resource, ResearchResource.Repo,
   password: "postgres",
   database: "research_resource_test",
   hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox
+  pool: Ecto.Adapters.SQL.Sandbox,
+  ownership_timeout: 10 * 60 * 1000 # 10 min timeout when debugging tests
 
 config :comeonin, :bcrypt_log_rounds, 4
 config :comeonin, :pbkdf2_rounds, 1
