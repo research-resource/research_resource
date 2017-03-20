@@ -1,0 +1,161 @@
+<div class="pa4 w-60">
+  <h2>Welcome To Research Resource, <%=String.capitalize @current_user.first_name%></h2>
+  <p>
+    In order to complete your registration, there are a few more things that we need to ask of you.
+  </p>
+  <p>
+    You will need to complete an initial questionnaire, and follow up questionnaires once a year. A link for these will be emailed to you.
+  </p>
+  <p>
+    Additionally, consent needs to be given for a number of different things. Please complete this below, and don't hesitate to get in touch if you need more information.
+  </p>
+</div>
+
+<div class="pa4 w-60">
+  <h3>Consent</h3>
+  <p>
+    Talking Therapies Research Resource in collaboration with the SLaM NIHR BioResource for Mental Health.
+  </p>
+  <p>
+    Name of Principal Investigators:
+    Prof. Thalia Eley and Dr Gerome Breen
+  </p>
+</div>
+
+<div class="pa4">
+  <div class="dib w-50 v-mid mr5">
+    <p>
+      The following points are about signing up to the Talking Therapies Research Resource, access to treatment records and taking part in research projects.
+    </p>
+    <p>
+      Please watch our animation about consent if you need more information.
+    </p>
+    <p>
+      You must answer "Yes" or "No" to each question in order to sign up to the register.
+    </p>
+  </div>
+  <div class="dib h5 w-40 outline v-mid tc">
+    <h5>Watch Animation on Consent</h5>
+  </div>
+</div>
+
+<div class="bg-light-gray pa4">
+  <span class="ph5">1.</span>
+  <div>
+    <div class="dib v-mid w-80 mr2 ph5">
+      <p>
+        I confirm that I have read and understood the information sheet for the Talking Therapies Research Resource and have had the opportunity to ask questions.
+      </p>
+    </div>
+    <div class="dib v-mid">
+      <%= radio_button :consent, :consent_1, "Yes"%>
+      <%= label :consent, :consent_1, "Yes" %>
+      <%= radio_button :consent, :consent_1, "No" %>
+      <%= label :consent, :consent_1, "No" %>
+    </div>
+  </div>
+</div>
+<div class="pa4">
+  <span class="ph5">2.</span>
+  <div>
+    <div class="dib v-mid w-80 mr2 ph5">
+      <p>
+        I understand that my participation in this project is voluntary and that I am free to withdraw at any time, without giving any reason and without my medical care or legal rights being affected.
+      </p>
+    </div>
+    <div class="dib v-mid">
+      <%= radio_button :consent, :consent_2, "Yes"%>
+      <%= label :consent, :consent_2, "Yes" %>
+      <%= radio_button :consent, :consent_2, "No" %>
+      <%= label :consent, :consent_2, "No" %>
+    </div>
+  </div>
+</div>
+<div class="bg-light-gray pa4">
+  <span class="ph5">3.</span>
+  <div>
+    <div class="dib v-mid w-80 mr2 ph5">
+      <p>
+        I understand that sections of my medical records relating to my treatment within the Southwark Talking Therapies Service may be looked at by authorised individuals from the Talking Therapies Research Resource team.
+        I give permission for these individuals to have access to my records.
+      </p>
+    </div>
+    <div class="dib v-mid">
+      <%= radio_button :consent, :consent_3, "Yes"%>
+      <%= label :consent, :consent_3, "Yes" %>
+      <%= radio_button :consent, :consent_3, "No" %>
+      <%= label :consent, :consent_3, "No" %>
+    </div>
+  </div>
+</div>
+<div class="pa4">
+  <span class="ph5">4.</span>
+  <div>
+    <div class="dib v-mid w-80 mr2 ph5">
+      <p>
+        I agree to provide questionnaire data, including information about my demographics (e.g. age, gender, and employment situation), emotional wellbeing, personality and experiences of treatment.
+      </p>
+    </div>
+    <div class="dib v-mid">
+      <%= radio_button :consent, :consent_4, "Yes"%>
+      <%= label :consent, :consent_4, "Yes" %>
+      <%= radio_button :consent, :consent_4, "No" %>
+      <%= label :consent, :consent_4, "No" %>
+    </div>
+  </div>
+</div>
+<div class="bg-light-gray pa4">
+  <span class="ph5">5.</span>
+  <div>
+    <div class="dib v-mid w-80 mr2 ph5">
+      <p>
+        I agree to be contacted by the Talking Therapies Research Resource regarding my participation in research studies that I have registered
+my interest in.
+      </p>
+    </div>
+    <div class="dib v-mid">
+      <%= radio_button :consent, :consent_5, "Yes"%>
+      <%= label :consent, :consent_5, "Yes" %>
+      <%= radio_button :consent, :consent_5, "No" %>
+      <%= label :consent, :consent_5, "No" %>
+    </div>
+  </div>
+</div>
+<div class="pa4">
+  <span class="ph5">6.</span>
+  <div>
+    <div class="dib v-mid w-80 mr2 ph5">
+      <p>
+        I agree to be contacted by the Talking Therapies Research Resource informing me about updates to the website and new studies that I might
+be interested in taking part in.
+      </p>
+    </div>
+    <div class="dib v-mid">
+      <%= radio_button :consent, :consent_6, "Yes"%>
+      <%= label :consent, :consent_6, "Yes" %>
+      <%= radio_button :consent, :consent_6, "No" %>
+      <%= label :consent, :consent_6, "No" %>
+    </div>
+  </div>
+</div>
+<div class="bg-light-gray pa4">
+  <span class="ph5">7.</span>
+  <div>
+    <div class="dib v-mid w-80 mr2 ph5">
+      <p>
+        It has been clarified that I can be informed of the results of any studies arising from the Talking Therapies Research Resource via a biannual newsletter.
+      </p>
+    </div>
+    <div class="dib v-mid">
+      <%= radio_button :consent, :consent_7, "Yes"%>
+      <%= label :consent, :consent_7, "Yes" %>
+      <%= radio_button :consent, :consent_7, "No" %>
+      <%= label :consent, :consent_7, "No" %>
+    </div>
+  </div>
+</div>
+
+<div class="pa3 ph5">
+  <%= submit "Next", class: "mr3 bn f6 link dim br-pill ph3 pv2 mb2 dib white bg-blue" %>
+  <%= link "Cancel", to: "#", class: "dib" %>
+</div>

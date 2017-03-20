@@ -36,6 +36,7 @@ defmodule ResearchResource.Web do
 
       import ResearchResource.Router.Helpers
       import ResearchResource.Gettext
+      import ResearchResource.Auth, only: [authenticate_user: 2]
     end
   end
 

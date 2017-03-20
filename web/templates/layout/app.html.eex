@@ -13,7 +13,7 @@
 
   <body>
     <div class="">
-      <header class="header">
+      <header class="header bg-light-gray pa4">
         <nav role="navigation">
           <div class="dt dt--fixed w-100">
             <%= link "Home", to: page_path(@conn, :index), class: "dtc tc ttu" %>
