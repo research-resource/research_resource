@@ -39,121 +39,24 @@
   </div>
 </div>
 
-<div class="bg-light-gray pa4">
-  <span class="ph5">1.</span>
-  <div>
-    <div class="dib v-mid w-80 mr2 ph5">
-      <p>
-        I confirm that I have read and understood the information sheet for the Talking Therapies Research Resource and have had the opportunity to ask questions.
-      </p>
-    </div>
-    <div class="dib v-mid">
-      <%= radio_button :consent, :consent_1, "Yes"%>
-      <%= label :consent, :consent_1, "Yes" %>
-      <%= radio_button :consent, :consent_1, "No" %>
-      <%= label :consent, :consent_1, "No" %>
-    </div>
-  </div>
-</div>
-<div class="pa4">
-  <span class="ph5">2.</span>
-  <div>
-    <div class="dib v-mid w-80 mr2 ph5">
-      <p>
-        I understand that my participation in this project is voluntary and that I am free to withdraw at any time, without giving any reason and without my medical care or legal rights being affected.
-      </p>
-    </div>
-    <div class="dib v-mid">
-      <%= radio_button :consent, :consent_2, "Yes"%>
-      <%= label :consent, :consent_2, "Yes" %>
-      <%= radio_button :consent, :consent_2, "No" %>
-      <%= label :consent, :consent_2, "No" %>
+<%= for { question, i } <- Enum.with_index @consent_questions do %>
+  <div class="<%= get_background_colour(i) %> pa4">
+    <span class="ph5"><%= i + 1 %>.</span>
+    <div>
+      <div class="dib v-mid w-80 mr2 ph5">
+        <p>
+          <%= question["field_label"] %>
+        </p>
+      </div>
+      <div class="dib v-mid">
+        <%= radio_button question["form name"], question["field_name"], "Yes"%>
+        <%= label question["form name"], question["field_name"], "Yes" %>
+        <%= radio_button question["form name"], question["field_name"], "No" %>
+        <%= label question["form name"], question["field_name"], "No" %>
+      </div>
     </div>
   </div>
-</div>
-<div class="bg-light-gray pa4">
-  <span class="ph5">3.</span>
-  <div>
-    <div class="dib v-mid w-80 mr2 ph5">
-      <p>
-        I understand that sections of my medical records relating to my treatment within the Southwark Talking Therapies Service may be looked at by authorised individuals from the Talking Therapies Research Resource team.
-        I give permission for these individuals to have access to my records.
-      </p>
-    </div>
-    <div class="dib v-mid">
-      <%= radio_button :consent, :consent_3, "Yes"%>
-      <%= label :consent, :consent_3, "Yes" %>
-      <%= radio_button :consent, :consent_3, "No" %>
-      <%= label :consent, :consent_3, "No" %>
-    </div>
-  </div>
-</div>
-<div class="pa4">
-  <span class="ph5">4.</span>
-  <div>
-    <div class="dib v-mid w-80 mr2 ph5">
-      <p>
-        I agree to provide questionnaire data, including information about my demographics (e.g. age, gender, and employment situation), emotional wellbeing, personality and experiences of treatment.
-      </p>
-    </div>
-    <div class="dib v-mid">
-      <%= radio_button :consent, :consent_4, "Yes"%>
-      <%= label :consent, :consent_4, "Yes" %>
-      <%= radio_button :consent, :consent_4, "No" %>
-      <%= label :consent, :consent_4, "No" %>
-    </div>
-  </div>
-</div>
-<div class="bg-light-gray pa4">
-  <span class="ph5">5.</span>
-  <div>
-    <div class="dib v-mid w-80 mr2 ph5">
-      <p>
-        I agree to be contacted by the Talking Therapies Research Resource regarding my participation in research studies that I have registered
-my interest in.
-      </p>
-    </div>
-    <div class="dib v-mid">
-      <%= radio_button :consent, :consent_5, "Yes"%>
-      <%= label :consent, :consent_5, "Yes" %>
-      <%= radio_button :consent, :consent_5, "No" %>
-      <%= label :consent, :consent_5, "No" %>
-    </div>
-  </div>
-</div>
-<div class="pa4">
-  <span class="ph5">6.</span>
-  <div>
-    <div class="dib v-mid w-80 mr2 ph5">
-      <p>
-        I agree to be contacted by the Talking Therapies Research Resource informing me about updates to the website and new studies that I might
-be interested in taking part in.
-      </p>
-    </div>
-    <div class="dib v-mid">
-      <%= radio_button :consent, :consent_6, "Yes"%>
-      <%= label :consent, :consent_6, "Yes" %>
-      <%= radio_button :consent, :consent_6, "No" %>
-      <%= label :consent, :consent_6, "No" %>
-    </div>
-  </div>
-</div>
-<div class="bg-light-gray pa4">
-  <span class="ph5">7.</span>
-  <div>
-    <div class="dib v-mid w-80 mr2 ph5">
-      <p>
-        It has been clarified that I can be informed of the results of any studies arising from the Talking Therapies Research Resource via a biannual newsletter.
-      </p>
-    </div>
-    <div class="dib v-mid">
-      <%= radio_button :consent, :consent_7, "Yes"%>
-      <%= label :consent, :consent_7, "Yes" %>
-      <%= radio_button :consent, :consent_7, "No" %>
-      <%= label :consent, :consent_7, "No" %>
-    </div>
-  </div>
-</div>
+<% end %>
 
 <div class="pa3 ph5">
   <%= submit "Next", class: "mr3 bn f6 link dim br-pill ph3 pv2 mb2 dib white bg-blue" %>
