@@ -7,7 +7,9 @@ use Mix.Config
 
 # General application configuration
 config :research_resource,
-  ecto_repos: [ResearchResource.Repo]
+  ecto_repos: [ResearchResource.Repo],
+  redcap_url: System.get_env("REDCAP_URL"),
+  redcap_token: System.get_env("REDCAP_TOKEN")
 
 # Configures the endpoint
 config :research_resource, ResearchResource.Endpoint,
