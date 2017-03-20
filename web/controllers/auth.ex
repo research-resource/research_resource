@@ -1,6 +1,9 @@
 defmodule ResearchResource.Auth do
   import Plug.Conn
   import Comeonin.Bcrypt, only: [checkpw: 2, dummy_checkpw: 0]
+  import Phoenix.Controller
+
+  alias ResearchResource.Router.Helpers
 
   def init(opts) do
     Keyword.fetch!(opts, :repo)
@@ -48,5 +51,17 @@ defmodule ResearchResource.Auth do
   defp put_current_user(conn, user) do
     conn
     |> assign(:current_user, user)
+  end
+
+  def authenticate_user(conn, _opts) do
+    if conn.assigns.current_user do
+      conn
+    else
+      conn
+      |> Plug.Conn.put_session(:redirect_url, conn.request_path)
+      |> put_flash(:error, "You must be logged in to access that page")
+      |> redirect(to: Helpers.session_path(conn, :new))
+      |> halt()
+    end
   end
 end

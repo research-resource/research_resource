@@ -13,8 +13,9 @@ defmodule ResearchResource.SessionController do
   def create(conn, %{"session" => %{"email" => email, "password" => pass}}) do
     case ResearchResource.Auth.login_by_email_and_password(conn, email, pass, repo: Repo) do
       {:ok, conn} ->
+        path = get_session(conn, :redirect_url) || page_path(conn, :index)
         conn
-        |> redirect(to: page_path(conn, :index))
+        |> redirect(to: path)
       {:error, _reason, conn} ->
         conn
         |> put_flash(:error, "Invalid email/password combination")
