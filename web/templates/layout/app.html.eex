@@ -13,25 +13,25 @@
 
   <body>
     <div class="">
-      <header class="header bg-light-gray pa4">
+      <header class="header bg-near-white pa4">
         <nav role="navigation">
           <div class="dt dt--fixed w-100">
-            <%= link "Home", to: page_path(@conn, :index), class: "dtc tc ttu" %>
-            <%= link "About", to: about_path(@conn, :index), class: "dtc tc ttu" %>
-            <%= link "Projects", to: projects_path(@conn, :index), class: "dtc tc ttu" %>
-            <%= link "Who", to: who_we_are_path(@conn, :index), class: "dtc tc ttu" %>
-            <%= link "FAQS", to: faqs_path(@conn, :index), class: "dtc tc ttu" %>
+            <%= link "Home", to: page_path(@conn, :index), class: "dtc tc ttu no-underline blue" %>
+            <%= link "About", to: about_path(@conn, :index), class: "dtc tc ttu no-underline blue" %>
+            <%= link "Projects", to: projects_path(@conn, :index), class: "dtc tc ttu no-underline blue" %>
+            <%= link "Who", to: who_we_are_path(@conn, :index), class: "dtc tc ttu no-underline blue" %>
+            <%= link "FAQS", to: faqs_path(@conn, :index), class: "dtc tc ttu no-underline blue" %>
             <%= if @current_user do %>
               <div class="dtc tr">
                 <span><%=String.capitalize @current_user.first_name%></span>
                 <span>|</span>
-                <a href="#" class="">My Account</a>
+                <a href="#" class="no-underline blue">My Account</a>
               </div>
             <% else %>
             <div class="dtc tr">
-              <%= link "Sign Up", to: user_path(@conn, :new), class: ""  %>
+              <%= link "Sign Up", to: user_path(@conn, :new), class: "no-underline blue ttu"  %>
               <span>|</span>
-              <%= link "Log In", to: session_path(@conn, :new), class: ""  %>
+              <%= link "Log In", to: session_path(@conn, :new), class: "no-underline blue ttu"  %>
             </div>
             <% end %>
           </div>
