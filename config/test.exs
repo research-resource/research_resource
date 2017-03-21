@@ -21,3 +21,6 @@ config :research_resource, ResearchResource.Repo,
 
 config :comeonin, :bcrypt_log_rounds, 4
 config :comeonin, :pbkdf2_rounds, 1
+
+# Define mock module for Redcap API
+config :research_resource, :redcap_api, ResearchResource.Redcap.InMemory

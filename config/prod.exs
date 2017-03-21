@@ -27,6 +27,8 @@ config :research_resource, ResearchResource.Repo,
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
   ssl: true
 
+config :research_resource, :redcap_api, ResearchResource.Redcap.HTTPClient
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key
