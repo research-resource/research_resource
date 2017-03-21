@@ -13,7 +13,7 @@
   </div>
 </div>
 
-<%= component "signing_up", [] %>
+<%= component "signing_up", conn: @conn %>
 
 <div class="bg-near-white pa4">
   <div class="mw9 center ph5-ns">

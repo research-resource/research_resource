@@ -55,7 +55,7 @@
     </p>
 
     <p>
-      For more information view our full <a href="#">Information Sheet</a>
+      For more information view our full <%= link "Information Sheet", to: about_path(@conn, :index) %>
     </p>
   </div>
 </div>

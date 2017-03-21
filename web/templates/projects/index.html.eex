@@ -171,4 +171,4 @@
   </div>
 </div>
 
-<%= component "signing_up", [] %>
+<%= component "signing_up", conn: @conn %>
