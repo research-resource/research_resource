@@ -16,10 +16,9 @@ defmodule ResearchResource.ConsentController do
     # data
     user_data = Helpers.user_to_record(conn.assigns.current_user)
     consent_data = Helpers.consent_to_record(consent)
-    IO.inspect consent_data
     data = Map.merge(consent_data, user_data)
 
-    # @redcap_api.save_record(data)
+    @redcap_api.save_record(data)
     redirect(conn, to: page_path(conn, :index))
   end
 
