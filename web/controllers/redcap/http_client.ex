@@ -32,6 +32,6 @@ defmodule ResearchResource.Redcap.HTTPClient do
   defp filter_fields({:ok, res}, instrument) do
     {:ok, data} = Poison.Parser.parse(res.body)
 
-    consent_questions = Enum.filter(data, fn(e) -> e["form_name"] == instrument end)
+    consent_questions = Enum.filter(data, fn(question) -> question["form_name"] == instrument end)
   end
 end

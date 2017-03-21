@@ -1,4 +1,12 @@
 defmodule ResearchResource.Redcap.Helpers do
+  @moduledoc """
+  Helpers functions used by Redcap.HTTPClient
+  """
+
+  @doc """
+  convert an Ecto User model to a simple map
+  `record_id` needs to be defined for Redcap to save the record
+  """
   def user_to_record(user) do
     %{
       record_id: user.ttrrid,
@@ -8,13 +16,18 @@ defmodule ResearchResource.Redcap.Helpers do
     }
   end
 
-  # convert yes/no to 1/0
-  # %{"consent_1" => "Yes", "consent_2" => "No", ... } to %{"consent_1" => 1, "consent_2" => 0, ... }
+  @doc """
+  convert the value of a map from "Yes" or "No" to 1 or 0
+  ## Example
+    iex> ResearchResource.Redcap.Helpers.consent_to_record(%{"consent_1" => "Yes", "consent_2" => "No"})
+    %{"consent_1" => 1, "consent_2" => 0}
+  """
   def consent_to_record(consent) do
-    for {k, v} <- consent, into: %{}, do: {k, bool_to_num(v)}
+    Map.new(consent,
+      fn {k, v} ->
+        {k, v == "Yes" && 1 || 0}
+      end
+    )
   end
-
-  defp bool_to_num("Yes"), do: 1
-  defp bool_to_num(_), do: 0
 
 end
