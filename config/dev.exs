@@ -41,3 +41,5 @@ config :research_resource, ResearchResource.Repo,
   database: "research_resource_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :research_resource, :redcap_api, ResearchResource.Redcap.HTTPClient

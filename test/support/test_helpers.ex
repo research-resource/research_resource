@@ -6,7 +6,8 @@ defmodule ResearchResource.TestHelpers do
       first_name: "Some User",
       last_name: "Test",
       email: "user#{Base.encode16(:crypto.rand_bytes(8))}@test.com",
-      password: "supersecret"
+      password: "supersecret",
+      ttrrid: "ttrr0000001"
     }, attrs)
 
     %ResearchResource.User{}

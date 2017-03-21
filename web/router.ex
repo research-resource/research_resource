@@ -22,14 +22,9 @@ defmodule ResearchResource.Router do
     get "/projects", ProjectsController, :index
     get "/who", WhoWeAreController, :index
     get "/faqs", FaqsController, :index
-    get "/consent", ConsentController, :index
 
+    resources "/consent", ConsentController, only: [:new, :create]
     resources "/users", UserController, only: [:show, :new, :create]
     resources "/sessions", SessionController, only: [:new, :create, :delete]
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", ResearchResource do
-  #   pipe_through :api
-  # end
 end
