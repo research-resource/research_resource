@@ -1,1 +1,174 @@
-<h2>Projects</h2>
+<div class="mw9 center ph5 pv4">
+  <div class="dib w-40 mr7 pa2 v-mid">
+    <h2 class="ttu">Our Projects</h2>
+    <p>
+      Here are some examples of the research studies that members can take part in. Some of these studies are designed to give us a better understand of what treatments work for whom, and why. Others explore the characteristics of those for whom treatment has not worked, or have a broader goal around understanding what leads to the development of disorders such as anxiety and depression.
+    </p>
+    <p>
+      As a member, you do not have to sign up to any of these studies if you do not want to, only those that interest you. Once you are signed in, you will be able to see further details about the research, and what would be expected of you as a participant.
+    </p>
+    <p>
+      <%= link "Sign up now", to: user_path(@conn, :new) %> to become a member and start getting involved in research
+    </p>
+  </div>
+
+  <div class="dib w-20 pa2 v-mid">
+    <%= if !@current_user do %>
+      <div class="bg-near-white pa4">
+        <%= link "Sign Up to the Research Resource", to: user_path(@conn, :new), class: "blue no-underline ttu" %>
+      </div>
+    <%= end %>
+  </div>
+</div>
+
+<div class="pa4 bg-near-white">
+  <div class="mw9 center ph5">
+    <h3 class="ttu ph3">Upcoming Projects</h3>
+    <p class="ph3">
+      These are upcoming projects that you can sign up to be a part of:
+    </p>
+  </div>
+  <div class="mw9 center ph5-ns cf">
+    <div class="fl w-100 w-third-ns pa3">
+      <div class="bg-white h5">
+        <div class="bb pa2 b--light-gray">
+          <h4 class="blue">Project #7</h4>
+        </div>
+        <div class="ph4 pv1">
+          <p class="ph3 pv1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+          </p>
+          <a href="#" class="dtc tc ttu no-underline blue">More About Project #7</a>
+        </div>
+      </div>
+    </div>
+    <div class="fl w-100 w-third-ns pa3">
+      <div class="bg-white h5">
+        <div class="bb pa2 b--light-gray">
+          <h4 class="blue">Project #8</h4>
+        </div>
+        <div class="ph4 pv1">
+          <p class="ph3 pv1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+          </p>
+          <a href="#" class="dtc tc ttu no-underline blue">More About Project #8</a>
+        </div>
+      </div>
+    </div>
+    <div class="fl w-100 w-third-ns pa3">
+      <div class="bg-white h5">
+        <div class="bb pa2 b--light-gray">
+          <h4 class="blue">Project #9</h4>
+        </div>
+        <div class="ph4 pv1">
+          <p class="ph3 pv1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+          </p>
+          <a href="#" class="dtc tc ttu no-underline blue">More About Project #9</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pa4 bg-white">
+  <div class="mw9 center ph5">
+    <h3 class="ttu ph3">Current Projects</h3>
+    <p class="ph3">
+      These are projects that are already running. Find out about the projects here:
+    </p>
+  </div>
+  <div class="mw9 center ph5-ns cf">
+    <div class="fl w-100 w-third-ns pa3">
+      <div class="bg-near-white h5">
+        <div class="bb pa2 b--gray">
+          <h4 class="blue">Project #4</h4>
+        </div>
+        <div class="ph4 pv1">
+          <p class="ph3 pv1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+          </p>
+          <a href="#" class="dtc tc ttu no-underline blue">More About Project #4</a>
+        </div>
+      </div>
+    </div>
+    <div class="fl w-100 w-third-ns pa3">
+      <div class="bg-near-white h5">
+        <div class="bb pa2 b--gray">
+          <h4 class="blue">Project #5</h4>
+        </div>
+        <div class="ph4 pv1">
+          <p class="ph3 pv1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+          </p>
+          <a href="#" class="dtc tc ttu no-underline blue">More About Project #5</a>
+        </div>
+      </div>
+    </div>
+    <div class="fl w-100 w-third-ns pa3">
+      <div class="bg-near-white h5">
+        <div class="bb pa2 b--gray">
+          <h4 class="blue">Project #6</h4>
+        </div>
+        <div class="ph4 pv1">
+          <p class="ph3 pv1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+          </p>
+          <a href="#" class="dtc tc ttu no-underline blue">More About Project #6</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pa4 bg-near-white">
+  <div class="mw9 center ph5">
+    <h3 class="ttu ph3">Archived Projects</h3>
+    <p class="ph3">
+      These are projects that have already finished. You can find out about the results here:
+    </p>
+  </div>
+  <div class="mw9 center ph5-ns cf">
+    <div class="fl w-100 w-third-ns pa3">
+      <div class="bg-white h5">
+        <div class="bb pa2 b--light-gray">
+          <h4 class="blue">Project #1</h4>
+        </div>
+        <div class="ph4 pv1">
+          <p class="ph3 pv1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+          </p>
+          <a href="#" class="dtc tc ttu no-underline blue">More About Project #1</a>
+        </div>
+      </div>
+    </div>
+    <div class="fl w-100 w-third-ns pa3">
+      <div class="bg-white h5">
+        <div class="bb pa2 b--light-gray">
+          <h4 class="blue">Project #2</h4>
+        </div>
+        <div class="ph4 pv1">
+          <p class="ph3 pv1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+          </p>
+          <a href="#" class="dtc tc ttu no-underline blue">More About Project #2</a>
+        </div>
+      </div>
+    </div>
+    <div class="fl w-100 w-third-ns pa3">
+      <div class="bg-white h5">
+        <div class="bb pa2 b--light-gray">
+          <h4 class="blue">Project #3</h4>
+        </div>
+        <div class="ph4 pv1">
+          <p class="ph3 pv1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+          </p>
+          <a href="#" class="dtc tc ttu no-underline blue">More About Project #3</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= component "signing_up", conn: @conn %>

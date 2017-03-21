@@ -1,123 +1,62 @@
-<div>
-  <div class="pa4">
-    <h2>WELCOME TO TALKING THERAPIES RESEARCH RESOURCE</h2>
-    <div>
-      <div class="dib w-40 mr7 v-mid">
-        <p class="ma1">The Talking Therapies Research Register team want to develop better predictors of treatment response in anxiety and depression. We also want to promote and enable other research studies in this field. You are eligible to take part if you have recently been referred to a talking therapies service within the NHS.</p>
-      </div>
-
-      <div class="dib w-20 pa2 v-mid">
-        <div class="bg-near-white pa4">
-          <%= link "Sign Up to the Research Resource", to: user_path(@conn, :new), class: "blue no-underline ttu" %>
-        </div>
-      </div>
-    </div>
+<div class="mw9 center ph5 pv4">
+  <h2 class="ttu pa2">Welcome to Talking Therapies Research Resource</h2>
+  <div class="dib w-40 mr7 pa2 v-mid">
+    <p class="ma1">The Talking Therapies Research Register team want to develop better predictors of treatment response in anxiety and depression. We also want to promote and enable other research studies in this field. You are eligible to take part if you have recently been referred to a talking therapies service within the NHS.</p>
   </div>
 
-  <div class="pa4">
-    <h3>What does signing up involve?</h3>
+  <div class="dib w-20 pa2 v-mid">
+    <%= if !@current_user do %>
+      <div class="bg-near-white pa4">
+        <%= link "Sign Up to the Research Resource", to: user_path(@conn, :new), class: "blue no-underline ttu" %>
+      </div>
+    <%= end %>
+  </div>
+</div>
 
-    <div class="mw9 center ph3-ns">
-      <div class="cf ph2-ns">
-        <div class="fl w-100 w-third-ns pa2">
-          <div class="outline bg-white pa4 h5">
-            <h4>1</h4>
-            <h5>Allowing access to relevant medical records.</h5>
-            <p class="ph3 pv1">
-              Don't worry - after signing up, you will be given more information about this before any access is given.
-            </p>
+<%= component "signing_up", conn: @conn %>
+
+<div class="bg-near-white pa4">
+  <div class="mw9 center ph5-ns">
+    <div class="cf ph2-ns">
+      <div class="fl w-100 w-third-ns pa3">
+        <div class="bg-white h5">
+          <div class="bb pa2 b--light-gray">
+            <h4 class="ma0 blue">Projects</h4>
           </div>
-        </div>
-        <div class="fl w-100 w-third-ns pa2">
-          <div class="outline bg-white pa4 h5">
-            <h4>2</h4>
-            <h5>Completing a questionnaire</h5>
+          <div class="ph4 pv1">
             <p class="ph3 pv1">
-              This will be XX amount of questions about consectetur adipiscing elit. Aenean euismod bibendum laoreet.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
             </p>
-          </div>
-        </div>
-        <div class="fl w-100 w-third-ns pa2">
-          <div class="outline bg-white pa4 h5">
-            <h4>3</h4>
-            <h5>Giving a saliva sample</h5>
-            <p class="ph3 pv1">
-              We ask you to provide a saliva sample so that we can use the DNA to identify whether genetic factors influence the development and treatment of common mental health problems.
-            </p>
+            <%= link "View The Projects", to: projects_path(@conn, :index), class: "dtc tc ttu no-underline blue" %>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="pa4">
-    <p>
-      All your information will be kept confidential. All data use is strictly within the terms of the Data Protection Act (DPA 1998).
-    </p>
-
-    <p>
-      Once you have signed up you will:
-    </p>
-
-    <ul>
-      <li>Be asked to complete questionnaires once a year</li>
-      <li>Take part in projects that interest you</li>
-      <li>Access information about treatment options</li>
-    </ul>
-
-    <p>
-      You can unsubscribe to the Talking Therapies Research Register at any time.
-    </p>
-
-    <p>
-      For more information view our full <a href="#">Information Sheet</a>
-    </p>
-  </div>
-
-  <div class="bg-near-white pa4">
-    <div class="mw9 center ph5-ns">
-      <div class="cf ph2-ns">
-        <div class="fl w-100 w-third-ns pa3">
-          <div class="outline bg-white h5">
-            <div class="bb pa2">
-              <h4 class="ma0">Projects</h4>
-            </div>
-            <div class="ph4 pv1">
-              <p class="ph3 pv1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
-              </p>
-              <%= link "View The Projects", to: projects_path(@conn, :index), class: "dtc tc ttu blue no-underline" %>
-            </div>
+      <div class="fl w-100 w-third-ns pa3">
+        <div class="bg-white h5">
+          <div class="bb pa2 b--light-gray">
+            <h4 class="ma0 blue">Who We Are</h4>
+          </div>
+          <div class="ph4 pv1">
+            <p class="ph3 pv1">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+            </p>
+            <%= link "Meet the Team", to: who_we_are_path(@conn, :index), class: "dtc tc ttu no-underline blue" %>
           </div>
         </div>
-        <div class="fl w-100 w-third-ns pa3">
-          <div class="outline bg-white h5">
-            <div class="bb pa2">
-              <h4 class="ma0">Who We Are</h4>
-            </div>
-            <div class="ph4 pv1">
-              <p class="ph3 pv1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
-              </p>
-              <%= link "Meet the Team", to: who_we_are_path(@conn, :index), class: "dtc tc ttu blue no-underline" %>
-            </div>
+      </div>
+      <div class="fl w-100 w-third-ns pa3">
+        <div class="bg-white h5">
+          <div class="bb pa2 b--light-gray">
+            <h4 class="ma0 blue">FAQS</h4>
           </div>
-        </div>
-        <div class="fl w-100 w-third-ns pa3">
-          <div class="outline bg-white h5">
-            <div class="bb pa2">
-              <h4 class="ma0">FAQS</h4>
-            </div>
-            <div class="ph4 pv1">
-              <p class="ph3 pv1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
-              </p>
-              <%= link "Read the FAQs", to: faqs_path(@conn, :index), class: "dtc tc ttu blue no-underline" %>
-            </div>
+          <div class="ph4 pv1">
+            <p class="ph3 pv1">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+            </p>
+            <%= link "Read the FAQs", to: faqs_path(@conn, :index), class: "dtc tc ttu no-underline blue" %>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  </div>
+</div>

@@ -53,6 +53,7 @@ defmodule ResearchResource.Web do
       import ResearchResource.Router.Helpers
       import ResearchResource.ErrorHelpers
       import ResearchResource.Gettext
+      import ResearchResource.ComponentHelpers
     end
   end
 
