@@ -2,7 +2,7 @@ module.exports = (function() {
   var noConsent = document.querySelectorAll(".no-consent");
   var yesConsent = document.querySelectorAll(".yes-consent");
 
-  noConsent.forEach(function(el){
+[].forEach.call(noConsent, function(el){
     el.addEventListener("click", function (e) {
       var index = e.target.id[e.target.id.length - 1];
       document.getElementById("error-consent-" + index).classList.remove("dn");
@@ -10,7 +10,7 @@ module.exports = (function() {
     });
   });
 
-  yesConsent.forEach(function(el, i, a){
+[].forEach.call(yesConsent, function(el, i, a){
     el.addEventListener("click", function (e) {
       var index = e.target.id[e.target.id.length - 1];
       document.getElementById("error-consent-" + index).classList.add("dn");
