@@ -39,26 +39,29 @@
   </div>
 </div>
 
-<%= for { question, i } <- Enum.with_index @consent_questions do %>
-  <div class="<%= get_background_colour(i) %> pa4">
-    <span class="ph5"><%= i + 1 %>.</span>
-    <div>
-      <div class="dib v-mid w-80 mr2 ph5">
-        <p>
-          <%= question["field_label"] %>
-        </p>
-      </div>
-      <div class="dib v-mid">
-        <%= radio_button question["form name"], question["field_name"], "Yes"%>
-        <%= label question["form name"], question["field_name"], "Yes" %>
-        <%= radio_button question["form name"], question["field_name"], "No" %>
-        <%= label question["form name"], question["field_name"], "No" %>
+<%= form_for @conn, consent_path(@conn, :create), [as: :consent], fn f -> %>
+  <%= for { question, i } <- Enum.with_index @consent_questions do %>
+    <div class="<%= get_background_colour(i) %> pa4">
+      <span class="ph5"><%= i + 1 %>.</span>
+      <div>
+        <div class="dib v-mid w-80 mr2 ph5">
+          <p>
+            <%= question["field_label"] %>
+          </p>
+        </div>
+        <div class="dib v-mid">
+          <%= radio_button f, String.to_atom(question["field_name"]), "Yes"%>
+          <%= label f, question["field_name"], "Yes" %>
+          <%= radio_button f, String.to_atom(question["field_name"]), "No" %>
+          <%= label f, question["field_name"], "No" %>
+        </div>
       </div>
     </div>
+  <% end %>
+  <div class="pa3 ph5">
+    <%= submit "Next", class: "mr3 bn f6 link dim br-pill ph3 pv2 mb2 dib white bg-blue pointer" %>
+    <%= link "Cancel", to: "#", class: "dib" %>
   </div>
 <% end %>
 
-<div class="pa3 ph5">
-  <%= submit "Next", class: "mr3 bn f6 link dim br-pill ph3 pv2 mb2 dib white bg-blue" %>
-  <%= link "Cancel", to: "#", class: "dib" %>
-</div>
+
