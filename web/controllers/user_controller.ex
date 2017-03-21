@@ -15,7 +15,7 @@ defmodule ResearchResource.UserController do
         conn
         |> create_ttrrid(user)
         |> ResearchResource.Auth.login(user)
-        |> redirect(to: page_path(conn, :index))
+        |> redirect(to: consent_path(conn, :new))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end

@@ -18,7 +18,7 @@ defmodule ResearchResource.UserControllerTest do
     user = Repo.get_by!(User, email: "me@test.com")
     assert user.ttrrid =~ "TTRR"
     assert String.length(user.ttrrid) == 11
-    assert redirected_to(conn) == page_path(conn, :index)
+    assert redirected_to(conn) == consent_path(conn, :new)
   end
 
   test "POST /users/create - fail", %{conn: conn} do

@@ -26,12 +26,12 @@ defmodule ResearchResource.Redcap.HTTPClient do
       data: "[#{payload}]"
     ]
 
-    res = HTTPoison.post(@redcap_url, {:form, body}, [])
+    HTTPoison.post(@redcap_url, {:form, body}, [])
   end
 
   defp filter_fields({:ok, res}, instrument) do
     {:ok, data} = Poison.Parser.parse(res.body)
 
-    consent_questions = Enum.filter(data, fn(question) -> question["form_name"] == instrument end)
+    Enum.filter(data, fn(question) -> question["form_name"] == instrument end)
   end
 end

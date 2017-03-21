@@ -9,7 +9,9 @@ use Mix.Config
 config :research_resource,
   ecto_repos: [ResearchResource.Repo],
   redcap_url: System.get_env("REDCAP_URL"),
-  redcap_token: System.get_env("REDCAP_TOKEN")
+  redcap_token: System.get_env("REDCAP_TOKEN"),
+  qualtrics_token: System.get_env("QUALTRICS_TOKEN"),
+  qualtrics_mailinglist_id: System.get_env("QUALTRICS_MAILINGLIST_ID")
 
 # Configures the endpoint
 config :research_resource, ResearchResource.Endpoint,
