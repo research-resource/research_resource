@@ -50,18 +50,30 @@
           </p>
         </div>
         <div class="dib v-mid">
-          <%= radio_button f, String.to_atom(question["field_name"]), "Yes"%>
+          <%= radio_button f, String.to_atom(question["field_name"]), "Yes", class: "yes-consent", id: "yes-consent-#{i+1}" %>
           <%= label f, question["field_name"], "Yes" %>
-          <%= radio_button f, String.to_atom(question["field_name"]), "No" %>
+          <%= radio_button f, String.to_atom(question["field_name"]), "No", class: "no-consent", id: "no-consent-#{i+1}" %>
           <%= label f, question["field_name"], "No" %>
+        </div>
+        <div id="error-consent-<%= i+1 %>" class="pl3 mh5 dn bg-light-pink w-80 br-pill">
+          <div class="v-mid dib br-100 h3 w3 bg-white tc pt1">
+            <span class="f1">!</span>
+          </div>
+          <div class="dib v-mid ph4 pv1">
+            <p>
+              If you do not consent to this option, you will not be able to join the Research Resource
+            </p>
+            <p>
+              If you are unsure, why not give us a call to talk it through - or <a href="#">request a call back</a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
   <% end %>
   <div class="pa3 ph5">
-    <%= submit "Next", class: "mr3 bn f6 link dim br-pill ph3 pv2 mb2 dib white bg-blue pointer" %>
+    <%= submit "Next", class: "mr3 bn f6 link dim br-pill ph3 pv2 mb2 white bg-blue dn", id: "next-active" %>
+    <%= submit "You cannot complete registration", class: "mr3 bn f6 link dim br-pill ph3 pv2 mb2 dib white bg-grey", id: "next-inactive" %>
     <%= link "Cancel", to: "#", class: "dib" %>
   </div>
 <% end %>
-
-
