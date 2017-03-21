@@ -21,19 +21,35 @@ defmodule ResearchResource.Redcap do
     }
   end
 
+  # convert yes/no to 1/0
+  def consent_to_record(consent) do
+    # %{"consent_1" => "Yes", "consent_2" => "No", ... } to
+    # %{"consent_1" => 1, "consent_2" => 0, ... }
+    for {k, v} <- consent, into: %{}, do: {k, bool_to_num(v)}
+  end
+
+  defp bool_to_num(value) do
+    if value == "Yes" do
+      1
+    else
+      0
+    end
+  end
+
   def save_record(data) do
-    {:ok, payload} = Poison.encode(data)
-    IO.puts payload
-    IO.puts "******************"
-    res = HTTPoison.post(@redcap_url, {:form,
-    [token: @redcap_token,
-     content: "record",
-     format: "json",
-     type: "flat",
-     overwriteBehavior: "normal",
-     data: payload
-    ]}, [])
-    IO.inspect res
+    # add complete status to the record
+    record = Map.merge(data, %{user_details_complete: 2, consent_complete: 2})
+    {:ok, payload} = Poison.encode(record)
+    body = [
+      token: @redcap_token,
+      content: "record",
+      format: "json",
+      type: "flat",
+      overwriteBehavior: "normal",
+      data: "[#{payload}]"
+    ]
+
+    res = HTTPoison.post(@redcap_url, {:form, body}, [])
   end
 
   defp filter_fields({:ok, res}, instrument) do
