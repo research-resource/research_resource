@@ -1,23 +1,21 @@
-module.exports = (function() {
-  var noConsent = document.querySelectorAll(".no-consent");
-  var yesConsent = document.querySelectorAll(".yes-consent");
+var noConsent = document.querySelectorAll(".no-consent");
+var yesConsent = document.querySelectorAll(".yes-consent");
 
 [].forEach.call(noConsent, function(el){
-    el.addEventListener("click", function (e) {
-      var index = e.target.id[e.target.id.length - 1];
-      document.getElementById("error-consent-" + index).classList.remove("dn");
-      checkAllAnswered();
-    });
+  el.addEventListener("click", function (e) {
+    var index = e.target.id[e.target.id.length - 1];
+    document.getElementById("error-consent-" + index).classList.remove("dn");
+    checkAllAnswered();
   });
+});
 
 [].forEach.call(yesConsent, function(el, i, a){
-    el.addEventListener("click", function (e) {
-      var index = e.target.id[e.target.id.length - 1];
-      document.getElementById("error-consent-" + index).classList.add("dn");
-      checkAllAnswered();
-    });
+  el.addEventListener("click", function (e) {
+    var index = e.target.id[e.target.id.length - 1];
+    document.getElementById("error-consent-" + index).classList.add("dn");
+    checkAllAnswered();
   });
-})();
+});
 
 function checkAllAnswered() {
   var checked = document.querySelectorAll("input.yes-consent[type=radio]:checked");
