@@ -5,7 +5,7 @@ defmodule ResearchResource.TestHelpers do
     changes = Dict.merge(%{
       first_name: "Some User",
       last_name: "Test",
-      email: "user#{Base.encode16(:crypto.rand_bytes(8))}@test.com",
+      email: "user#{Base.encode16(:crypto.strong_rand_bytes(8))}@test.com",
       password: "supersecret",
       ttrrid: "ttrr0000001"
     }, attrs)

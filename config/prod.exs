@@ -28,6 +28,7 @@ config :research_resource, ResearchResource.Repo,
   ssl: true
 
 config :research_resource, :redcap_api, ResearchResource.Redcap.HTTPClient
+config :research_resource, :qualtrics_api, ResearchResource.Qualtrics.HTTPClient
 
 # ## SSL Support
 #

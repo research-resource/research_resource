@@ -1,4 +1,4 @@
-defmodule ResearchResource.Redcap.Helpers do
+defmodule ResearchResource.Redcap.RedcapHelpers do
   @moduledoc """
   Helpers functions used by Redcap.HTTPClient
   """

@@ -24,3 +24,4 @@ config :comeonin, :pbkdf2_rounds, 1
 
 # Define mock module for Redcap API
 config :research_resource, :redcap_api, ResearchResource.Redcap.InMemory
+config :research_resource, :qualtrics_api, ResearchResource.Qualtrics.InMemory
