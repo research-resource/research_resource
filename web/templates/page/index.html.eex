@@ -1,14 +1,14 @@
 <div>
   <div class="pa4">
     <h2>WELCOME TO TALKING THERAPIES RESEARCH RESOURCE</h2>
-    <div class="pa4">
-      <div class="dib w-60 pa2 v-mid">
+    <div>
+      <div class="dib w-40 mr7 v-mid">
         <p class="ma1">The Talking Therapies Research Register team want to develop better predictors of treatment response in anxiety and depression. We also want to promote and enable other research studies in this field. You are eligible to take part if you have recently been referred to a talking therapies service within the NHS.</p>
       </div>
 
-      <div class="dib w-30 pa2 v-mid">
-        <div class="outline bg-white pa2 pv3">
-          <%= link "Sign Up to the Research Resource", to: user_path(@conn, :new) %>
+      <div class="dib w-20 pa2 v-mid">
+        <div class="bg-near-white pa4">
+          <%= link "Sign Up to the Research Resource", to: user_path(@conn, :new), class: "blue no-underline ttu" %>
         </div>
       </div>
     </div>
@@ -86,7 +86,7 @@
               <p class="ph3 pv1">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
               </p>
-              <%= link "View The Projects", to: projects_path(@conn, :index), class: "dtc tc ttu" %>
+              <%= link "View The Projects", to: projects_path(@conn, :index), class: "dtc tc ttu blue no-underline" %>
             </div>
           </div>
         </div>
@@ -99,7 +99,7 @@
               <p class="ph3 pv1">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
               </p>
-              <%= link "Meet the Team", to: who_we_are_path(@conn, :index), class: "dtc tc ttu" %>
+              <%= link "Meet the Team", to: who_we_are_path(@conn, :index), class: "dtc tc ttu blue no-underline" %>
             </div>
           </div>
         </div>
@@ -112,7 +112,7 @@
               <p class="ph3 pv1">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
               </p>
-              <%= link "Read the FAQs", to: faqs_path(@conn, :index), class: "dtc tc ttu" %>
+              <%= link "Read the FAQs", to: faqs_path(@conn, :index), class: "dtc tc ttu blue no-underline" %>
             </div>
           </div>
         </div>
