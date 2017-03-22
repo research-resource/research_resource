@@ -1,1 +1,78 @@
-<h2>FAQS</h2>
+<div class="mw9 center ph5 pt4">
+  <div class="dib w-40 mr7 v-mid pa2">
+    <h2 class="ttu">FAQs</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
+  </div>
+
+  <div class="dib w-20 pa2 v-mid">
+    <%= if !@current_user do %>
+    <div class="bg-near-white pa4">
+      <%= link "Sign Up to the Research Resource", to: user_path(@conn, :new), class: "blue no-underline ttu" %>
+    </div>
+    <%= end %>
+  </div>
+</div>
+
+<div class="bg-near-white mb1">
+  <input id="close-1" class="close-faq dn" type="checkbox"/>
+  <div class="ph6 pv4 bb b--white">
+    <h3 class="dib ma0">Question Lorem Ipsum?</h3>
+    <label for="close-1" class="fr dib br-100 h2 w2 bg-white tc relative pointer">
+      <img class="plus dn" src="/images/plus.svg" />
+      <img class="close dn" src="/images/close.svg" />
+    </label>
+  </div>
+  <div class="pl6 pv3 w-50 ques">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+    </p>
+  </div>
+</div>
+
+<div class="bg-near-white mb1">
+  <input id="close-2" class="close-faq dn" type="checkbox"/>
+  <div class="ph6 pv4 bb b--white">
+    <h3 class="dib ma0">Question Lorem Ipsum?</h3>
+    <label for="close-2" class="fr dib br-100 h2 w2 bg-white tc relative pointer">
+      <img class="plus dn" src="/images/plus.svg" />
+      <img class="close dn" src="/images/close.svg" />
+    </label>
+  </div>
+  <div class="pl6 pv3 w-50 ques">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+    </p>
+  </div>
+</div>
+
+<div class="bg-near-white mb1">
+  <input id="close-3" class="close-faq dn" type="checkbox"/>
+  <div class="ph6 pv4 bb b--white">
+    <h3 class="dib ma0">Question Lorem Ipsum?</h3>
+    <label for="close-3" class="fr dib br-100 h2 w2 bg-white tc relative pointer">
+      <img class="plus dn" src="/images/plus.svg" />
+      <img class="close dn" src="/images/close.svg" />
+    </label>
+  </div>
+  <div class="pl6 pv3 w-50 ques">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+    </p>
+  </div>
+</div>
+
+<div class="bg-near-white mb1">
+  <input id="close-4" class="close-faq dn" type="checkbox"/>
+  <div class="ph6 pv4 bb b--white">
+    <h3 class="dib ma0">Question Lorem Ipsum?</h3>
+    <label for="close-4" class="fr dib br-100 h2 w2 bg-white tc relative pointer">
+      <img class="plus dn" src="/images/plus.svg" />
+      <img class="close dn" src="/images/close.svg" />
+    </label>
+  </div>
+  <div class="pl6 pv3 w-50 ques">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+    </p>
+  </div>
+</div>
