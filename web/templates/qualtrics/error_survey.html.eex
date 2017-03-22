@@ -1,0 +1,6 @@
+<h1>Sorry</h1>
+<h2><%=@error%></h2>
+
+<p>
+  Please contact a member of the team
+</p>
