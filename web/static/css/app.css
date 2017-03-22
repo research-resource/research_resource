@@ -1,1 +1,13 @@
 /* This file is for your main application css. */
+
+.close-faq:not(:checked) ~ div.ques {
+  display: none;
+}
+
+.close-faq:not(:checked) ~ div label .plus {
+  display: block;
+}
+
+.close-faq:checked ~ div label .close {
+  display: block;
+}
