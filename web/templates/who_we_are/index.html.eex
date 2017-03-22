@@ -1,1 +1,126 @@
-<h2>Who We Are</h2>
+<div class="mw9 center ph5 pv4">
+  <div class="dib w-40 mr7 pa2 v-mid">
+    <h2 class="ttu">Who We Are</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+    </p>
+  </div>
+
+  <div class="dib w-20 pa2 v-mid">
+    <%= if !@current_user do %>
+      <div class="bg-near-white pa4">
+        <%= link "Sign Up to the Research Resource", to: user_path(@conn, :new), class: "blue no-underline ttu" %>
+      </div>
+    <%= end %>
+  </div>
+</div>
+
+<div class="bg-near-white pa4">
+  <div class="mw9 center ph5 cf">
+    <h3 class="ph3 ttu">Meet the Team</h3>
+    <div class="fl w-100 w-third-ns pa3">
+      <div class="bg-white h5">
+        <div class="ph4 pv1">
+          <div class="v-mid br-100 h4 w4 bg-near-white tc pt1 center"></div>
+          <span class="ttu">Thalia Eley</span>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum
+          </p>
+          <a href="#" class="dtc tc ttu no-underline blue">More About Thalia</a>
+        </div>
+      </div>
+    </div>
+    <div class="fl w-100 w-third-ns pa3">
+      <div class="bg-white h5">
+        <div class="ph4 pv1">
+          <div class="v-mid br-100 h4 w4 bg-near-white tc pt1 center"></div>
+          <span class="ttu">Gerome Breen</span>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum
+          </p>
+          <a href="#" class="dtc tc ttu no-underline blue">More About John</a>
+        </div>
+      </div>
+    </div>
+    <div class="fl w-100 w-third-ns pa3">
+      <div class="bg-white h5">
+        <div class="ph4 pv1">
+          <div class="v-mid br-100 h4 w4 bg-near-white tc pt1 center"></div>
+          <span class="ttu">John Doe</span>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum
+          </p>
+          <a href="#" class="dtc tc ttu no-underline blue">More About John</a>
+        </div>
+      </div>
+    </div>
+    <div class="fl w-100 pa3">
+      <div class="bg-white h-50 relative">
+        <div class="ph4 pt4">
+          <div class="w4 dib">
+            <div class="br-100 h2 w2 bg-near-white tc mb3 absolute right-0 top-0">
+              <span class="f4 v-mid">X</span>
+            </div>
+            <div class="v-top br-100 h4 w4 bg-near-white tc mb2"></div>
+            <div class="tc">
+              <a href="#" class="db pa1">Lorem ipsum</a>
+              <a href="#" class="db pa1">dolor sit amet</a>
+              <a href="#" class="db pa1">consectetur adipiscing</a>
+            </div>
+          </div>
+          <div class="v-top dib w-80 ph5 ml4">
+            <span class="ttu">Gerome Breen</span>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+            </p>
+            <p>
+              Sed porta at mi id molestie. Morbi sed gravida tellus felis orci, feugiat non eros sit amet, mattis pellentesque magna. Aenean dignissim nisl quis bibendum posuere.
+            </p>
+            <p>
+              Vivamus semper ipsum quis egestas fringilla. Vivamus posuere augue a ornare sodales. Fusce gravida arcu quis eleifend vehicula. Sed pretium ex erat. Sed porta at mi id molestie. Morbi sed gravida tellus felis orci, feugiat non eros sit consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fl w-100 w-third-ns pa3">
+      <div class="bg-white h5">
+        <div class="ph4 pv1">
+          <div class="v-mid br-100 h4 w4 bg-near-white tc pt1 center"></div>
+          <span class="ttu">John Doe</span>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum
+          </p>
+          <a href="#" class="dtc tc ttu no-underline blue">More About John</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="fl w-100 w-third-ns pa3">
+      <div class="bg-white h5">
+        <div class="ph4 pv1">
+          <div class="v-mid br-100 h4 w4 bg-near-white tc pt1 center"></div>
+          <span class="ttu">Thalia Eley</span>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum
+          </p>
+          <a href="#" class="dtc tc ttu no-underline blue">More About Thalia</a>
+        </div>
+      </div>
+    </div>
+    <div class="fl w-100 w-third-ns pa3">
+      <div class="bg-white h5">
+        <div class="ph4 pv1">
+          <div class="v-mid br-100 h4 w4 bg-near-white tc pt1 center"></div>
+          <span class="ttu">Gerome Breen</span>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum
+          </p>
+          <a href="#" class="dtc tc ttu no-underline blue">More About Gerome</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= component "signing_up", [conn: @conn] %>
