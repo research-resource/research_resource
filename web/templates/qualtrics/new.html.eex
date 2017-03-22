@@ -1,3 +1,5 @@
 <h1>Qualtrics Questionnaire</h1>
+<div class="aspect-ratio aspect-ratio--1x1 h100 w100">
+  <iframe src="<%= @survey_link %>" class="aspect-ratio--object" frameborder="0"></iframe>
+</div>
 
-<iframe src="<%= @survey_link %>" height="800px" width="600px"></iframe>

@@ -1,6 +1,8 @@
 defmodule ResearchResource.QualtricsController do
   use ResearchResource.Web, :controller
 
+  plug :authenticate_user when action in [:new]
+
   @qualtrics_api Application.get_env(:research_resource, :qualtrics_api)
 
   def new(conn, _) do
