@@ -1,1 +1,3 @@
 <h1>Qualtrics Questionnaire</h1>
+
+<iframe src="<%= @survey_link %>" height="800px" width="600px"></iframe>

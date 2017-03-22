@@ -15,7 +15,6 @@ defmodule ResearchResource.ConsentController do
 
   # save user and consent
   def create(conn, %{"consent" => consent}) do
-    # data
     user_data = RedcapHelpers.user_to_record(conn.assigns.current_user)
     consent_data = RedcapHelpers.consent_to_record(consent)
     data = Map.merge(consent_data, user_data)
