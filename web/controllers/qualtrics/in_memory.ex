@@ -11,4 +11,11 @@ defmodule ResearchResource.Qualtrics.InMemory do
         {:error, "no Qualtrics questionnaire found"}
     end
   end
+
+  def survey_completed?(contact_id) do
+    case contact_id do
+      "1" -> true
+      "0" -> false
+    end
+  end
 end
