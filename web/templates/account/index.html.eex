@@ -26,46 +26,50 @@
   </div>
 </div>
 
-<div class="mw9 center ph5 pv4 bg-near-white">
-  <div class="dib w-50 pa2 v-mid">
-    <h3>Account Details</h3>
-    <%= label :disabled, :first_name, "First Name", class: "db" %>
-    <%= text_input :disabled, :first_name, disabled: true, value: (String.capitalize @current_user.first_name), class: "mb2" %>
-    <%= label :disabled, :last_name, "Last Name", class: "db" %>
-    <%= text_input :disabled, :last_name, disabled: true, value: (String.capitalize @current_user.last_name), class: "mb2" %>
-    <%= label :disabled, :password, "Password", class: "db" %>
-    <%= password_input :disabled, :password, disabled: true, value: "********" %>
-    <a href="#" class="blue no-underline">Change Password</a>
+<%= form_for @conn, account_path(@conn, :update, @current_user), [method: "put", as: :account], fn f -> %>
+  <div class="mw9 center ph5 pv4 bg-near-white">
+    <div class="dib w-50 pa2 v-mid">
+      <h3>Account Details</h3>
+      <%= label :disabled, :first_name, "First Name", class: "db" %>
+      <%= text_input :disabled, :first_name, disabled: true, value: (String.capitalize @current_user.first_name), class: "mb2" %>
+      <%= label :disabled, :last_name, "Last Name", class: "db" %>
+      <%= text_input :disabled, :last_name, disabled: true, value: (String.capitalize @current_user.last_name), class: "mb2" %>
+      <%= label f, :email, "Email", class: "db" %>
+      <%= text_input f, :email, value: @current_user.email, class: "mb2" %>
+      <%= label :disabled, :password, "Password", class: "db" %>
+      <%= password_input :disabled, :password, disabled: true, value: "********" %>
+      <a href="#" class="blue no-underline">Change Password</a>
+    </div>
   </div>
-</div>
 
-<div class="mw9 center ph5 pv4 bg-white">
-  <div class="dib w-50 pa2 v-mid">
-    <h3>Contact Details</h3>
-    <%= label :disabled, :tel, "Telephone Number", class: "db" %>
-    <%= telephone_input :disabled, :tel, class: "mb2" %>
-    <%= label :disabled, :addr_1, "Address Line 1", class: "db" %>
-    <%= text_input :disabled, :addr_1, class: "mb2" %>
-    <%= label :disabled, :addr_2, "Address Line 2", class: "db" %>
-    <%= text_input :disabled, :addr_2, class: "mb2" %>
-    <%= label :disabled, :county, "County", class: "db" %>
-    <%= text_input :disabled, :county, class: "mb2" %>
-    <%= label :disabled, :postcode, "Postcode", class: "db" %>
-    <%= text_input :disabled, :postcode %>
+  <div class="mw9 center ph5 pv4 bg-white">
+    <div class="dib w-50 pa2 v-mid">
+      <h3>Contact Details</h3>
+      <%= label f, :telephone, "Telephone Number", class: "db" %>
+      <%= telephone_input f, :telephone, class: "mb2" %>
+      <%= label f, :address_1, "Address Line 1", class: "db" %>
+      <%= text_input f, :address_1, class: "mb2" %>
+      <%= label f, :address_2, "Address Line 2", class: "db" %>
+      <%= text_input f, :address_2, class: "mb2" %>
+      <%= label f, :county, "County", class: "db" %>
+      <%= text_input f, :county, class: "mb2" %>
+      <%= label f, :postcode, "Postcode", class: "db" %>
+      <%= text_input f, :postcode %>
+    </div>
   </div>
-</div>
 
-<div class="mw9 center ph5 pv4 bg-near-white">
-  <div class="dib w-50 pa2 v-mid">
-    <h3>More About You</h3>
-    <%= label :disabled, :example, "Example", class: "db" %>
-    <%= select :disabled, :example, ["Example", "Example"], class: "mb2" %>
-    <%= label :disabled, :example_2, "Example", class: "db" %>
-    <%= text_input :disabled, :example_2 %>
+  <div class="mw9 center ph5 pv4 bg-near-white">
+    <div class="dib w-50 pa2 v-mid">
+      <h3>More About You</h3>
+      <%= label :example, :example, "Example", class: "db" %>
+      <%= select :example, :example, ["Example", "Example"], class: "mb2" %>
+      <%= label :example, :example_2, "Example", class: "db" %>
+      <%= text_input :example, :example_2 %>
+    </div>
   </div>
-</div>
 
-<div class="mw9 center ph5 pb4 bg-near-white">
-  <%= submit "Save Changes", class: "mr3 bn f6 link dim br-pill ph3 pv2 mb2 white bg-blue" %>
-  <%= link "Cancel", to: "#", class: "dib blue no-underline" %>
-</div>
+  <div class="mw9 center ph5 pb4 bg-near-white">
+    <%= submit "Save Changes", class: "mr3 bn f6 link dim br-pill ph3 pv2 mb2 white bg-blue" %>
+    <%= link "Cancel", to: "#", class: "dib blue no-underline" %>
+  </div>
+<% end %>

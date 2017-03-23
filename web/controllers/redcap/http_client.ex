@@ -13,10 +13,8 @@ defmodule ResearchResource.Redcap.HTTPClient do
   end
 
   def save_record(data) do
-    # add complete status to the record
-    record = Map.merge(data, %{user_details_complete: 2, consent_complete: 2})
+    {:ok, payload} = Poison.encode(data)
 
-    {:ok, payload} = Poison.encode(record)
     body = [
       token: @redcap_token,
       content: "record",

@@ -17,7 +17,11 @@ defmodule ResearchResource.ConsentController do
   def create(conn, %{"consent" => consent}) do
     user_data = RedcapHelpers.user_to_record(conn.assigns.current_user)
     consent_data = RedcapHelpers.consent_to_record(consent)
-    data = Map.merge(consent_data, user_data)
+    data =
+      user_data
+      |> Map.merge(consent_data)
+      |> Map.merge(%{user_details_complete: 2, consent_complete: 2})
+
     @redcap_api.save_record(data)
 
     contact_qualtrics = QualtricsHelpers.user_to_qualtrics_contact(conn.assigns.current_user)
