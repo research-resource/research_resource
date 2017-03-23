@@ -46,15 +46,15 @@
     <div class="dib w-50 pa2 v-mid">
       <h3>Contact Details</h3>
       <%= label f, :telephone, "Telephone Number", class: "db" %>
-      <%= telephone_input f, :telephone, class: "mb2" %>
+      <%= telephone_input f, :telephone, value: @user_details[:telephone], class: "mb2" %>
       <%= label f, :address_1, "Address Line 1", class: "db" %>
-      <%= text_input f, :address_1, class: "mb2" %>
+      <%= text_input f, :address_1, value: @user_details[:address_1], class: "mb2" %>
       <%= label f, :address_2, "Address Line 2", class: "db" %>
-      <%= text_input f, :address_2, class: "mb2" %>
+      <%= text_input f, :address_2, value: @user_details[:address_2], class: "mb2" %>
       <%= label f, :county, "County", class: "db" %>
-      <%= text_input f, :county, class: "mb2" %>
+      <%= text_input f, :county, value: @user_details[:county], class: "mb2" %>
       <%= label f, :postcode, "Postcode", class: "db" %>
-      <%= text_input f, :postcode %>
+      <%= text_input f, :postcode, value: @user_details[:postcode]  %>
     </div>
   </div>
 

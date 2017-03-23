@@ -7,7 +7,14 @@ defmodule ResearchResource.AccountController do
   plug :authenticate_user when action in [:index]
 
   def index(conn, _params) do
-    render conn, "index.html"
+    user_details =
+      conn.assigns.current_user.ttrrid
+      |> @redcap_api.get_user_data()
+      # Turn user data from a map to a keyword list
+      |> Enum.to_list
+      |> Enum.map(fn {key, val} -> {String.to_atom(key), val} end)
+
+    render conn, "index.html", user_details: user_details
   end
 
   def update(conn, %{"account" => account_params}) do

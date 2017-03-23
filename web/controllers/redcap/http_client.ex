@@ -32,4 +32,19 @@ defmodule ResearchResource.Redcap.HTTPClient do
 
     Enum.filter(data, fn(question) -> question["form_name"] == instrument end)
   end
+
+  def get_user_data(id) do
+    body = [
+      token: @redcap_token,
+      content: "record",
+      format: "json",
+      type: "flat",
+      records: id
+    ]
+
+    {:ok, res} = HTTPoison.post(@redcap_url, {:form, body}, [])
+    {:ok, [data]} = Poison.Parser.parse(res.body)
+
+    data
+  end
 end
