@@ -25,7 +25,7 @@
               <div class="dtc tr">
                 <span><%=String.capitalize @current_user.first_name%></span>
                 <span>|</span>
-                <a href="#" class="no-underline blue">My Account</a>
+                <%= link "My Account", to: account_path(@conn, :index), class: "no-underline blue" %>
               </div>
             <% else %>
             <div class="dtc tr">

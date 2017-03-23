@@ -22,6 +22,7 @@ defmodule ResearchResource.Router do
     get "/projects", ProjectsController, :index
     get "/who", WhoWeAreController, :index
     get "/faqs", FaqsController, :index
+    get "/account", AccountController, :index
 
     resources "/sessions", SessionController, only: [:new, :create, :delete]
     resources "/users", UserController, only: [:show, :new, :create]
