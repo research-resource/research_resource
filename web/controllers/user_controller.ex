@@ -2,6 +2,7 @@ defmodule ResearchResource.UserController do
   use ResearchResource.Web, :controller
   alias ResearchResource.User
 
+  @id_prefix Application.get_env(:research_resource, :id_prefix)
 
   def new(conn, _) do
     changeset = User.changeset(%User{})
@@ -22,7 +23,7 @@ defmodule ResearchResource.UserController do
   end
 
   def create_ttrrid(conn, user) do
-    ttrrid = "TTRR" <> String.rjust(Integer.to_string(user.id), 7, ?0)
+    ttrrid = @id_prefix <> String.rjust(Integer.to_string(user.id), 7, ?0)
     changeset = User.changeset(user, %{"ttrrid" => ttrrid})
     Repo.update(changeset)
     conn
