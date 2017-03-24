@@ -1,0 +1,27 @@
+<%= form_for create_user_changeset(assigns[:changeset]), user_path(@conn, :create), fn f -> %>
+  <div class="dib">
+    <%= label f, :first_name, "First name", class: "db" %>
+    <%= text_input f, :first_name, class: "mr3" %>
+    <%= error_tag f, :first_name %>
+  </div>
+
+  <div class="dib">
+    <%= label f, :last_name, "Last name", class: "db" %>
+    <%= text_input f, :last_name, class: "mr3" %>
+    <%= error_tag f, :last_name %>
+  </div>
+
+  <div class="dib">
+    <%= label f, :email, "Email Address", class: "db" %>
+    <%= email_input f, :email, class: "mr3" %>
+    <%= error_tag f, :email %>
+  </div>
+
+  <div class="dib">
+    <%= label f, :password, "Password", class: "db" %>
+    <%= password_input f, :password, class: "mr3" %>
+    <%= error_tag f, :password %>
+  </div>
+
+  <%= submit "Sign Up", class: "mr3 bn f6 link dim br-pill ph3 pv2 mb2 white bg-blue" %>
+<% end %>

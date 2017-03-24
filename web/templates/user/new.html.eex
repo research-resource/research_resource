@@ -1,24 +1,20 @@
-<h1>Create User</h1>
-<%= form_for @changeset, user_path(@conn, :create), fn f -> %>
-  <div class="">
-    <%= text_input f, :first_name, placeholder: "first name", class: "" %>
-    <%= error_tag f, :first_name %>
+<div class="mw9 center ph5 pt4">
+  <div class="dib w-40 mr7 v-mid pa2">
+    <h2 class="ttu">Sign Up</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
   </div>
 
-  <div class="">
-    <%= text_input f, :last_name, placeholder: "last name", class: "" %>
-    <%= error_tag f, :last_name %>
+  <div class="dib w-20 pa2 v-mid">
+    <%= if !@current_user do %>
+    <div class="bg-near-white pa3">
+      <p>
+        Already got an account? <%= link "Log in here", to: session_path(@conn, :new), class: "blue no-underline" %>
+      </p>
+    </div>
+    <%= end %>
   </div>
+</div>
 
-  <div class="">
-    <%= email_input f, :email, placeholder: "email", class: "" %>
-    <%= error_tag f, :email %>
-  </div>
-
-  <div class="">
-    <%= password_input f, :password, placeholder: "password", class: "" %>
-    <%= error_tag f, :password %>
-  </div>
-
-  <%= submit "Sign Up", class: "" %>
-<% end %>
+<div class="bg-near-white pa5">
+  <%= component "sign_up", conn: @conn, current_user: @current_user, changeset: @changeset %>
+</div>

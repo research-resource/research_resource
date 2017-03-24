@@ -5,7 +5,7 @@ defmodule ResearchResource.UserControllerTest do
 
   test "GET /users/new", %{conn: conn} do
     conn = get conn, "/users/new"
-    assert html_response(conn, 200) =~ "Create User"
+    assert html_response(conn, 200) =~ "Sign Up"
   end
 
   test "POST /users/create - success", %{conn: conn} do
@@ -24,6 +24,6 @@ defmodule ResearchResource.UserControllerTest do
   test "POST /users/create - fail", %{conn: conn} do
     conn = post conn, user_path(conn, :create), user: %{}
 
-    assert html_response(conn, 200) =~ "Create User"
+    assert html_response(conn, 200) =~ "Sign Up"
   end
 end
