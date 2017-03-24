@@ -8,7 +8,7 @@ defmodule ResearchResource.Qualtrics.HTTPClient do
   @qualtrics_url "https://eu.qualtrics.com/API/v3"
   def create_contact(user) do
     {:ok, payload} = Poison.encode(user)
-    url = "#{@qualtrics_url}/#{@qualtrics_mailinglist_id}/contacts"
+    url = "#{@qualtrics_url}/mailinglists/#{@qualtrics_mailinglist_id}/contacts"
     case HTTPoison.post(url, payload, @qualtrics_headers) do
       {:ok, res} ->
         {:ok, data} = Poison.Parser.parse(res.body)
