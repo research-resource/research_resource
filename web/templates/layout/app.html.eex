@@ -13,7 +13,7 @@
 
   <body>
     <div class="">
-      <header class="header bg-near-white pa4">
+      <header class="header bg-light-gray pa4">
         <nav role="navigation">
           <div class="dt dt--fixed w-100">
             <%= link "Home", to: page_path(@conn, :index), class: "dtc tc ttu no-underline blue" %>
@@ -44,7 +44,15 @@
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>
-
+      <footer>
+        <div class="bg-light-gray pa3 tc">
+          <%= link "Ts & Cs", to: "#", class: "mh3 tc ttu no-underline blue" %>
+          <%= link "FAQS", to: faqs_path(@conn, :index), class: "mh3 tc ttu no-underline blue" %>
+          <%= link "Consent", to: "#", class: "mh3 tc ttu no-underline blue" %>
+          <%= link "Ethics", to: "#", class: "mh3 tc ttu no-underline blue" %>
+          <%= link "Contact Us", to: "#", class: "mh3 tc ttu no-underline blue" %>
+        </div>
+      </footer>
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
