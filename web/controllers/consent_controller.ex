@@ -1,9 +1,6 @@
 defmodule ResearchResource.ConsentController do
   use ResearchResource.Web, :controller
 
-  alias ResearchResource.Redcap.RedcapHelpers
-  alias ResearchResource.Qualtrics.QualtricsHelpers
-  alias ResearchResource.User
   alias ResearchResource.{Redcap.RedcapHelpers, Qualtrics.QualtricsHelpers, User}
 
   plug :authenticate_user when action in [:new, :create]
