@@ -5,13 +5,11 @@
   </div>
 
   <div class="dib w-20 pa2 v-mid">
-    <%= if !@current_user do %>
     <div class="bg-near-white pa3">
       <p>
         Already got an account? <%= link "Log in here", to: session_path(@conn, :new), class: "blue no-underline" %>
       </p>
     </div>
-    <%= end %>
   </div>
 </div>
 
