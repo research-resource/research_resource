@@ -44,3 +44,5 @@ config :research_resource, ResearchResource.Repo,
 
 config :research_resource, :redcap_api, ResearchResource.Redcap.HTTPClient
 config :research_resource, :qualtrics_api, ResearchResource.Qualtrics.HTTPClient
+
+config :research_resource, id_prefix: "TEST"
