@@ -13,7 +13,7 @@ defmodule ResearchResource.Qualtrics.HTTPClient do
       {:ok, res} ->
         {:ok, data} = Poison.Parser.parse(res.body)
         {:ok, data["result"]["id"]}
-      {:error, res} ->
+      {:error, _res} ->
         {:error, "Error create Qualtrics contact"}
     end
   end
@@ -29,7 +29,7 @@ defmodule ResearchResource.Qualtrics.HTTPClient do
       {:ok, res} ->
         {:ok, data} = Poison.Parser.parse(res.body)
         {:ok, data["result"]}
-      {:error, res} ->
+      {:error, _res} ->
         {:error, "Qualtrics contact not found"}
     end
   end
@@ -37,8 +37,10 @@ defmodule ResearchResource.Qualtrics.HTTPClient do
   def survey_completed?(contact_id) do
     case get_contact(contact_id) do
       {:ok, contact} ->
-        survey_history = List.first(Enum.filter(contact["responseHistory"], fn(history) -> history["surveyId"] == @qualtrics_survey_id end))
-        survey_history && survey_history["finishedSurvey"] == true 
+        survey_history = contact["responseHistory"]
+        |> Enum.filter(&(&1["surveyId"] == @qualtrics_survey_id))
+        |> List.first
+        survey_history && survey_history["finishedSurvey"] == true
       {:error, _res} ->
         false
     end
