@@ -13,10 +13,8 @@ defmodule ResearchResource.Redcap.HTTPClient do
   end
 
   def save_record(data) do
-    # add complete status to the record
-    record = Map.merge(data, %{user_details_complete: 2, consent_complete: 2})
+    {:ok, payload} = Poison.encode(data)
 
-    {:ok, payload} = Poison.encode(record)
     body = [
       token: @redcap_token,
       content: "record",
@@ -33,5 +31,20 @@ defmodule ResearchResource.Redcap.HTTPClient do
     {:ok, data} = Poison.Parser.parse(res.body)
 
     Enum.filter(data, fn(question) -> question["form_name"] == instrument end)
+  end
+
+  def get_user_data(id) do
+    body = [
+      token: @redcap_token,
+      content: "record",
+      format: "json",
+      type: "flat",
+      records: id
+    ]
+
+    {:ok, res} = HTTPoison.post(@redcap_url, {:form, body}, [])
+    {:ok, [data]} = Poison.Parser.parse(res.body)
+
+    data
   end
 end

@@ -35,4 +35,10 @@ defmodule ResearchResource.SessionControllerTest do
 
     assert html_response(conn, 200) =~ "Invalid email/password"
   end
+
+  @tag login_as: "me@test.com"
+  test "DELETE /sessions/delete - logged in user", %{conn: conn} do
+    conn = delete conn, session_path(conn, :delete, conn.assigns.current_user)
+    assert redirected_to(conn) == page_path(conn, :index)
+  end
 end
