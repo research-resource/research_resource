@@ -13,7 +13,8 @@ config :research_resource,
   qualtrics_token: System.get_env("QUALTRICS_TOKEN"),
   qualtrics_mailinglist_id: System.get_env("QUALTRICS_MAILINGLIST_ID"),
   qualtrics_survey_id: System.get_env("QUALTRICS_SURVEY_ID"),
-  qualtrics_distribution_id: System.get_env("QUALTRICS_DISTRIBUTION_ID")
+  qualtrics_distribution_id: System.get_env("QUALTRICS_DISTRIBUTION_ID"),
+  id_prefix: "TTRR"
 
 # Configures the endpoint
 config :research_resource, ResearchResource.Endpoint,

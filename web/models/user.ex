@@ -3,6 +3,7 @@ defmodule ResearchResource.User do
 
   schema "users" do
     field :ttrrid, :string
+    field :qualtrics_id, :string
     field :first_name, :string
     field :last_name, :string
     field :email, :string
@@ -14,7 +15,7 @@ defmodule ResearchResource.User do
 
   def changeset(model, params \\ :invalid) do
     model
-    |> cast(params, ~w[first_name last_name email ttrrid])
+    |> cast(params, ~w[first_name last_name email ttrrid qualtrics_id])
     |> validate_required([:first_name, :last_name, :email])
   end
 

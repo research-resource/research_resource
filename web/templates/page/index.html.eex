@@ -60,3 +60,10 @@
     </div>
   </div>
 </div>
+
+<%= if !@current_user do %>
+  <div class="bg-white ph5 pt3 pb5 mw9 center">
+    <h3>Sign Up</h3>
+    <%= component "sign_up", conn: @conn, current_user: @current_user %>
+  </div>
+<% end %>
