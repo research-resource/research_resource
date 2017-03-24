@@ -18,7 +18,10 @@ defmodule ResearchResource.AccountController do
   end
 
   def update(conn, %{"account" => account_params}) do
-    RedcapHelpers.user_to_record(conn.assigns.current_user)
+    conn.assigns.current_user
+    |> RedcapHelpers.user_to_record
+    |> Enum.filter(fn {key, val} -> key != :email end)
+    |> Enum.into(%{})
     |> Map.merge(account_params)
     |> @redcap_api.save_record
     |> case do

@@ -1,6 +1,6 @@
 defmodule ResearchResource.Redcap.InMemory do
   def save_record(data) do
-    case data[:email] do
+    case data["email"] do
       "error@test.com" ->
         {:error, "Bad response"}
       _ ->
