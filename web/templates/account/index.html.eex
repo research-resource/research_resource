@@ -35,7 +35,7 @@
       <%= label :disabled, :last_name, "Last Name", class: "db" %>
       <%= text_input :disabled, :last_name, disabled: true, value: (String.capitalize @current_user.last_name), class: "mb2" %>
       <%= label f, :email, "Email", class: "db" %>
-      <%= text_input f, :email, value: @current_user.email, class: "mb2" %>
+      <%= text_input f, :email, value: @user_details[:email], class: "mb2" %>
       <%= label :disabled, :password, "Password", class: "db" %>
       <%= password_input :disabled, :password, disabled: true, value: "********" %>
       <a href="#" class="blue no-underline">Change Password</a>

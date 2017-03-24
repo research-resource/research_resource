@@ -30,7 +30,7 @@ defmodule ResearchResource.AccountControllerTest do
 
   @tag login_as: "error@test.com"
   test "PUT /account/update - error", %{conn: conn} do
-    conn = put conn, account_path(conn, :update, conn.assigns.current_user, %{"account" => %{telephone: "123"}})
+    conn = put conn, account_path(conn, :update, conn.assigns.current_user, %{"account" => %{"email": "error@test.com"}})
     assert get_flash(conn, :error) == "Something went wrong"
   end
 end
