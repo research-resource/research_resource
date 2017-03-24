@@ -1,11 +1,11 @@
 <div class="pa4">
   <div class="mw9 center ph5">
-    <h3 class="ph3">What does signing up involve?</h3>
+    <h3 class="ph3 ttu">What does signing up involve?</h3>
   </div>
 
   <div class="mw9 center ph5-ns cf">
     <div class="fl w-100 w-third-ns pa3">
-      <div class="bg-near-white pa4 h5">
+      <div class="bg-near-white pa4 pt2 h5">
         <h4>1</h4>
         <h5>Allowing access to relevant medical records.</h5>
         <p>
@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="fl w-100 w-third-ns pa3">
-      <div class="bg-near-white pa4 h5">
+      <div class="bg-near-white pa4 pt2 h5">
         <h4>2</h4>
         <h5>Completing a questionnaire</h5>
         <p>
@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="fl w-100 w-third-ns pa3">
-      <div class="bg-near-white pa4 h5">
+      <div class="bg-near-white pa4 pt2 h5">
         <h4>3</h4>
         <h5>Giving a saliva sample</h5>
         <p>

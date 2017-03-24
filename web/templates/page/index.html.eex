@@ -20,8 +20,8 @@
     <div class="cf ph2-ns">
       <div class="fl w-100 w-third-ns pa3">
         <div class="bg-white h5">
-          <div class="bb pa2 b--light-gray">
-            <h4 class="ma0 blue">Projects</h4>
+          <div class="bb pa3 b--light-gray">
+            <h4 class="ma0 blue ttu">Projects</h4>
           </div>
           <div class="ph4 pv1">
             <p class="ph3 pv1">
@@ -33,8 +33,8 @@
       </div>
       <div class="fl w-100 w-third-ns pa3">
         <div class="bg-white h5">
-          <div class="bb pa2 b--light-gray">
-            <h4 class="ma0 blue">Who We Are</h4>
+          <div class="bb pa3 b--light-gray">
+            <h4 class="ma0 blue ttu">Who We Are</h4>
           </div>
           <div class="ph4 pv1">
             <p class="ph3 pv1">
@@ -46,7 +46,7 @@
       </div>
       <div class="fl w-100 w-third-ns pa3">
         <div class="bg-white h5">
-          <div class="bb pa2 b--light-gray">
+          <div class="bb pa3 b--light-gray">
             <h4 class="ma0 blue">FAQS</h4>
           </div>
           <div class="ph4 pv1">
@@ -63,7 +63,7 @@
 
 <%= if !@current_user do %>
   <div class="bg-white ph5 pt3 pb5 mw9 center">
-    <h3>Sign Up</h3>
+    <h3 class="ttu">Sign Up</h3>
     <%= component "sign_up", conn: @conn, current_user: @current_user %>
   </div>
 <% end %>
