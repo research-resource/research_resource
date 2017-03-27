@@ -38,7 +38,7 @@
       <%= text_input f, :email, value: @user_details[:email], class: "mb2" %>
       <%= label :disabled, :password, "Password", class: "db" %>
       <%= password_input :disabled, :password, disabled: true, value: "********" %>
-      <a href="#" class="blue no-underline">Change Password</a>
+      <%= link "Change Password", to: change_password_path(@conn, :index), class: "blue no-underline" %>
     </div>
   </div>
 

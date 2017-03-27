@@ -28,5 +28,6 @@ defmodule ResearchResource.Router do
     resources "/consent", ConsentController, only: [:new, :create]
     resources "/qualtrics", QualtricsController, only: [:new]
     resources "/account", AccountController, only: [:index, :update]
+    resources "/change_password", ChangePasswordController, only: [:index, :update]
   end
 end
