@@ -17,6 +17,7 @@ defmodule ResearchResource.User do
     model
     |> cast(params, ~w[first_name last_name email ttrrid qualtrics_id])
     |> validate_required([:first_name, :last_name, :email])
+    |> unique_constraint(:email)
   end
 
   def registration_changeset(model, params) do
