@@ -72,8 +72,8 @@
     </div>
   <% end %>
   <div class="pa3 ph5">
-    <%= submit "Next", class: "mr3 bn f6 link dim br-pill ph3 pv2 mb2 white bg-blue dn", id: "next-active" %>
-    <%= submit "You cannot complete registration", class: "mr3 bn f6 link dim br-pill ph3 pv2 mb2 dib white bg-grey", id: "next-inactive" %>
+    <%= component "button_ok", class: "dn", value: "Next", id: "next-active" %>
+    <%= component "button_error", class: nil, value: "You cannot complete registration", id: "next-inactive" %>
     <%= link "Cancel", to: "#", class: "dib" %>
   </div>
 <% end %>
