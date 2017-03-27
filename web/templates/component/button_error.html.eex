@@ -1,0 +1,1 @@
+<%= submit @value, class: "mr3 bn f6 link dim br-pill ph3 pv2 mb2 dib white bg-grey pointer #{@class}", id: @id, type: "button" %>
