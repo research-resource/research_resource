@@ -23,5 +23,5 @@
     <%= error_tag f, :password %>
   </div>
 
-  <%= component "button_ok", value: "Sign Up", id: nil %>
+  <%= component "button_ok", value: "Sign Up", id: nil, class: nil %>
 <% end %>
