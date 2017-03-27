@@ -1,7 +1,8 @@
 defmodule ResearchResource.UserControllerTest do
   use ResearchResource.ConnCase
-  alias ResearchResource.Repo
-  alias ResearchResource.User
+  use Bamboo.Test
+
+  alias ResearchResource.{Repo, User, Email}
 
   test "GET /users/new", %{conn: conn} do
     conn = get conn, "/users/new"
@@ -25,5 +26,18 @@ defmodule ResearchResource.UserControllerTest do
     conn = post conn, user_path(conn, :create), user: %{}
 
     assert html_response(conn, 200) =~ "Sign Up"
+  end
+
+  test "Create welcome email" do
+    email = Email.send_email("test@email.com", "Welcome to Research Resource", "Welcome Test")
+    assert email.to == "test@email.com"
+    assert email.subject == "Welcome to Research Resource"
+    assert email.text_body == "Welcome Test"
+  end
+
+  test "Send Welcome email" do
+    email = Email.send_email("test@email.com", "Welcome to Research Resource", "Welcome Test")
+    email |> ResearchResource.Mailer.deliver_now
+    assert_delivered_email Email.send_email("test@email.com", "Welcome to Research Resource", "Welcome Test")
   end
 end

@@ -1,10 +1,10 @@
-defmodule SesEmailTest.Email do
+defmodule ResearchResource.Email do
   use Bamboo.Phoenix, view: SesEmailTest.EmailView
 
-  def send_test_email(from_email_address, subject, message) do
+  def send_email(to_email_address, subject, message) do
     new_email()
-    |> to("yourvalidatedemail@example.com")
-    |> from(from_email_address) # also needs to be a validated email
+    |> to(to_email_address)
+    |> from("tt.research.resource@gmail.com") # also needs to be a validated email
     |> subject(subject)
     |> text_body(message)
   end

@@ -1,3 +1,3 @@
-defmodule SesEmailTest.Mailer do
-  use Bamboo.Mailer, otp_app: :ses_email_test
+defmodule ResearchResource.Mailer do
+  use Bamboo.Mailer, otp_app: :research_resource
 end

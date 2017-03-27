@@ -30,7 +30,7 @@ config :logger, :console,
   metadata: [:request_id]
 
 # Configure mailing
-config :ses_email_test, ResearchResource.Mailer,
+config :research_resource, ResearchResource.Mailer,
   adapter: Bamboo.SMTPAdapter,
   server: System.get_env("SES_SERVER"),
   port: System.get_env("SES_PORT"),
