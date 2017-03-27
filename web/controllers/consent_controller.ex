@@ -57,7 +57,7 @@ defmodule ResearchResource.ConsentController do
 
   defp check_consent(consent) do
     Enum.all?(consent, fn {k, v} ->
-      case String.at(k, String.length(k) - 1) do
+      case String.last(k) do
         "y" ->
           v == "Yes"
         _ ->
