@@ -1,0 +1,17 @@
+<div class="bg-near-white mt2">
+  <div class="bb b--gray pv2 ph4">
+    <h3 class="blue">Call us on 020 789123</h3>
+  </div>
+  <div class="ph4 pv3">
+    <h3>Or request a call back</h3>
+    <%= label :call_back, :name, "Name", class: "db" %>
+    <%= text_input :call_back, :name, class: "mb3 w-100" %>
+    <%= label :call_back, :tel, "Phone Number", class: "db" %>
+    <%= telephone_input :call_back, :tel, class: "mb3 w-100" %>
+    <%= label :call_back, :time, "Best Time to Call", class: "db" %>
+    <%= select :call_back, :time, ["Morning", "Afternoon", "Evening"], class: "mb3 w-100" %>
+    <div class="tc">
+      <%= submit "Request Call back", class: "bn br-pill ph3 pv2 blue bg-white pointer" %>
+    </div>
+  </div>
+</div>

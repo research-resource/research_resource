@@ -4,13 +4,17 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
   </div>
 
-  <div class="dib w-20 pa2 v-mid">
+  <div class="absolute right-2 dib w-30 pa2 v-mid">
     <%= if !@current_user do %>
-    <div class="bg-near-white pa4">
-      <%= link "Sign Up to the Research Resource", to: user_path(@conn, :new), class: "blue no-underline ttu" %>
-    </div>
+      <div class="w-70 bg-near-white pa4">
+        <%= link "Sign Up to the Research Resource", to: user_path(@conn, :new), class: "blue no-underline ttu" %>
+      </div>
     <%= end %>
+    <div class="w-90">
+      <%= component "request_call", conn: @conn %>
+    </div>
   </div>
+
 </div>
 
 <div class="mw9 center ph5">
