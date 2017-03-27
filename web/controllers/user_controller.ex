@@ -15,8 +15,8 @@ defmodule ResearchResource.UserController do
       {:ok, user} ->
         subject = "Welcome to Research Resource"
         message = "Welcome to Research Resource, #{user.first_name}"
-        ResearchResource.Email.send_email(user.email, subject, message)
-        |> ResearchResource.Mailer.deliver_now()
+        # mail = ResearchResource.Email.send_email(user.email, subject, message)
+        # |> ResearchResource.Mailer.deliver_now()
         conn
         |> create_ttrrid(user)
         |> ResearchResource.Auth.login(user)
