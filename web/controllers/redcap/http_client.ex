@@ -43,8 +43,9 @@ defmodule ResearchResource.Redcap.HTTPClient do
     ]
 
     {:ok, res} = HTTPoison.post(@redcap_url, {:form, body}, [])
-    {:ok, [data]} = Poison.Parser.parse(res.body)
-
-    data
+    case Poison.Parser.parse(res.body) do
+      {:ok, []} -> nil
+      {:ok, [data]} -> data
+    end
   end
 end

@@ -3,7 +3,9 @@ defmodule ResearchResource.AccountControllerTest do
 
   setup %{conn: conn} = config do
     if username = config[:login_as] do
-      user = insert_user(email: username)
+      user = %{email: username}
+      |> Map.merge(if username == "nottrrid@nottrrid.com" do %{ttrrid: nil} else %{} end)
+      |> insert_user
       conn = assign(build_conn(), :current_user, user)
       {:ok, conn: conn, user: user}
     else
@@ -15,6 +17,12 @@ defmodule ResearchResource.AccountControllerTest do
   test "GET /account - logged in", %{conn: conn} do
     conn = get conn, "/account"
     assert html_response(conn, 200) =~ "Welcome"
+  end
+
+  @tag login_as: "nottrrid@nottrrid.com"
+  test "GET /account - user not in Redcap", %{conn: conn} do
+    conn = get conn, "/account"
+    assert html_response(conn, 302) =~ "redirected"
   end
 
   test "GET /account - not logged in", %{conn: conn} do
@@ -33,4 +41,6 @@ defmodule ResearchResource.AccountControllerTest do
     conn = put conn, account_path(conn, :update, conn.assigns.current_user, %{"account" => %{"email": "error@test.com"}})
     assert get_flash(conn, :error) == "Something went wrong"
   end
+
+
 end
