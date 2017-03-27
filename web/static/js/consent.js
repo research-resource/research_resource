@@ -3,8 +3,10 @@ var yesConsent = document.querySelectorAll(".yes-consent");
 
 [].forEach.call(noConsent, function(el){
   el.addEventListener("click", function (e) {
-    var index = e.target.id[e.target.id.length - 1];
-    document.getElementById("error-consent-" + index).classList.remove("dn");
+    if(e.target.name[e.target.name.length - 2] === "y") {
+      var index = e.target.id[e.target.id.length - 1];
+      document.getElementById("error-consent-" + index).classList.remove("dn");
+    }
     checkAllAnswered();
   });
 });
@@ -18,10 +20,10 @@ var yesConsent = document.querySelectorAll(".yes-consent");
 });
 
 function checkAllAnswered() {
-  var checked = document.querySelectorAll("input.yes-consent[type=radio]:checked");
+  var checked = document.querySelectorAll("input[type=radio]:checked");
   var count = document.querySelectorAll(".yes-consent");
 
-  if (checked.length === count.length) {
+  if (checkRequired() && checked.length === count.length) {
     nextButton('active');
   } else {
     nextButton('inactive')
@@ -43,4 +45,18 @@ function nextButton (state) {
     nextActive.classList.remove('dib');
     nextActive.classList.add('dn');
   }
+}
+
+function checkRequired() {
+  var allButtons = document.querySelectorAll("input.yes-consent[type=radio]");
+
+  var required = [].filter.call(allButtons, function(el) {
+    return el.name[el.name.length - 2] === "y";
+  });
+
+  var requiredChecked = [].filter.call(required, function(el) {
+    return el.checked;
+  });
+
+  return requiredChecked.length === required.length;
 }

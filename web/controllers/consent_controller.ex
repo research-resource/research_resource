@@ -14,8 +14,23 @@ defmodule ResearchResource.ConsentController do
 
   # save user and consent
   def create(conn, %{"consent" => consent}) do
+    case check_consent(consent) do
+      true ->
+        create_user(conn, consent)
+      false ->
+        conn
+        |> put_flash(:error, "You must consent to the required questions")
+        |> redirect(to: consent_path(conn, :new))
+    end
+  end
+
+  def create_user(conn, consent) do
     user_data = RedcapHelpers.user_to_record(conn.assigns.current_user)
-    consent_data = RedcapHelpers.consent_to_record(consent)
+    consent_data =
+      consent
+      |> Enum.map(fn {key, val} -> {Regex.replace(~r/_[yn]\b/, key, ""), val} end)
+      |> RedcapHelpers.consent_to_record
+
     data =
       user_data
       |> Map.merge(consent_data)
@@ -35,7 +50,17 @@ defmodule ResearchResource.ConsentController do
             |> redirect(to: qualtrics_path(conn, :new))
         end
     end
+  end
 
+  defp check_consent(consent) do
+    Enum.all?(consent, fn {k, v} ->
+      case String.at(k, String.length(k) - 1) do
+        "y" ->
+          v == "Yes"
+        _ ->
+          true
+      end
+    end)
   end
 
   # redirect to the consent page if the form is submitted without any values (consent map is not defined)
