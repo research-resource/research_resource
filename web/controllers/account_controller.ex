@@ -4,7 +4,7 @@ defmodule ResearchResource.AccountController do
 
   @redcap_api Application.get_env(:research_resource, :redcap_api)
 
-  plug :authenticate_user when action in [:index]
+  plug :authenticate_user when action in [:index, :update]
 
   def index(conn, _params) do
     user_details =
