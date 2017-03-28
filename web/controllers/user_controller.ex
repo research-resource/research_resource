@@ -32,4 +32,10 @@ defmodule ResearchResource.UserController do
     Repo.update(changeset)
     conn
   end
+
+  def update(conn, %{"user" => %{"email" => email}, "old_user" => old_user_params}) do
+    changeset = User.changeset(old_user_params, %{"email" => email})
+    Repo.update(changeset)
+  end
+  def update(conn, _), do: {:ok, "No update to postgres needed"}
 end

@@ -26,7 +26,7 @@
   </div>
 </div>
 
-<%= form_for @conn, account_path(@conn, :update, @current_user), [method: "put", as: :account], fn f -> %>
+<%= form_for @changeset, account_path(@conn, :update, @current_user), [method: "put", as: :account], fn f -> %>
   <div class="mw9 center ph5 pv4 bg-near-white">
     <div class="dib w-50 pa2 v-mid">
       <h3>Account Details</h3>
@@ -35,7 +35,7 @@
       <%= label :disabled, :last_name, "Last Name", class: "db" %>
       <%= text_input :disabled, :last_name, disabled: true, value: (String.capitalize @current_user.last_name), class: "mb2" %>
       <%= label f, :email, "Email", class: "db" %>
-      <%= text_input f, :email, value: @user_details[:email], class: "mb2" %>
+      <%= email_input f, :email, value: @user_details[:email], class: "mb2" %>
       <%= label :disabled, :password, "Password", class: "db" %>
       <%= password_input :disabled, :password, disabled: true, value: "********" %>
       <%= link "Change Password", to: change_password_path(@conn, :index), class: "blue no-underline" %>
