@@ -28,6 +28,13 @@ defmodule ResearchResource.User do
     |> put_pass_hash()
   end
 
+  def email_changeset(model, params \\ :invalid) do
+    model
+    |> cast(params, ~w(email))
+    |> validate_required([:email])
+    |> unique_constraint(:email)
+  end
+
   defp put_pass_hash(changeset) do
     case changeset do
       %Ecto.Changeset{valid?: true, changes: %{password: pass}} ->
