@@ -13,6 +13,9 @@ defmodule ResearchResource.Auth do
     user_id = get_session(conn, :user_id)
 
     cond do
+      # this first condition is only use for our tests
+      # the test assign values directly to the conn instead of creating some fake sessions/cookies
+      # see Chapter 8 page 137 section Integration Tests of the Programmin Phoenix book
       user = conn.assigns[:current_user] ->
         put_current_user(conn, user)
       user = user_id && repo.get(ResearchResource.User, user_id) ->
