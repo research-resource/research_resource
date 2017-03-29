@@ -14,7 +14,7 @@ defmodule ResearchResource.ChangePasswordControllerTest do
   @tag login_as: "me@test.com"
   test "GET /change_password - logged in", %{conn: conn} do
     conn = get conn, "/change_password"
-    assert html_response(conn, 200) =~ "Consent"
+    assert html_response(conn, 200) =~ "Change Password"
   end
 
   test "GET /change_password - not logged in", %{conn: conn} do
