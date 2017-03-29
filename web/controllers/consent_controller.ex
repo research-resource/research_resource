@@ -70,4 +70,11 @@ defmodule ResearchResource.ConsentController do
   def create(conn, _) do
     redirect(conn, to: consent_path(conn, :new))
   end
+
+  def view(conn, _params) do
+    render(conn, "view.html",
+      consent_questions: @redcap_api.get_instrument_fields("consent"),
+      consent_answers: @redcap_api.get_user_data(conn.assigns.current_user.ttrrid)
+    )
+  end
 end

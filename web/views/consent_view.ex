@@ -12,4 +12,8 @@ defmodule ResearchResource.ConsentView do
         String.to_atom("#{name}_n")
     end
   end
+
+  def get_checked_yes(checked), do: checked == "1"
+
+  def get_checked_no(checked), do: checked == "0"
 end
