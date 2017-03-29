@@ -1,4 +1,4 @@
-<div class="pa4 w-60">
+<div class="pa4 w-60 dib">
   <h2>Welcome To Research Resource, <%=String.capitalize @current_user.first_name%></h2>
   <p>
     In order to complete your registration, there are a few more things that we need to ask of you.
@@ -9,6 +9,12 @@
   <p>
     Additionally, consent needs to be given for a number of different things. Please complete this below, and don't hesitate to get in touch if you need more information.
   </p>
+</div>
+
+<div class="absolute right-2 dib w-30 pa2 v-mid">
+  <div class="w-90 right-2 dn-m">
+    <%= component "request_call", conn: @conn %>
+  </div>
 </div>
 
 <div class="pa4 w-60">

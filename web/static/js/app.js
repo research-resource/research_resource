@@ -20,3 +20,4 @@ import "phoenix_html"
 
 // import socket from "./socket"
 import "./consent.js"
+import "./request_call.js"
