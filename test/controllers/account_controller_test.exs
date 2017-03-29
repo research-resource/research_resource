@@ -1,6 +1,8 @@
 defmodule ResearchResource.AccountControllerTest do
   use ResearchResource.ConnCase
 
+  alias ResearchResource.{Repo, User}
+
   setup %{conn: conn} = config do
     if username = config[:login_as] do
       user = %{email: username}
@@ -36,11 +38,19 @@ defmodule ResearchResource.AccountControllerTest do
     assert get_flash(conn, :info) == "Profile Updated"
   end
 
-  @tag login_as: "error@test.com"
+  @tag login_as: "noerror@test.com"
   test "PUT /account/update - error", %{conn: conn} do
     conn = put conn, account_path(conn, :update, conn.assigns.current_user, %{"account" => %{"email": "error@test.com"}})
+    assert Repo.get_by(User, email: "noerror@test.com")
+    # Does not update postgres if redcap fails
+    refute Repo.get_by(User, email: "error@test.com")
     assert get_flash(conn, :error) == "Something went wrong"
   end
 
-
+  @tag login_as: "me@test.com"
+  test "PUT /account/update - email already taken", %{conn: conn} do
+    insert_user(%{email: "hello@test.com", ttrrid: "TEST", qualtrics_id: "TEST"})
+    conn = put conn, account_path(conn, :update, conn.assigns.current_user, %{"account" => %{"email": "hello@test.com"}})
+    assert get_flash(conn, :error) == "Email has already been taken"
+  end
 end

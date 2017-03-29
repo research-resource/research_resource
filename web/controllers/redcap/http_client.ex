@@ -24,7 +24,12 @@ defmodule ResearchResource.Redcap.HTTPClient do
       data: "[#{payload}]"
     ]
 
-    HTTPoison.post(@redcap_url, {:form, body}, [])
+    case HTTPoison.post(@redcap_url, {:form, body}, []) do
+      {:ok, %HTTPoison.Response{status_code: 200}} ->
+        {:ok, %HTTPoison.Response{status_code: 200}}
+      {_, response} ->
+        {:error, response}
+    end
   end
 
   defp filter_fields({:ok, res}, instrument) do
