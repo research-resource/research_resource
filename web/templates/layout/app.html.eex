@@ -48,8 +48,6 @@
         <div class="bg-light-gray pa3 tc">
           <%= link "Ts & Cs", to: "#", class: "mh3 tc ttu no-underline blue" %>
           <%= link "FAQS", to: faqs_path(@conn, :index), class: "mh3 tc ttu no-underline blue" %>
-          <%= link "Consent", to: "#", class: "mh3 tc ttu no-underline blue" %>
-          <%= link "Ethics", to: "#", class: "mh3 tc ttu no-underline blue" %>
           <%= link "Contact Us", to: "#", class: "mh3 tc ttu no-underline blue" %>
         </div>
       </footer>
