@@ -1,0 +1,4 @@
+<%= component "about", conn: @conn, current_user: @current_user %>
+<div class="pa3 ph5">
+  <%= link "Next", to: "/consent/new", class: "mr3 bn f6 link br-pill ph3 pv2 mb2 dim no-underline white bg-blue" %>
+</div>
