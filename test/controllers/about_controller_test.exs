@@ -1,14 +1,8 @@
 defmodule ResearchResource.AboutControllerTest do
   use ResearchResource.ConnCase
 
-  setup %{conn: conn} = config do
-    if username = config[:login_as] do
-      user = insert_user(email: username)
-      conn = assign(build_conn(), :current_user, user)
-      {:ok, conn: conn, user: user}
-    else
-      :ok
-    end
+  setup config do
+    login_user(config, &build_conn/0, &assign/3)
   end
 
   test "GET /about", %{conn: conn} do
@@ -26,6 +20,4 @@ defmodule ResearchResource.AboutControllerTest do
     conn = get conn, "/about/consent"
     assert html_response(conn, 200) =~ "About"
   end
-
-
 end
