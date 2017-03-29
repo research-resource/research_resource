@@ -10,7 +10,7 @@
         <%= link "Sign Up to the Research Resource", to: user_path(@conn, :new), class: "blue no-underline ttu" %>
       </div>
     <%= end %>
-    <div class="w-90">
+    <div class="w-25 fixed right-3 dn-m" id="request-call-about">
       <%= component "request_call", conn: @conn %>
     </div>
   </div>
@@ -187,7 +187,7 @@
   </div>
 </div>
 
-<div class="bg-near-white pa4">
+<div class="bg-near-white pa4" id="request-call-footer">
   <div class="mw9 center cf">
     <div class="fl w-100 w-third-ns pa3">
       <div class="bg-white h5">
