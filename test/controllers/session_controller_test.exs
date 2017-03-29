@@ -2,7 +2,7 @@ defmodule ResearchResource.SessionControllerTest do
   use ResearchResource.ConnCase
 
   setup config do
-    login_user(config, &build_conn/0, &assign/3)
+    login_user(config)
   end
 
   test "GET /sessions/new", %{conn: conn} do

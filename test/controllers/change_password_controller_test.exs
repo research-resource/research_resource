@@ -2,7 +2,7 @@ defmodule ResearchResource.ChangePasswordControllerTest do
   use ResearchResource.ConnCase
 
   setup config do
-    login_user(config, &build_conn/0, &assign/3)
+    login_user(config)
   end
 
   @tag login_as: "me@test.com"
