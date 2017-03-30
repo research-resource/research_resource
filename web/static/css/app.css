@@ -1,5 +1,74 @@
-/* This file is for your main application css. */
+/* Fonts */
+@font-face {
+    font-family: "Montreal";
+    src: url("/fonts/montreal-regular.ttf");
+}
 
+@font-face {
+    font-family: "Montreal Bold";
+    src: url("/fonts/montreal-bold.ttf");
+}
+
+@font-face {
+    font-family: "Lemon Tuesday";
+    src: url("/fonts/lemon-tuesday.otf");
+}
+
+.montreal {
+  font-family: "Montreal", sans-serif;
+}
+
+.montreal-bold {
+  font-family: "Montreal Bold", sans-serif;
+}
+
+.lemon-tuesday {
+  font-family: "Lemon Tuesday", sans-serif;
+}
+
+/* Font Colours */
+.green {
+  color: #99C937;
+}
+
+.dark-blue {
+  color: #215968;
+}
+
+.light-blue {
+  color: #B7DEE8;
+}
+
+.lightest-blue {
+  color: #D4EBF1;
+}
+
+.red {
+  color: #A70042
+}
+
+/* Background Colours */
+.bg-green {
+  background-color: #99C937;
+}
+
+.bg-dark-blue {
+  background-color: #215968;
+}
+
+.bg-light-blue {
+  background-color: #B7DEE8;
+}
+
+.bg-lightest-blue {
+  background-color: #D4EBF1;
+}
+
+.bg-red {
+  background-color: #A70042
+}
+
+/* Consent Alert CSS */
 .close-faq:not(:checked) ~ div.ques {
   display: none;
 }
