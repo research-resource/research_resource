@@ -34,6 +34,11 @@ defmodule ResearchResource.ConsentController do
     end
   end
 
+  # redirect to the consent page if the form is submitted without any values (consent map is not defined)
+  def create(conn, _) do
+    redirect(conn, to: consent_path(conn, :new))
+  end
+
   def create_user_redcap(conn, consent) do
     user_data = RedcapHelpers.user_to_record(conn.assigns.current_user)
 
@@ -71,11 +76,6 @@ defmodule ResearchResource.ConsentController do
           true
       end
     end)
-  end
-
-  # redirect to the consent page if the form is submitted without any values (consent map is not defined)
-  def create(conn, _) do
-    redirect(conn, to: consent_path(conn, :new))
   end
 
   def view(conn, _params) do
