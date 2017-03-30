@@ -13,10 +13,7 @@ defmodule ResearchResource.UserController do
     changeset = User.registration_changeset(%User{}, user_params)
     case Repo.insert(changeset) do
       {:ok, user} ->
-        subject = "Welcome to Research Resource"
-        message = "Welcome to Research Resource, #{user.first_name}"
-        # mail = ResearchResource.Email.send_email(user.email, subject, message)
-        # |> ResearchResource.Mailer.deliver_now()
+        send_registration_email(user)
         conn
         |> create_ttrrid(user)
         |> ResearchResource.Auth.login(user)
@@ -33,5 +30,12 @@ defmodule ResearchResource.UserController do
     changeset = User.changeset(user, %{"ttrrid" => ttrrid})
     Repo.update(changeset)
     conn
+  end
+
+  defp send_registration_email(user) do
+    subject = "Welcome to Research Resource"
+    message = "Welcome to Research Resource, #{user.first_name}"
+    ResearchResource.Email.send_email(user.email, subject, message)
+    |> ResearchResource.Mailer.deliver_now()
   end
 end
