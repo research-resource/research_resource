@@ -3,16 +3,8 @@ defmodule ResearchResource.AccountControllerTest do
 
   alias ResearchResource.{Repo, User}
 
-  setup %{conn: conn} = config do
-    if username = config[:login_as] do
-      user = %{email: username}
-      |> Map.merge(if username == "nottrrid@nottrrid.com" do %{ttrrid: nil} else %{} end)
-      |> insert_user
-      conn = assign(build_conn(), :current_user, user)
-      {:ok, conn: conn, user: user}
-    else
-      :ok
-    end
+  setup config do
+    login_user(config)
   end
 
   @tag login_as: "me@test.com"

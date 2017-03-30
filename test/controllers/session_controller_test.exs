@@ -1,14 +1,8 @@
 defmodule ResearchResource.SessionControllerTest do
   use ResearchResource.ConnCase
 
-  setup %{conn: conn} = config do
-    if username = config[:login_as] do
-      user = insert_user(email: username)
-      conn = assign(build_conn(), :current_user, user)
-      {:ok, conn: conn, user: user}
-    else
-      :ok
-    end
+  setup config do
+    login_user(config)
   end
 
   test "GET /sessions/new", %{conn: conn} do
@@ -23,14 +17,14 @@ defmodule ResearchResource.SessionControllerTest do
   end
 
   test "POST /sessions/create - success", %{conn: conn} do
-    insert_user(email: "me@test.com", password: "secret")
+    insert_user(%{email: "me@test.com", password: "secret"})
     conn = post conn, session_path(conn, :create), session: %{email: "me@test.com", password: "secret"}
 
     assert redirected_to(conn) == page_path(conn, :index)
   end
 
   test "POST /sessions/create - fail", %{conn: conn} do
-    insert_user(email: "me@test.com", password: "secret")
+    insert_user(%{email: "me@test.com", password: "secret"})
     conn = post conn, session_path(conn, :create), session: %{email: "me@test.com", password: "bad"}
 
     assert html_response(conn, 200) =~ "Invalid email/password"

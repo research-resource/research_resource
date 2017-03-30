@@ -1,14 +1,8 @@
 defmodule ResearchResource.ChangePasswordControllerTest do
   use ResearchResource.ConnCase
 
-  setup %{conn: conn} = config do
-    if username = config[:login_as] do
-      user = insert_user(email: username, password: "secret")
-      conn = assign(build_conn(), :current_user, user)
-      {:ok, conn: conn, user: user}
-    else
-      :ok
-    end
+  setup config do
+    login_user(config)
   end
 
   @tag login_as: "me@test.com"

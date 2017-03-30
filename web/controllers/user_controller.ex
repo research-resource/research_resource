@@ -20,14 +20,14 @@ defmodule ResearchResource.UserController do
         conn
         |> create_ttrrid(user)
         |> ResearchResource.Auth.login(user)
-        |> redirect(to: consent_path(conn, :new))
+        |> redirect(to: about_path(conn, :about))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
   end
 
   # Update postgres user with a ttrrid.
-  # The conn.assigns.current_user used to identify the user is loaded from the postgre value 
+  # The conn.assigns.current_user used to identify the user is loaded from the postgre value
   def create_ttrrid(conn, user) do
     ttrrid = @id_prefix <> String.rjust(Integer.to_string(user.id), 7, ?0)
     changeset = User.changeset(user, %{"ttrrid" => ttrrid})

@@ -1,19 +1,9 @@
 defmodule ResearchResource.QualtricsControllerTest do
   use ResearchResource.ConnCase
 
-  setup %{conn: conn} = config do
-    if username = config[:login_as] do
-      user = %{email: username}
-      |> Map.merge(if username == "survey@completed.com" do %{qualtrics_id: "1"} else %{} end)
-      |> insert_user
-      conn = assign(build_conn(), :current_user, user)
-      {:ok, conn: conn, user: user}
-    else
-      :ok
-    end
+  setup config do
+    login_user(config)
   end
-
-
 
   @tag login_as: "me@test.com"
   test "GET /qualtrics/new - found survey link", %{conn: conn} do
