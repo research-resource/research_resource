@@ -9,7 +9,14 @@ defmodule ResearchResource.ConsentController do
   @qualtrics_api Application.get_env(:research_resource, :qualtrics_api)
 
   def new(conn, _params) do
-    render(conn, "new.html", consent_questions: @redcap_api.get_instrument_fields("consent"))
+    conn.assigns.current_user.ttrrid
+    |> @redcap_api.get_user_data()
+    |> case do
+      %{"record_id" => _record_id} ->
+        redirect(conn, to: consent_path(conn, :view))
+      _ ->
+        render(conn, "new.html", consent_questions: @redcap_api.get_instrument_fields("consent"))
+    end
   end
 
   # save user and consent
@@ -69,5 +76,12 @@ defmodule ResearchResource.ConsentController do
   # redirect to the consent page if the form is submitted without any values (consent map is not defined)
   def create(conn, _) do
     redirect(conn, to: consent_path(conn, :new))
+  end
+
+  def view(conn, _params) do
+    render(conn, "view.html",
+      consent_questions: @redcap_api.get_instrument_fields("consent"),
+      consent_answers: @redcap_api.get_user_data(conn.assigns.current_user.ttrrid)
+    )
   end
 end

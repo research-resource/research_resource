@@ -16,9 +16,9 @@ defmodule ResearchResource.Redcap.InMemory do
     # no user found in Redcap
     nil
   end
-  
+
   def get_user_data(_id) do
-    {:ok, response} = Poison.Parser.parse "{\"telephone\": \"111\"}"
+    {:ok, response} = Poison.Parser.parse "{\"telephone\": \"111\", \"record_id\": \"123\"}"
     response
   end
 

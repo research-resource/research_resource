@@ -5,10 +5,16 @@ defmodule ResearchResource.ConsentControllerTest do
     login_user(config)
   end
 
-  @tag login_as: "me@test.com"
-  test "GET /consent/new - logged in", %{conn: conn} do
+  @tag login_as: "nottrrid@nottrrid.com"
+  test "GET /consent/new - logged in - not in redcap", %{conn: conn} do
     conn = get conn, "/consent/new"
     assert html_response(conn, 200) =~ "Consent"
+  end
+
+  @tag login_as: "me@test.com"
+  test "GET /consent/new - logged in - in redcap", %{conn: conn} do
+    conn = get conn, "/consent/new"
+    assert html_response(conn, 302) =~ "/consent/view"
   end
 
   test "GET /consent - not logged in", %{conn: conn} do
@@ -41,5 +47,11 @@ defmodule ResearchResource.ConsentControllerTest do
     assert html_response(conn, 302) =~ "redirected"
     assert redirected_to(conn) == consent_path(conn, :new)
     assert get_flash(conn, :error)
+  end
+
+  @tag login_as: "me@test.com"
+  test "GET /consent/view", %{conn: conn} do
+    conn = get conn, "/consent/view"
+    assert html_response(conn, 200) =~ "My Consent"
   end
 end

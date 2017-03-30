@@ -17,7 +17,7 @@
         Request Saliva Kit
       </li>
       <li class="mb1">
-        <%= link "My Consent", to: consent_path(@conn, :new), class: "blue no-underline" %>
+        <%= link "My Consent", to: consent_path(@conn, :view), class: "blue no-underline" %>
       </li>
       <li class="mb1">
         <%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete", class: "blue no-underline" %>
