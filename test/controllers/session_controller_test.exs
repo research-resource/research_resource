@@ -7,7 +7,7 @@ defmodule ResearchResource.SessionControllerTest do
 
   test "GET /sessions/new", %{conn: conn} do
     conn = get conn, "/sessions/new"
-    assert html_response(conn, 200) =~ "Log In"
+    assert html_response(conn, 200) =~ "LOG IN"
   end
 
   @tag login_as: "me@test.com"

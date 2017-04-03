@@ -31,6 +31,10 @@
   color: #99C937;
 }
 
+.hover-green:hover {
+  color: #99C937;
+}
+
 .dark-blue {
   color: #215968;
 }
@@ -50,6 +54,10 @@
 /* Background Colours */
 .bg-green {
   background-color: #99C937;
+}
+
+.b--green {
+  border-color: #99C937;
 }
 
 .bg-dark-blue {
