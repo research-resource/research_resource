@@ -49,6 +49,38 @@
   <%= for { question, i } <- Enum.with_index @consent_questions do %>
     <%= component "consent_question", question: question, i: i, f: f %>
   <% end %>
+  <div class="pa4">
+    <div class="dib w-50 v-mid mr5">
+      <h3>Please provide your details so that we can send you a saliva kit.</h3>
+      <span>You should receive your kit within XX days.</span>
+      <div class="w-50 mt4">
+        <div class="db tr mb1">
+          <%= label f, :name, "Name" %>
+          <%= text_input f, :name %>
+        </div>
+        <div class="db tr mb1">
+          <%= label f, :postcode, "Postcode" %>
+          <%= text_input f, :postcode %>
+        </div>
+        <div class="db tr mb1">
+          <%= label f, :address_1, "Address Line 1" %>
+          <%= text_input f, :address_1 %>
+        </div>
+        <div class="db tr mb1">
+          <%= label f, :address_2, "Address Line 2" %>
+          <%= text_input f, :address_2 %>
+        </div>
+        <div class="db tr mb1">
+          <%= label f, :town, "Town/City" %>
+          <%= text_input f, :town %>
+        </div>
+        <div class="db tr mb1">
+          <%= label f, :county, "County" %>
+          <%= text_input f, :county %>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="pa3 ph5">
     <%= component "button_ok", class: "dn", value: "Next", id: "next-active" %>
     <%= component "button_error", class: nil, value: "You cannot complete registration", id: "next-inactive" %>
