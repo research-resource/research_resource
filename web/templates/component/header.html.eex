@@ -1,0 +1,22 @@
+<header class="header bg-light-blue pt3 pb3">
+  <nav role="navigation relative">
+    <img src="/images/elixir.png" class="db w3 center" alt="logo talking therapies reasearch resource" />
+    <%= if @current_user do %>
+        <div class="absolute top-1 right-1 tracked dark-blue">
+          <span><%=String.capitalize @current_user.first_name%></span>
+          <span>|</span>
+          <%= link "My Account", to: account_path(@conn, :index), class: "no-underline dark-blue" %>
+        </div>
+    <% else %>
+      <a class="absolute montreal-bold top-1 right-1 f5 tracked-mega link ba bw1 hover-bg-white br-pill ph3 pv2 mb2 dib white hover-green bg-green b--green" href="<%=session_path(@conn, :new)%>">SIGN UP / LOG IN</a>
+    <% end %>
+    <div class="header-menu dt dt--fixed mw8 center pt5">
+      <%= component "menu_item", item_value: "Home", item_link: page_path(@conn, :index) %>
+      <%= component "menu_item", item_value: "About", item_link: about_path(@conn, :index) %>
+      <%= component "menu_item", item_value: "Projects", item_link: projects_path(@conn, :index) %>
+      <%= component "menu_item", item_value: "Who we are", item_link: who_we_are_path(@conn, :index) %>
+      <%= component "menu_item", item_value: "FAQs", item_link: faqs_path(@conn, :index) %>
+      <%= component "menu_item", item_value: "Resources", item_link: "#" %>
+    </div>
+  </nav>
+</header>

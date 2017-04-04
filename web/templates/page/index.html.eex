@@ -1,67 +1,19 @@
-<div class="mw9 center ph5 pv4">
-  <h2 class="ttu pa2">Welcome to Talking Therapies Research Resource</h2>
-  <div class="dib w-40 mr7 pa2 v-mid">
-    <p class="ma1">The Talking Therapies Research Register team want to develop better predictors of treatment response in anxiety and depression. We also want to promote and enable other research studies in this field. You are eligible to take part if you have recently been referred to a talking therapies service within the NHS.</p>
-  </div>
+<%= if !@current_user do %>
+  <%= component "sign_up", conn: @conn %>
+<% end %>
+<div class="more bg-light-blue">
+  <p class="f3 montreal tracked-mega dark-blue tc pt5">MORE ABOUT <span class="montreal-bold">RESEARCH RESOURCE</span></p>
+  <div class="w-50 center tc pa5">
+    <div class="dib w-30">
+      <a class="ttu montreal-bold top-1 right-1 f5 tracked-mega link ba bw1 hover-bg-white br-pill ph3 pv2 mb2 dib white hover-green bg-green b--green" href="">About</a>
+    </div>
 
-  <div class="dib w-20 pa2 v-mid">
-    <%= if !@current_user do %>
-      <div class="bg-near-white pa4">
-        <%= link "Sign Up to the Research Resource", to: user_path(@conn, :new), class: "blue no-underline ttu" %>
-      </div>
-    <%= end %>
-  </div>
-</div>
+    <div class="dib w-30">
+      <a class="ttu montreal-bold top-1 right-1 f5 tracked-mega link ba bw1 hover-bg-white br-pill ph3 pv2 mb2 dib white hover-green bg-green b--green" href="">Meet the team</a>
+    </div>
 
-<div class="bg-near-white pa4">
-  <div class="mw9 center ph5-ns">
-    <div class="cf ph2-ns">
-      <div class="fl w-100 w-third-ns pa3">
-        <div class="bg-white h5">
-          <div class="bb pa3 b--light-gray">
-            <h4 class="ma0 blue ttu">Projects</h4>
-          </div>
-          <div class="ph4 pv1">
-            <p class="ph3 pv1">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
-            </p>
-            <%= link "View The Projects", to: projects_path(@conn, :index), class: "dtc tc ttu no-underline blue" %>
-          </div>
-        </div>
-      </div>
-      <div class="fl w-100 w-third-ns pa3">
-        <div class="bg-white h5">
-          <div class="bb pa3 b--light-gray">
-            <h4 class="ma0 blue ttu">Who We Are</h4>
-          </div>
-          <div class="ph4 pv1">
-            <p class="ph3 pv1">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
-            </p>
-            <%= link "Meet the Team", to: who_we_are_path(@conn, :index), class: "dtc tc ttu no-underline blue" %>
-          </div>
-        </div>
-      </div>
-      <div class="fl w-100 w-third-ns pa3">
-        <div class="bg-white h5">
-          <div class="bb pa3 b--light-gray">
-            <h4 class="ma0 blue">FAQS</h4>
-          </div>
-          <div class="ph4 pv1">
-            <p class="ph3 pv1">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
-            </p>
-            <%= link "Read the FAQs", to: faqs_path(@conn, :index), class: "dtc tc ttu no-underline blue" %>
-          </div>
-        </div>
-      </div>
+    <div class="dib w-30">
+      <a class="ttu montreal-bold top-1 right-1 f5 tracked-mega link ba bw1 hover-bg-white br-pill ph3 pv2 mb2 dib white hover-green bg-green b--green" href="">Projects</a>
     </div>
   </div>
 </div>
-
-<%= if !@current_user do %>
-  <div class="bg-white ph5 pt3 pb5 mw9 center">
-    <h3 class="ttu">Sign Up</h3>
-    <%= component "sign_up", conn: @conn, current_user: @current_user %>
-  </div>
-<% end %>

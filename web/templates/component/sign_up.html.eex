@@ -1,27 +1,34 @@
+<p class="f3 montreal tracked-mega dark-blue tc">SIGN UP  TO <span class="montreal-bold">RESEARCH RESOURCE</span></p>
+<p class="center tc montreal tracked mw7 dark-blue">
+  To begin signing up you just need to provide your name, email address and a password. You will be sent a notification email to check we have the best way of contacting you
+</p>
 <%= form_for create_user_changeset(assigns[:changeset]), user_path(@conn, :create), fn f -> %>
-  <div class="dib">
-    <%= label f, :first_name, "First name", class: "db" %>
-    <%= text_input f, :first_name, class: "mr3" %>
-    <%= error_tag f, :first_name %>
-  </div>
+  <div class="mw7 center tc">
+      <div class="dib w-40 pa2">
+        <%= error_tag f, :first_name %>
+        <%= text_input f, :first_name, placeholder: "First name", class: "ba br2 pa2 montreal tracked dark-blue w-100" %>
+      </div>
 
-  <div class="dib">
-    <%= label f, :last_name, "Last name", class: "db" %>
-    <%= text_input f, :last_name, class: "mr3" %>
-    <%= error_tag f, :last_name %>
-  </div>
+      <div class="dib w-40 pa2">
+        <%= error_tag f, :last_name %>
+        <%= text_input f, :last_name, placeholder: "Last name", class: "ba br2 pa2 montreal tracked dark-blue w-100" %>
+      </div>
 
-  <div class="dib">
-    <%= label f, :email, "Email Address", class: "db" %>
-    <%= email_input f, :email, class: "mr3" %>
-    <%= error_tag f, :email %>
-  </div>
+      <div class="dib w-40 pa2">
+        <%= error_tag f, :email %>
+        <%= email_input f, :email, placeholder: "Email address", class: "ba br2 pa2 montreal tracked dark-blue w-100" %>
+      </div>
 
-  <div class="dib">
-    <%= label f, :password, "Password", class: "db" %>
-    <%= password_input f, :password, class: "mr3" %>
-    <%= error_tag f, :password %>
+      <div class="dib w-40 pa2">
+        <%= error_tag f, :password %>
+        <%= password_input f, :password, placeholder: "Password", class: "ba br2 pa2 montreal tracked dark-blue w-100" %>
+      </div>
+      <span class="db center tc montreal tracked dark-blue">
+        You can withdraw from the Resource at any time
+      </span>
+      <%= submit "Sign Up", class: "pointer ttu montreal-bold top-1 right-1 f5 tracked-mega link ba bw1 hover-bg-white br-pill ph3 pv2 mt4 dib white hover-green bg-green b--green"%>
+      <span class="db center tc montreal tracked dark-blue">
+        <a href="#">Already have an account?</a>
+      </span>
   </div>
-
-  <%= component "button_ok", value: "Sign Up", id: nil, class: nil %>
 <% end %>

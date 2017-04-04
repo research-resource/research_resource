@@ -13,30 +13,7 @@
 
   <body>
     <div class="">
-      <header class="header bg-light-gray pa4">
-        <nav role="navigation">
-          <div class="dt dt--fixed w-100">
-            <%= link "Home", to: page_path(@conn, :index), class: "dtc tc ttu no-underline blue" %>
-            <%= link "About", to: about_path(@conn, :index), class: "dtc tc ttu no-underline blue" %>
-            <%= link "Projects", to: projects_path(@conn, :index), class: "dtc tc ttu no-underline blue" %>
-            <%= link "Who", to: who_we_are_path(@conn, :index), class: "dtc tc ttu no-underline blue" %>
-            <%= link "FAQS", to: faqs_path(@conn, :index), class: "dtc tc ttu no-underline blue" %>
-            <%= if @current_user do %>
-              <div class="dtc tr">
-                <span><%=String.capitalize @current_user.first_name%></span>
-                <span>|</span>
-                <%= link "My Account", to: account_path(@conn, :index), class: "no-underline blue" %>
-              </div>
-            <% else %>
-            <div class="dtc tr">
-              <%= link "Sign Up", to: user_path(@conn, :new), class: "no-underline blue ttu"  %>
-              <span>|</span>
-              <%= link "Log In", to: session_path(@conn, :new), class: "no-underline blue ttu"  %>
-            </div>
-            <% end %>
-          </div>
-        </nav>
-      </header>
+      <%= component "header", conn: @conn, current_user: @current_user %>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
@@ -45,10 +22,10 @@
         <%= render @view_module, @view_template, assigns %>
       </main>
       <footer>
-        <div class="bg-light-gray pa3 tc">
-          <%= link "Ts & Cs", to: "#", class: "mh3 tc ttu no-underline blue" %>
-          <%= link "FAQS", to: faqs_path(@conn, :index), class: "mh3 tc ttu no-underline blue" %>
-          <%= link "Contact Us", to: "#", class: "mh3 tc ttu no-underline blue" %>
+        <div class="center w-100 tc pa4 montreal">
+          <%= link "Ts & Cs", to: "#", class: "mh3 tc ttu no-underline dark-blue" %>
+          <%= link "FAQS", to: faqs_path(@conn, :index), class: "mh3 tc ttu no-underline dark-blue" %>
+          <%= link "Contact Us", to: "#", class: "mh3 tc no-underline dark-blue" %>
         </div>
       </footer>
     </div> <!-- /container -->

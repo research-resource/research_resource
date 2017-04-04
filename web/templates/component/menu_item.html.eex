@@ -1,0 +1,3 @@
+<div class="dtc tc">
+  <a href="<%=@item_link%>" class="no-underline montreal dark-blue pointer"><%=@item_value%></a>
+</div>
