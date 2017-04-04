@@ -60,6 +60,10 @@
   border-color: #99C937;
 }
 
+.b--red {
+  border-color: #A70042;
+}
+
 .bg-dark-blue {
   background-color: #215968;
 }
@@ -74,6 +78,10 @@
 
 .bg-red {
   background-color: #A70042
+}
+
+.bg-red-10 {
+  background-color: rgba(167,00,42,0.1);
 }
 
 /* Consent Alert CSS */

@@ -1,4 +1,4 @@
-<div class="<%= get_background_colour(@i) %> pa4">
+<div class="pa4 montreal">
   <span class="ph5"><%= @i + 1 %>.</span>
   <div>
     <div class="dib v-mid w-80 mr2 ph5">
@@ -12,6 +12,7 @@
         <%= label @f, question_name(@question["field_name"], @question["required_field"]), "Yes" %>
         <%= radio_button @f, question_name(@question["field_name"], @question["required_field"]), "No", class: "no-consent", id: "no-consent-#{@i+1}" %>
         <%= label @f, question_name(@question["field_name"], @question["required_field"]), "No" %>
+        <%= radio_button @f, question_name(@question["field_name"], @question["required_field"]), "Unselected", checked: true, class: "dn" %>
       </div>
     <% else %>
       <div class="dib v-mid">
@@ -24,7 +25,7 @@
         <%= label :disabled, question_name(@question["field_name"], @question["required_field"]), "No" %>
       </div>
     <% end %>
-    <div id="error-consent-<%= @i+1 %>" class="pl3 mh5 dn bg-light-pink w-80 br-pill">
+    <div id="error-consent-<%= @i+1 %>" class="pl3 mh5 dn ba b--red bg-red-10 w-80 br-pill">
       <div class="v-mid dib br-100 h3 w3 bg-white tc pt1">
         <span class="f1">!</span>
       </div>
