@@ -53,4 +53,35 @@ defmodule ResearchResource.Redcap.HTTPClient do
       {:ok, [data]} -> data
     end
   end
+
+  def get_projects() do
+    res = HTTPoison.post(@redcap_url, {:form,
+      [token: @redcap_token,
+      content: "metadata",
+      format: "json"
+    ]}, %{})
+    filter_projects(res)
+  end
+
+  @doc """
+  Filter and convert a list of projects fields to a map:
+    %{"redcap_project_instrument" =>
+        %{"name" => "Project Name", "description" => "Description of the project"}
+    }
+ """
+  defp filter_projects({:ok, res}) do
+    {:ok, data} = Poison.Parser.parse(res.body)
+    data
+    |> Enum.filter(fn(question) -> question["form_name"] =~ ~r/project/i end)
+    |> Enum.reduce(%{}, fn(field, acc) ->
+      cond do
+        !acc[field["form_name"]] && (field["field_label"] == "name" || field["field_label"] == "description")  ->
+          Map.put(acc, field["form_name"], Map.put(%{}, field["field_label"], field["field_annotation"]))
+        field["field_label"] == "name" || field["field_label"] == "description" ->
+          Map.put(acc, field["form_name"], Map.put(acc[field["form_name"]], field["field_label"], field["field_annotation"]))
+        true ->
+          acc
+      end
+    end)
+  end
 end

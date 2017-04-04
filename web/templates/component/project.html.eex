@@ -1,0 +1,13 @@
+<div class="fl w-100 w-third-ns pa3">
+  <div class="bg-white h5">
+    <div class="bb pa3 b--light-gray">
+      <h4 class="blue ma0"> <%= @project["name"] %> </h4>
+    </div>
+    <div class="ph4">
+      <p class="ph3">
+        <%= @project["description"] %>
+      </p>
+      <a href="#" class="dtc tc ttu no-underline blue">More About <%=@project["name"]%></a>
+    </div>
+  </div>
+</div>

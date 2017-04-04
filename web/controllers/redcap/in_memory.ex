@@ -22,4 +22,7 @@ defmodule ResearchResource.Redcap.InMemory do
     response
   end
 
+  def get_projects() do
+    %{"proj1" => %{"name" => "project 1", "description" => "description of the project 1"}}
+  end
 end
