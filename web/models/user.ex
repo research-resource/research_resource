@@ -9,13 +9,14 @@ defmodule ResearchResource.User do
     field :email, :string
     field :password, :string, virtual: true
     field :password_hash, :string
+    field :ttrr_consent, :boolean
 
     timestamps()
   end
 
   def changeset(model, params \\ :invalid) do
     model
-    |> cast(params, ~w[first_name last_name email ttrrid qualtrics_id])
+    |> cast(params, ~w[first_name last_name email ttrrid qualtrics_id ttrr_consent])
     |> validate_required([:first_name, :last_name, :email])
     |> unique_constraint(:email)
   end

@@ -9,10 +9,8 @@ defmodule ResearchResource.ConsentController do
   @qualtrics_api Application.get_env(:research_resource, :qualtrics_api)
 
   def new(conn, _params) do
-    conn.assigns.current_user.ttrrid
-    |> @redcap_api.get_user_data()
-    |> case do
-      %{"record_id" => _record_id} ->
+    case conn.assigns.current_user.ttrr_consent do
+      true ->
         redirect(conn, to: consent_path(conn, :view))
       _ ->
         render(conn, "new.html", consent_questions: @redcap_api.get_instrument_fields("consent"))
@@ -25,6 +23,7 @@ defmodule ResearchResource.ConsentController do
       true ->
         conn
         |> create_user_redcap(consent)
+        |> update_consent
         |> create_user_qualtrics
         |> redirect(to: qualtrics_path(conn, :new))
       false ->
@@ -83,5 +82,15 @@ defmodule ResearchResource.ConsentController do
       consent_questions: @redcap_api.get_instrument_fields("consent"),
       consent_answers: @redcap_api.get_user_data(conn.assigns.current_user.ttrrid)
     )
+  end
+
+  def update_consent(conn) do
+    changeset = User.changeset(conn.assigns.current_user, %{"ttrr_consent" => true} )
+
+    case Repo.update(changeset) do
+      {:ok, user} ->
+        conn
+        |> assign(:current_user, user)
+    end
   end
 end
