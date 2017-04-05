@@ -31,7 +31,7 @@
 
   <div class="mw9 center ph5-ns cf">
 
-    <%= for {_instrument, project} <- @projects do %>
+    <%= for project <- @projects do %>
       <%= component "project", project: project %>
     <% end %>
   </div>

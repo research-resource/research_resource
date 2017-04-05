@@ -64,23 +64,22 @@ defmodule ResearchResource.Redcap.HTTPClient do
   end
 
   @doc """
-  Filter and convert a list of projects fields to a map:
-    %{"redcap_project_instrument" =>
-        %{"name" => "Project Name", "description" => "Description of the project"}
-    }
+  Filter and convert a list of Redcap fields:
+  [%{name: "project name", description: "description of the project"}, ...]
  """
   defp filter_projects({:ok, res}) do
     {:ok, data} = Poison.Parser.parse(res.body)
     data
-    |> Enum.filter(fn(question) -> question["form_name"] =~ ~r/project/i end)
-    |> Enum.reduce(%{}, fn(field, acc) ->
-      cond do
-        !acc[field["form_name"]] && (field["field_label"] == "name" || field["field_label"] == "description")  ->
-          Map.put(acc, field["form_name"], Map.put(%{}, field["field_label"], field["field_annotation"]))
-        field["field_label"] == "name" || field["field_label"] == "description" ->
-          Map.put(acc, field["form_name"], Map.put(acc[field["form_name"]], field["field_label"], field["field_annotation"]))
-        true ->
-          acc
+    |> Enum.filter(fn(question) -> question["field_label"] == "name" || question["field_label"] == "description" end)
+    |> Enum.group_by(fn(question) -> question["form_name"] end)
+    |> Enum.map(fn(project) -> info_project(project) end)
+  end
+
+  defp info_project({_p, values}) do
+    Enum.reduce(values, %{}, fn(field, acc) ->
+      case field["field_label"] do
+        "name" -> Map.put(acc, :name, field["field_annotation"])
+        "description" -> Map.put(acc, :description,field["field_annotation"])
       end
     end)
   end
