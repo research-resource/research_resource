@@ -55,32 +55,34 @@ defmodule ResearchResource.Redcap.HTTPClient do
   end
 
   def get_projects() do
-    res = HTTPoison.post(@redcap_url, {:form,
+    {:ok, res} = HTTPoison.post(@redcap_url, {:form,
       [token: @redcap_token,
       content: "metadata",
       format: "json"
     ]}, %{})
-    filter_projects(res)
+    {:ok, data} = Poison.Parser.parse(res.body)
+    projects = filter_projects(data)
+    %{
+      current: Enum.filter(projects, fn(project) -> project[:status] != "archived" end),
+      archived: Enum.filter(projects, fn(project) -> project[:status] == "archived" end)
+    }
   end
 
   @doc """
   Filter and convert a list of Redcap fields:
   [%{name: "project name", description: "description of the project"}, ...]
  """
-  defp filter_projects({:ok, res}) do
-    {:ok, data} = Poison.Parser.parse(res.body)
+  defp filter_projects(data) do
     data
-    |> Enum.filter(fn(question) -> question["field_label"] == "name" || question["field_label"] == "description" end)
+    |> Enum.filter(fn(question) -> question["form_name"] =~ ~r/^project/ end)
+    |> Enum.filter(fn(question) -> Enum.member?(~w(name description status), question["field_label"]) end)
     |> Enum.group_by(fn(question) -> question["form_name"] end)
     |> Enum.map(fn(project) -> info_project(project) end)
   end
 
   defp info_project({_p, values}) do
     Enum.reduce(values, %{}, fn(field, acc) ->
-      case field["field_label"] do
-        "name" -> Map.put(acc, :name, field["field_annotation"])
-        "description" -> Map.put(acc, :description,field["field_annotation"])
-      end
+      Map.put(acc, String.to_atom(field["field_label"]), field["field_annotation"])
     end)
   end
 end
