@@ -1,7 +1,6 @@
-<%= component "about", conn: @conn, current_user: @current_user %>
+<%= component "about", conn: @conn, current_user: @current_user, class: "montreal" %>
 <%= if !@current_user do %>
-  <div class="bg-white ph5 pt3 pb5 mw9 center">
-    <h3 class="ttu">Sign Up</h3>
+  <div class="bg-white ph5 pt3 pb5 mw9 center" id="about-signup">
     <%= component "sign_up", conn: @conn, current_user: @current_user %>
   </div>
 <% end %>

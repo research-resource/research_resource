@@ -1,17 +1,24 @@
-<div class="bg-near-white mt2">
-  <div class="bb b--gray pv2 ph4">
-    <h3 class="blue">Call us on 020 789123</h3>
+<div class="bg-lightest-blue mt2 montreal">
+  <div class="bb b--white pv3 ph4">
+    <h3 class="ma0">Need some help?</h3>
+      <p>
+        Call us for free: 020 789123
+      </p>
+      <p>
+        Email us: ttrr@example.com
+      </p>
+      <%= link "Read the FAQs", to: faqs_path(@conn, :index) %>
   </div>
   <div class="ph4 pv3">
-    <h3>Or request a call back</h3>
+    <h3 class="ma0 mb2">Or request a call back</h3>
     <%= label :call_back, :name, "Name", class: "db" %>
-    <%= text_input :call_back, :name, class: "mb3 w-100" %>
+    <%= text_input :call_back, :name, class: "mb2 w-100 db ba br2 pa2 montreal tracked dark-blue" %>
     <%= label :call_back, :tel, "Phone Number", class: "db" %>
-    <%= telephone_input :call_back, :tel, class: "mb3 w-100" %>
+    <%= telephone_input :call_back, :tel, class: "mb2 w-100 db ba br2 pa2 montreal tracked dark-blue" %>
     <%= label :call_back, :time, "Best Time to Call", class: "db" %>
-    <%= select :call_back, :time, ["Morning", "Afternoon", "Evening"], class: "mb3 w-100" %>
+    <%= select :call_back, :time, ["Morning", "Afternoon", "Evening"], class: "mb2 w-100 db ba br2 pa2 montreal tracked dark-blue h2" %>
     <div class="tc">
-      <%= submit "Request Call back", class: "bn br-pill ph3 pv2 blue bg-white pointer" %>
+      <%= component "button_ok", value: "Request Call back" %>
     </div>
   </div>
 </div>
