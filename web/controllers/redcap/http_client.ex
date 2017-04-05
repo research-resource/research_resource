@@ -68,6 +68,13 @@ defmodule ResearchResource.Redcap.HTTPClient do
     }
   end
 
+  def get_project(id_project) do
+    fields = get_instrument_fields(id_project)
+    info = Enum.filter(fields, &(Enum.member?(~w(name description status), &1["field_label"])))
+    consents = Enum.filter(fields, &(!Enum.member?(~w(name description status), &1["field_label"])))
+    Map.merge(%{consents: consents}, info_project({id_project, info}))
+  end
+
   @doc """
   Filter and convert a list of Redcap fields:
   [%{name: "project name", description: "description of the project"}, ...]
@@ -80,9 +87,10 @@ defmodule ResearchResource.Redcap.HTTPClient do
     |> Enum.map(&(info_project(&1)))
   end
 
-  defp info_project({_p, values}) do
+  defp info_project({id_project, values}) do
     Map.new(values, fn %{"field_label" => label, "field_annotation" => annotation} ->
       {String.to_atom(label), annotation}
     end)
+    |> Map.put(:id_project, id_project)
   end
 end

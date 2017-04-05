@@ -31,6 +31,7 @@
       </div>
       <div class="dib v-mid ph4 pv1">
         <p>
+          <%= assigns[:error_message] %>
           If you do not consent to this option, you will not be able to join the Research Resource
         </p>
         <p>

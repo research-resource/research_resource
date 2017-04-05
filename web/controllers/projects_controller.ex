@@ -6,4 +6,9 @@ defmodule ResearchResource.ProjectsController do
     projects = @redcap_api.get_projects()
     render conn, "index.html", projects: projects
   end
+
+  def show(conn, %{"id" => id_project}) do
+    project = @redcap_api.get_project(id_project)
+    render conn, "show.html", project: project
+  end
 end

@@ -30,9 +30,8 @@
   </div>
 
   <div class="mw9 center ph5-ns cf">
-
     <%= for project <- @projects[:current] do %>
-      <%= component "project", project: project %>
+      <%= component "project", conn: @conn, project: project %>
     <% end %>
   </div>
 </div>
@@ -46,9 +45,8 @@
   </div>
 
   <div class="mw9 center ph5-ns cf">
-
     <%= for project <- @projects[:archived] do %>
-      <%= component "project", project: project %>
+      <%= component "project", conn: @conn, project: project %>
     <% end %>
   </div>
 </div>

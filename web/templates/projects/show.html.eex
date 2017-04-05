@@ -1,0 +1,17 @@
+<h1> <%= @project[:name] %> </h1>
+<p>
+  <%= @project[:description] %>
+</p>
+
+<%= form_for @conn, consent_path(@conn, :create), [as: :consent], fn f -> %>
+  <%= for { question, i } <- Enum.with_index @project[:consents] do %>
+    <%= component "consent_question", question: question, i: i, f: f , error_message: "oopps"%>
+  <% end %>
+
+  <div class="ph4">
+    <div class="pa3 ph5">
+      <%= component "button_ok", class: "dn", value: "Apply", id: "next-active" %>
+      <%= component "button_error", class: nil, value: "You cannot complete application", id: "next-inactive" %>
+    </div>
+  </div>
+<% end %>
