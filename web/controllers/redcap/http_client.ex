@@ -77,12 +77,12 @@ defmodule ResearchResource.Redcap.HTTPClient do
     |> Enum.filter(fn(question) -> question["form_name"] =~ ~r/^project/ end)
     |> Enum.filter(fn(question) -> Enum.member?(~w(name description status), question["field_label"]) end)
     |> Enum.group_by(fn(question) -> question["form_name"] end)
-    |> Enum.map(fn(project) -> info_project(project) end)
+    |> Enum.map(&(info_project(&1)))
   end
 
   defp info_project({_p, values}) do
-    Enum.reduce(values, %{}, fn(field, acc) ->
-      Map.put(acc, String.to_atom(field["field_label"]), field["field_annotation"])
+    Map.new(values, fn %{"field_label" => label, "field_annotation" => annotation} ->
+      {String.to_atom(label), annotation}
     end)
   end
 end
