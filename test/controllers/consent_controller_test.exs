@@ -42,6 +42,13 @@ defmodule ResearchResource.ConsentControllerTest do
   end
 
   @tag login_as: "me@test.com"
+  test "Post /consent/create with address", %{conn: conn} do
+    conn = post conn, consent_path(conn, :create), consent: %{"consent_1_y" => "Yes", "name" => "Me"}
+    assert html_response(conn, 302) =~ "redirected"
+    assert redirected_to(conn) == qualtrics_path(conn, :new)
+  end
+
+  @tag login_as: "me@test.com"
   test "Post /consent/create - required with no consent", %{conn: conn} do
     conn = post conn, consent_path(conn, :create), consent: %{"consent_2_y" => "No"}
     assert html_response(conn, 302) =~ "redirected"
