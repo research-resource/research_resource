@@ -13,7 +13,7 @@ defmodule ResearchResource.ContactController do
     conn
     |> send_callback_email(callback)
     |> put_flash(:info, "Thank you for requesting a call back, one of our staff will be in touch soon.")
-    |> redirect(to: contact_path(conn, :index))
+    |> redirect(to: get_referer_path(conn))
   end
   def create(conn,
     %{ "message" => %{"name" => name, "message" => message} = details }
@@ -21,12 +21,12 @@ defmodule ResearchResource.ContactController do
     conn
     |> send_message_email(details)
     |> put_flash(:info, "Thank you for your message, one of our staff will be in touch soon.")
-    |> redirect(to: contact_path(conn, :index))
+    |> redirect(to: get_referer_path(conn))
   end
   def create(conn, _) do
     conn
     |> put_flash(:error, "Please fill all fields in one of the forms.")
-    |> redirect(to: contact_path(conn, :index))
+    |> redirect(to: get_referer_path(conn))
   end
 
   defp send_callback_email(conn, details) do
@@ -54,5 +54,18 @@ defmodule ResearchResource.ContactController do
     |> ResearchResource.Mailer.deliver_now()
 
     conn
+  end
+
+  @doc """
+  Find page user came from so we can redirect back there with a message.
+  If no referer, defaults to 'contact' page
+  """
+  def get_referer_path(conn) do
+    case Enum.find(conn.req_headers, fn({key, _}) -> key == "referer" end) do
+      {"referer", referer} ->
+        URI.parse(referer).path
+      _ ->
+        "/contact"
+    end
   end
 end

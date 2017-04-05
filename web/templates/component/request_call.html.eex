@@ -5,20 +5,22 @@
         Call us for free: 020 789123
       </p>
       <p>
-        Email us: ttrr@example.com
+        Email us: <a href="mailto:ttrr@example.com">ttrr@example.com</a>
       </p>
       <%= link "Read the FAQs", to: faqs_path(@conn, :index) %>
   </div>
   <div class="ph4 pv3">
     <h3 class="ma0 mb2">Or request a call back</h3>
-    <%= label :call_back, :name, "Name", class: "db" %>
-    <%= text_input :call_back, :name, class: "mb2 w-100 db ba br2 pa2 montreal tracked dark-blue" %>
-    <%= label :call_back, :tel, "Phone Number", class: "db" %>
-    <%= telephone_input :call_back, :tel, class: "mb2 w-100 db ba br2 pa2 montreal tracked dark-blue" %>
-    <%= label :call_back, :time, "Best Time to Call", class: "db" %>
-    <%= select :call_back, :time, ["Morning", "Afternoon", "Evening"], class: "mb2 w-100 db ba br2 pa2 montreal tracked dark-blue h2" %>
-    <div class="tc">
-      <%= component "button_ok", value: "Request Call back" %>
-    </div>
+    <%= form_for @conn, contact_path(@conn, :create), [as: :callback], fn callback -> %>
+      <%= label :callback, :name, "Name", class: "db" %>
+      <%= text_input :callback, :name, class: "mb2 w-100 db ba br2 pa2 montreal tracked dark-blue" %>
+      <%= label :callback, :phone, "Phone Number", class: "db" %>
+      <%= telephone_input :callback, :phone, class: "mb2 w-100 db ba br2 pa2 montreal tracked dark-blue" %>
+      <%= label :callback, :time, "Best Time to Call", class: "db" %>
+      <%= select :callback, :time, ["Morning", "Afternoon", "Evening"], class: "mb2 w-100 db ba br2 pa2 montreal tracked dark-blue h2" %>
+      <div class="tc">
+        <%= component "button_ok", value: "Request Call back" %>
+      </div>
+    <% end %>
   </div>
 </div>
