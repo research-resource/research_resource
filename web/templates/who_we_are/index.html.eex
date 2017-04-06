@@ -1,13 +1,13 @@
 <div class="montreal dark-blue">
   <div class="mw9 center ph5 pv4">
-    <div class="dib w-60-ns pa4 v-mid">
+    <div class="dib w-60-ns pa4-ns v-mid">
       <h2 class="ttu">Who We Are</h2>
       <p>
         The Talking Therapies Research Resource is run by a team of researchers at the Institute of Psychiatry, King’s College London, in collaboration with IAPT clinicians and the BRC BioResource. Below is some information about those involved in the TTRR, and the research questions that they would like to explore.
       </p>
     </div>
 
-    <div class="dib w-30 center pa2 v-mid">
+    <div class="dn dib-ns w-30 center pa2 v-mid">
       <%= if !@current_user do %>
       <div class="bg-lightest-blue pa3 w-60 center br1">
         <%= link "Sign Up to the Research Resource", to: user_path(@conn, :new), class: "blue no-underline ttu" %>
@@ -17,17 +17,17 @@
   </div>
 
   <div class="bg-lightest-blue pa4">
-    <div class="mw9 center ph5 cf">
+    <div class="mw9 center ph2 ph5-ns cf">
       <h3 class="ttu">The TTRR Support Team</h3>
-      <p class="w-60">
+      <p class="w-60-ns">
         These are the research assistants that support the running of the TTRR website. They are the people you are most likely to speak to if you call with any queries or questions.
       </p>
       <%= for team_member <- @support_team do %>
-        <div class="db mt4">
+        <div class="db mt4 w-100 tc tl-ns">
           <div class="dib v-mid mr3">
             <div class="br-100 h4 w4 bg-light-gray"></div>
           </div>
-          <div class="dib v-mid w-60">
+          <div class="dib v-mid w-60-ns">
             <h4>
               <%= team_member["name"] %>
               <%= if team_member["title"] != "" do %> - <%=team_member["title"]%><% end %>
@@ -42,14 +42,14 @@
   </div>
 
   <div class="pa4">
-    <div class="mw9 center ph5 cf">
+    <div class="mw9 center ph2 ph5-ns cf">
       <h3 class="ttu">Investigators</h3>
-      <p class="w-60">
+      <p class="w-60-ns">
         Below is the team of researchers that set up the TTRR, a collaboration between Kings’ College London, the BRC BioResource and IAPT. They are interested in researching common mental health disorders and what treatments may work best for them.
       </p>
       <%= for team_member <- @investigators do %>
-        <div class="db mt4">
-          <div class="dib-ns v-mid mr3">
+        <div class="db mt4 w-100 tc tl-ns">
+          <div class="dib v-mid mr3">
             <div class="br-100 h4 w4 bg-light-gray"></div>
           </div>
           <div class="dib-ns v-mid w-60-ns">
