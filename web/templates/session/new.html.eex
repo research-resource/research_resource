@@ -1,20 +1,21 @@
-<div class="mw9 center ph5 pt4">
-  <div class="dib w-40 mr7 v-mid pa2">
-    <h2 class="ttu">Log in</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
-  </div>
+<div class="montreal dark-blue">
+  <div class="mw9 center ph5 pt4">
+    <div class="dib w-40 mr7 v-mid pa2">
+      <h2 class="ttu">Log in</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
+    </div>
 
-  <div class="dib w-20 pa2 v-mid">
-    <div class="bg-near-white pa3">
-      <p>
-        Haven't registered yet? <%= link "Sign up here", to: user_path(@conn, :new), class: "blue no-underline" %>
-      </p>
+    <div class="dib w-20 pa2 v-mid">
+      <div class="bg-near-white pa3">
+        <p>
+          Haven't registered yet? <%= link "Sign up here", to: user_path(@conn, :new), class: "blue no-underline" %>
+        </p>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="bg-near-white pa5">
-  <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
+  <div class="bg-near-white pa5">
+    <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
     <div class="dib">
       <%= label f, :email, "Email", class: "db" %>
       <%= email_input f, :email, class: "mr3" %>
@@ -26,5 +27,6 @@
     </div>
 
     <%= submit "Log in", class: "mr3 bn f6 link dim br-pill ph3 pv2 mb2 white bg-blue" %>
-  <% end %>
+    <% end %>
+  </div>
 </div>
