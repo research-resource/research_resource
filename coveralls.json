@@ -10,6 +10,7 @@
     "web/web.ex",
     "web/views/error_helpers.ex",
     "web/controllers/redcap/http_client.ex",
-    "web/controllers/qualtrics/http_client.ex"
+    "web/controllers/qualtrics/http_client.ex",
+    "web/controllers/who_we_are_controller.ex"
   ]
 }
