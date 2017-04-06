@@ -1,30 +1,31 @@
-<div class="pa4 w-60 dib montreal">
-  <h2>Welcome To Research Resource, <%=String.capitalize @current_user.first_name%></h2>
-  <p>
-    The Talking Therapies Research Resource (TTRR) is one branch of the SLaM NIHR BioResource, and is a way for those who have received a talking therapy within IAPT to join the Bioresource for Mental Health. The Talking Therapies Research Resource Team refers to the group of researchers working on this project within the BioResource.
-  </p>
-  <p>
-    The animation below illustrates the key steps involved in signing up to the BioResource through the TTRR.
-  </p>
-  <div class="pa4 w-100 montreal dib">
-    <div class="h5 w-100 outline v-mid tc">
-      <h5>BioResource Consent Animation</h5>
+<div class="montreal dark-blue">
+  <div class="pa4 w-60 dib">
+    <h2>Welcome To Research Resource, <%=String.capitalize @current_user.first_name%></h2>
+    <p>
+      The Talking Therapies Research Resource (TTRR) is one branch of the SLaM NIHR BioResource, and is a way for those who have received a talking therapy within IAPT to join the Bioresource for Mental Health. The Talking Therapies Research Resource Team refers to the group of researchers working on this project within the BioResource.
+    </p>
+    <p>
+      The animation below illustrates the key steps involved in signing up to the BioResource through the TTRR.
+    </p>
+    <div class="pa4 w-100 dib">
+      <div class="h5 w-100 outline v-mid tc">
+        <h5>BioResource Consent Animation</h5>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="dib w-30 v-mid">
-  <div class="w-90 dn-m center">
-    <%= component "request_call", conn: @conn %>
+  <div class="dib w-30 v-mid">
+    <div class="w-90 dn-m center">
+      <%= component "request_call", conn: @conn %>
+    </div>
   </div>
-</div>
 
-<%= form_for @conn, consent_path(@conn, :create), [as: :consent], fn f -> %>
+  <%= form_for @conn, consent_path(@conn, :create), [as: :consent], fn f -> %>
   <%= for { question, i } <- Enum.with_index @consent_questions do %>
-    <%= component "consent_question", question: question, i: i, f: f %>
+  <%= component "consent_question", question: question, i: i, f: f %>
   <% end %>
   <div class="pa4 bg-light-blue">
-    <div class="dib v-mid mr5 montreal ph5">
+    <div class="dib v-mid mr5 ph5">
       <h3>Please provide your details so that we can send you a saliva kit.</h3>
       <span>You should receive your kit within XX days.</span>
       <div class="w-40 mt4">
@@ -43,4 +44,5 @@
       <%= component "button_error", class: nil, value: "You cannot complete registration", id: "next-inactive" %>
     </div>
   </div>
-<% end %>
+  <% end %>
+</div>
