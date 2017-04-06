@@ -8,6 +8,6 @@
         <%= truncate(@project[:description], 140) %>
       </p>
       <%= link "Read More", to: projects_path(@conn, :show, @project[:id_project]), class: "dtc tc ttu no-underline blue" %>
-    </div
+    </div>
   </div>
 </div>

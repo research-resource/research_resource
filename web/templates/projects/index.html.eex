@@ -22,40 +22,69 @@
     </div>
   </div>
 
-  <div class="pa4 bg-near-white">
-    <div class="mw9 center ph5">
-      <h3 class="ttu ph3">Upcoming Projects</h3>
-      <p class="ph3">
-        These are upcoming projects that you can sign up to be a part of:
-      </p>
+  <%= if @current_user do %>
+    <div class="pa4 bg-near-white">
+      <div class="mw9 center ph5">
+        <h3 class="ttu ph3">My Projects</h3>
+        <p class="ph3">
+          These are the projects that you have already applied to:
+        </p>
+      </div>
+    </div>
+    <div class="mw9 center ph5-ns cf">
+      <%= for project <- @projects[:mine] do %>
+        <%= component "project", conn: @conn, project: project %>
+      <% end %>
     </div>
 
-  <div class="mw9 center ph5-ns cf">
-    <%= for project <- @projects[:current] do %>
-      <%= component "project", conn: @conn, project: project %>
-    <% end %>
-  </div>
-
-  <div class="pa4 bg-near-white">
-    <div class="mw9 center ph5">
-      <h3 class="ttu ph3">Archived Projects</h3>
-      <p class="ph3">
-        These are projects that have already finished. You can find out about the results here:
-      </p>
+    <div class="pa4 bg-near-white">
+      <div class="mw9 center ph5">
+        <h3 class="ttu ph3">Other Projects</h3>
+        <p class="ph3">
+          These are projects that you can still apply for:
+        </p>
+      </div>
+    </div>
+    <div class="mw9 center ph5-ns cf">
+      <%= for project <- @projects[:other] do %>
+        <%= component "project", conn: @conn, project: project %>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="pa4 bg-near-white">
+      <div class="mw9 center ph5">
+        <h3 class="ttu ph3">Current Projects</h3>
+        <p class="ph3">
+          These are upcoming projects that you can sign up to be a part of:
+        </p>
+      </div>
+    </div>
+    <div class="mw9 center ph5-ns cf">
+      <%= for project <- @projects[:current] do %>
+        <%= component "project", conn: @conn, project: project %>
+      <% end %>
     </div>
 
-  <div class="mw9 center ph5-ns cf">
-    <%= for project <- @projects[:archived] do %>
-      <%= component "project", conn: @conn, project: project %>
-    <% end %>
-  </div>
-
-  <%= component "signing_up", conn: @conn %>
+    <div class="pa4 bg-near-white">
+      <div class="mw9 center ph5">
+        <h3 class="ttu ph3">Archived Projects</h3>
+        <p class="ph3">
+          These are projects that have already finished. You can find out about the results here:
+        </p>
+      </div>
+    </div>
+    <div class="mw9 center ph5-ns cf">
+      <%= for project <- @projects[:archived] do %>
+        <%= component "project", conn: @conn, project: project %>
+      <% end %>
+    </div>
+  <% end %>
 
   <%= if !@current_user do %>
-  <div class="bg-near-white ph5 pt3 pb5 mw9 center">
-    <h3 class="ttu">Sign Up</h3>
-    <%= component "sign_up", conn: @conn, current_user: @current_user %>
-  </div>
+    <div class="bg-near-white ph5 pt3 pb5 mw9 center">
+      <h3 class="ttu">Sign Up</h3>
+      <%= component "sign_up", conn: @conn, current_user: @current_user %>
+    </div>
   <% end %>
+
 </div>

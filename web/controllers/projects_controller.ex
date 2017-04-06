@@ -5,7 +5,20 @@ defmodule ResearchResource.ProjectsController do
 
   def index(conn, _params) do
     projects = @redcap_api.get_projects()
-    render conn, "index.html", projects: projects
+    if conn.assigns.current_user do
+      user_data = @redcap_api.get_user_data(conn.assigns.current_user.ttrrid)
+      mine_other = %{
+        mine: Enum.filter(projects, fn(project) -> complete?(user_data[project[:id_project] <> "_complete"]) end),
+        other: Enum.filter(projects, fn(project) -> !complete?(user_data[project[:id_project] <> "_complete"]) end)
+      }
+      render conn, "index.html", projects: mine_other
+    else
+      current_archived = %{
+        current: Enum.filter(projects, fn(project) -> project[:status] != "archived" end),
+        archived: Enum.filter(projects, fn(project) -> project[:status] == "archived" end)
+      }
+      render conn, "index.html", projects: current_archived
+    end
   end
 
   def show(conn, %{"id" => id_project}) do
