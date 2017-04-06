@@ -5,9 +5,9 @@
     </div>
     <div class="ph4">
       <p class="ph3">
-        <%= @project[:description] %>
+        <%= truncate(@project[:description], 140) %>
       </p>
-      <a href="#" class="dtc tc ttu no-underline blue">More About <%=@project[:name]%></a>
+      <%= link "Read More", to: projects_path(@conn, :show, @project[:id_project]), class: "dtc tc ttu no-underline blue" %>
     </div>
   </div>
 </div>
