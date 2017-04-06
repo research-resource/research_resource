@@ -29,7 +29,7 @@ defmodule ResearchResource.Router do
     resources "/users", UserController, only: [:show, :new, :create]
     resources "/consent", ConsentController, only: [:new, :create]
     resources "/qualtrics", QualtricsController, only: [:new]
-    resources "/projects", ProjectsController, only: [:index, :show]
+    resources "/projects", ProjectsController, only: [:index, :show, :create]
     resources "/account", AccountController, only: [:index, :update]
     resources "/change_password", ChangePasswordController, only: [:index, :update]
     resources "/contact", ContactController, only: [:index, :create]

@@ -17,4 +17,12 @@ defmodule ResearchResource.ComponentView do
   def get_checked_yes(checked), do: checked == "1"
 
   def get_checked_no(checked), do: checked == "0"
+
+  def truncate(text, limit_characters) do
+    if String.length(text) < limit_characters do
+      text
+    else
+      String.slice(text, 0..limit_characters) <> "..."
+    end
+  end
 end

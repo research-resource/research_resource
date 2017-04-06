@@ -18,4 +18,9 @@ defmodule ResearchResource.ComponentViewTest do
     assert ComponentView.get_checked_no("1") == false
     assert ComponentView.get_checked_no("0") == true
   end
+
+  test "create truncate description" do
+    assert ComponentView.truncate("hello", 10) == "hello"
+    assert ComponentView.truncate("hello", 2) == "hel..."
+  end
 end
