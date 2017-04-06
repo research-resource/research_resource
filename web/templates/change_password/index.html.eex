@@ -8,17 +8,17 @@
 
   <div class="bg-near-white pa5">
     <%= form_for @conn, change_password_path(@conn, :update, @current_user), [method: "put", as: :change_password], fn f -> %>
-    <div class="dib">
+    <div class="dib mr3 w-20">
       <%= label f, :email, "Old Password", class: "db" %>
-      <%= password_input f, :old_password, class: "mr3" %>
+      <%= password_input f, :old_password, class: "ba br2 pa2 montreal tracked dark-blue w-100" %>
     </div>
 
-    <div class="dib">
+    <div class="dib mr3 w-20">
       <%= label f, :password, "New Password", class: "db" %>
-      <%= password_input f, :new_password, class: "mr3"  %>
+      <%= password_input f, :new_password, class: "ba br2 pa2 montreal tracked dark-blue w-100"  %>
     </div>
 
-    <%= submit "Change", class: "mr3 bn f6 link dim br-pill ph3 pv2 mb2 white bg-blue" %>
+    <%= component "button_ok", value: "Change", class: "mr3 bn f6 link dim br-pill ph3 pv2 mb2 white bg-blue" %>
     <% end %>
   </div>
 </div>
