@@ -6,7 +6,7 @@
     </div>
 
     <div class="dib w-20 pa2 v-mid">
-      <div class="bg-near-white pa3">
+      <div class="bg-lightest-blue br1 pa3">
         <p>
           Haven't registered yet? <%= link "Sign up here", to: user_path(@conn, :new), class: "blue no-underline" %>
         </p>
@@ -14,19 +14,17 @@
     </div>
   </div>
 
-  <div class="bg-near-white pa5">
+  <div class="bg-lightest-blue pa5">
     <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
-    <div class="dib">
-      <%= label f, :email, "Email", class: "db" %>
-      <%= email_input f, :email, class: "mr3" %>
+    <div class="dib mr3 w-20">
+      <%= email_input f, :email, placeholder: "Email", class: "ba br2 pa2 montreal tracked dark-blue w-100" %>
     </div>
 
-    <div class="dib">
-      <%= label f, :password, "Password", class: "db" %>
-      <%= password_input f, :password, class: "mr3"  %>
+    <div class="dib mr3 w-20">
+      <%= password_input f, :password, placeholder: "Password", class: "ba br2 pa2 montreal tracked dark-blue w-100"  %>
     </div>
 
-    <%= submit "Log in", class: "mr3 bn f6 link dim br-pill ph3 pv2 mb2 white bg-blue" %>
+    <%= component "button_ok", value: "Log in", class: "mr3 bn f6 link dim br-pill ph3 pv2 mb2 white bg-blue" %>
     <% end %>
   </div>
 </div>
