@@ -7,7 +7,7 @@ defmodule ResearchResource.ConsentController do
 
   @redcap_api Application.get_env(:research_resource, :redcap_api)
   @qualtrics_api Application.get_env(:research_resource, :qualtrics_api)
-  @email Application.get_env(:research_resource, :email)
+  @contact_email Application.get_env(:research_resource, :contact_email)
 
   def new(conn, _params) do
     case conn.assigns.current_user.ttrr_consent do
@@ -113,7 +113,7 @@ defmodule ResearchResource.ConsentController do
       #{user_details["county"]}
       #{user_details["postcode"]}"
 
-      ResearchResource.Email.send_email(@email, subject, message)
+      ResearchResource.Email.send_email(@contact_email, subject, message)
       |> ResearchResource.Mailer.deliver_now()
     end
     conn

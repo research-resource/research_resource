@@ -1,3 +1,8 @@
+/* Phoenix flash messages */
+.alert:empty {
+  display: none;
+}
+
 /* Fonts */
 @font-face {
     font-family: "Montreal";
@@ -16,10 +21,12 @@
 
 .montreal {
   font-family: "Montreal", sans-serif;
+  letter-spacing: 1px;
 }
 
 .montreal-bold {
   font-family: "Montreal Bold", sans-serif;
+  letter-spacing: 3px;
 }
 
 .lemon-tuesday {

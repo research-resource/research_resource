@@ -1,233 +1,232 @@
-<div class="mw9 center ph5 pt4">
-  <div class="dib w-40 mr7 v-mid pa2">
-    <h2 class="ttu">About the Research Resource</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
+<div class="montreal dark-blue">
+  <div class="mw9 center ph5 pt4">
+    <div class="dib w-60-ns v-mid pa2-ns">
+      <h2 class="ttu">About the Research Resource</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
+    </div>
+
+    <div class="absolute right-2 dib w-30 pa2 v-mid">
+      <div class="w-25 fixed right-3 db-ns dn-ns dn" id="request-call-about">
+        <%= component "request_call", conn: @conn %>
+      </div>
+    </div>
+
   </div>
 
-  <div class="absolute right-2 dib w-30 pa2 v-mid">
-    <%= if !@current_user do %>
-      <div class="w-70 bg-near-white pa4">
-        <%= link "Sign Up to the Research Resource", to: user_path(@conn, :new), class: "blue no-underline ttu" %>
-      </div>
-    <%= end %>
-    <div class="w-25 fixed right-3 dn-m" id="request-call-about">
-      <%= component "request_call", conn: @conn %>
+  <div class="mw9 center ph5">
+    <div class="w-60-ns pa2-ns">
+      <h5>Participant Information Sheet</h5>
+      <h4>Overview</h4>
+      <p>
+        You are invited to take part in the Talking Therapies Research Resource project. Talking therapies help many people but they don’t work for everyone.  We want to identify factors that predict response to talking therapies in order to help identify which treatments might work best for different people. Our project is a collaboration between IAPT services, the Centre for Affective Disorders and the BioResource for Mental Health.
+      </p>
+      <p>
+        Signing up to the Talking Therapies Research Resource project will involve providing access to your medical records (so we can find out, for example, whether you are better after your treatment through the Southwark Psychological Therapies Service), completing some questionnaires, and giving a saliva sample if you are happy to do so.
+      </p>
+      <p>
+        On the website you can see information about a number of research studies that are being carried out, investigating predictors of treatment response and exploring what might work for those who did not get better following treatment. If you decide to sign up to this project you will be able to take part in these studies should you wish to. You can stop taking part at any time.
+      </p>
+    </div>
+
+    <div class="w-60-ns pa2">
+      <h3>1. What is the purpose of the resource?</h3>
+      <p>
+        Talking therapies work differently for different people, and sometimes people don’t feel better when their therapy ends. We would like to find out why this might be happening. At the moment, there is quite a lot of research looking at responses to medication for people with anxiety and/or depression. However,  there is much less research which looks at treatment responses to psychological therapy and the common factors amongst people who are not responding to therapy. The purpose of this project is to support research into anxiety and depression, particularly what treatments work best for whom and why. By signing up for the resource, you will be invited to take part in research studies that are attempting to answer this, or a related, question.
+      </p>
+      <h4>The Research Resource aims to:</h4>
+      <p>
+        Collect psychological data (questionnaire responses) and biological (saliva) samples for use in (a) predicting treatment outcomes and (b) screening for recruitment to specific studies.
+      </p>
+      <p>
+        Link patients’ psychological and biological data with their medical records.
+      </p>
+      <p>
+        We also hope the Research Resource will work as a recruitment platform for studies investigating similar questions. Aims related to this element are to:
+      </p>
+      <ul>
+        <li>Create an online resource of participants interested in taking part in research.</li>
+        <li>Provide patients with information about research projects that they can get involved in.</li>
+        <li>Regularly update participants on the progress of the research and the contribution that they have made.</li>
+      </ul>
+      <p>
+        Ultimately, this research will hopefully allow us to direct patients towards treatments that are more effectively suited to their personal circumstances.
+      </p>
+    </div>
+
+    <div class="w-60-ns pa2">
+      <h3>2. Why am I being asked to take part?</h3>
+      <p>
+        You are eligible to take part if you have recently been referred to a talking therapies service within the NHS.
+      </p>
+    </div>
+
+    <div class="w-60-ns pa2">
+      <h3>3. Will my participation be kept confidential?</h3>
+      <p>
+        Yes. All information about you will be kept confidential and only the research team running the resource will have access to your personal and contact details. We will send you information via email about ongoing research projects and you can decide whether you want to take part or not.
+      </p>
+      <p>
+        A participant ID number will be used to identify data about you, and we will keep the list that links codes to people’s identity locked separately from the data.
+      </p>
+      <p>
+        All data use is strictly within the terms of the Data Protection Act (DPA 1998).
+      </p>
+    </div>
+
+    <div class="w-60-ns pa2">
+      <h3>4. What will I need to do if I sign up?</h3>
+      <p>
+        There are three steps to signing up to the Research Resource.
+      </p>
+      <p>
+        Step 1: Give your consent to take part, including allowing us to access to your clinical records.
+        The consent form includes a description of each of the types of activity you might be invited to take part in. It is up to you which ones you consent to.
+        As part of this process we will request access to relevant information from your medical records. This access has been approved by a committee, which reviews and monitors access to clinical records.
+      </p>
+      <p>
+        Specifically, we will request information on the details of your treatment within Southwark Psychological Therapies Service. This will include your answers to the questionnaires that you completed during therapy and also the responses made by your therapist.
+      </p>
+      <p>
+        We will combine this data with other data you provide us with so that we can begin to look at the factors that predict how well people respond to psychological treatment.
+      </p>
+      <p>
+        Step 2: Questionnaire data.
+        We will ask you to complete some questions which will ask about your demographics (e.g. age, gender, and employment situation), emotional wellbeing, personality and experiences of treatment. This will take around 20-30 minutes to complete.
+      </p>
+      <p>
+        All of your responses will be stored against a unique participant ID number so that your answers remain anonymous.
+      </p>
+      <p>
+        As part of signing up to the Talking Therapies Research Resource, you will also be asked if you would like to join the BioResource. Please click here to find out more about joining the BioResource.
+      </p>
+      <p>
+        The BioResource for Mental Health team will look after your saliva sample and DNA and will undertake any genetic analyses. The BioResource for Mental Health is part of a national NHS sponsored network
+      </p>
+      <p>
+        Step 3 involves providing a saliva sample and joining the BioResource.
+      </p>
+      <p>
+        Step 3: Saliva sample
+        We will ask you to provide a saliva sample by spitting into a specially designed collection tube. This will be sent to you at home and you can send it back to us using a freepost envelope which we will provide.
+      </p>
+      <p>
+        We will extract DNA (i.e. genetic material) from this sample, and use this in analyses to identify whether genetic factors influence the development and treatment of anxiety and/or depression.
+        Your saliva sample and the extracted DNA will be labelled using your unique ID number so that they remain anonymous but can be linked to your other data.
+      </p>
+      <p>
+        In all instances, the list that links ID numbers from one source of data (e.g. DNA) to another (e.g. medical records) will be kept locked separately from the data.
+      </p>
+      <p>
+        Once you are a member of the resource, you will be able to see information about a number of research studies that you are eligible to take part in. if you choose to do so, you can sign up to be a participant in any number of these studies.
+      </p>
+    </div>
+
+    <div class="w-60-ns pa2">
+      <h3>5. What are the possible benefits?</h3>
+      <p>
+        There may be no immediate benefit to you in terms of treatment but you will contribute to knowledge about which factors influence how likely someone is to respond to psychological therapy. This knowledge may lead to better treatment guidelines and improve future care for patients.
+      </p>
+      <p>
+        The Talking Therapies Research Resource is an information resource for members as well as researchers. With this in mind, you will have access to pages dedicated to providing useful information to members. This will include:
+      </p>
+      <ul>
+        <li>Links to information sources</li>
+        <li>Details of local and online support networks</li>
+        <li>Links to online forums</li>
+        <li>Updates about relevant research</li>
+      </ul>
+      <p>
+        By becoming part of the Talking Therapies Research Resource, you will be involved in a community of members and researchers dedicated to investigating which treatments might work best for different people, and striving to give back to the participants that have made their research possible.
+      </p>
+    </div>
+
+    <div class="w-60-ns pa2">
+      <h3>6. What are the possible disadvantages and risks of taking part?</h3>
+      <p>
+        Some of the questionnaires ask about topics which some people might find sensitive, and about experiences of anxiety and/or depression. Most of the questions will be very similar to those you complete during your treatment. You do not have to complete any questions that you do not wish to. Providing a saliva sample is a very low risk procedure but some people find it unpleasant.
+      </p>
+      <p>
+        Your participation is strictly confidential and the risk of identifiable information being accidentally disclosed is extremely low.
+      </p>
+    </div>
+
+    <div class="w-60-ns pa2">
+      <h3>7. What should I do if I want to be part of the resource?</h3>
+      <p>
+        If you decide to take part in the resource, you will need to fill in an online consent form.
+        You will then be asked to provide questionnaire data and a saliva sample before being able to sign up for any of the research studies available.
+      </p>
+    </div>
+
+    <div class="w-60-ns pa2">
+      <h3>8. What is consent and how does it work?</h3>
+      <p>
+        It is essential that all participants in the Talking Therapies Research Resource agree to take part of their own volition, and indicate that they fully understand what signing up will mean. There is no obligation to sign up. Once you have provided consent you can unsubscribe at any time.
+        Signing up to the resource means you are consenting to the following:
+      </p>
+      <ul>
+        <li>Overall consent to collect and store data about your personal circumstances (according to the information you provided) and access to your medical records</li>
+        <li>Consent to be contacted about other research studies</li>
+        <li>Joining the BioResource means you are also consenting to:</li>
+        <li>Overall consent to collect and store your genetic data (via a saliva sample)</li>
+      </ul>
+    </div>
+
+    <div class="w-60-ns pa2">
+      <h3>Supporting Information</h3>
+      <p>
+        How have patients and the public been involved in this project?
+      </p>
+      <p>
+        During the design of the Talking Therapies Research Resource we consulted several service user panels. We have taken into account patient opinions on the tests we will carry out, remuneration and how best to approach patients about participation.
+      </p>
     </div>
   </div>
 
-</div>
-
-<div class="mw9 center ph5">
-  <div class="w-50 pa2">
-    <h5>Participant Information Sheet</h5>
-    <h4>Overview</h4>
-    <p>
-      You are invited to take part in the Talking Therapies Research Resource project. Talking therapies help many people but they don’t work for everyone.  We want to identify factors that predict response to talking therapies in order to help identify which treatments might work best for different people. Our project is a collaboration between IAPT services, the Centre for Affective Disorders and the BioResource for Mental Health.
-    </p>
-    <p>
-      Signing up to the Talking Therapies Research Resource project will involve providing access to your medical records (so we can find out, for example, whether you are better after your treatment through the Southwark Psychological Therapies Service), completing some questionnaires, and giving a saliva sample if you are happy to do so.
-    </p>
-    <p>
-      On the website you can see information about a number of research studies that are being carried out, investigating predictors of treatment response and exploring what might work for those who did not get better following treatment. If you decide to sign up to this project you will be able to take part in these studies should you wish to. You can stop taking part at any time.
-    </p>
-  </div>
-
-  <div class="w-50 pa2">
-    <h3>1. What is the purpose of the resource?</h3>
-    <p>
-      Talking therapies work differently for different people, and sometimes people don’t feel better when their therapy ends. We would like to find out why this might be happening. At the moment, there is quite a lot of research looking at responses to medication for people with anxiety and/or depression. However,  there is much less research which looks at treatment responses to psychological therapy and the common factors amongst people who are not responding to therapy. The purpose of this project is to support research into anxiety and depression, particularly what treatments work best for whom and why. By signing up for the resource, you will be invited to take part in research studies that are attempting to answer this, or a related, question.
-    </p>
-    <h4>The Research Resource aims to:</h4>
-    <p>
-      Collect psychological data (questionnaire responses) and biological (saliva) samples for use in (a) predicting treatment outcomes and (b) screening for recruitment to specific studies.
-    </p>
-    <p>
-      Link patients’ psychological and biological data with their medical records.
-    </p>
-    <p>
-      We also hope the Research Resource will work as a recruitment platform for studies investigating similar questions. Aims related to this element are to:
-    </p>
-    <ul>
-      <li>Create an online resource of participants interested in taking part in research.</li>
-      <li>Provide patients with information about research projects that they can get involved in.</li>
-      <li>Regularly update participants on the progress of the research and the contribution that they have made.</li>
-    </ul>
-    <p>
-      Ultimately, this research will hopefully allow us to direct patients towards treatments that are more effectively suited to their personal circumstances.
-    </p>
-  </div>
-
-  <div class="w-50 pa2">
-    <h3>2. Why am I being asked to take part?</h3>
-    <p>
-      You are eligible to take part if you have recently been referred to a talking therapies service within the NHS.
-    </p>
-  </div>
-
-  <div class="w-50 pa2">
-    <h3>3. Will my participation be kept confidential?</h3>
-    <p>
-      Yes. All information about you will be kept confidential and only the research team running the resource will have access to your personal and contact details. We will send you information via email about ongoing research projects and you can decide whether you want to take part or not.
-    </p>
-    <p>
-      A participant ID number will be used to identify data about you, and we will keep the list that links codes to people’s identity locked separately from the data.
-    </p>
-    <p>
-      All data use is strictly within the terms of the Data Protection Act (DPA 1998).
-    </p>
-  </div>
-
-  <div class="w-50 pa2">
-    <h3>4. What will I need to do if I sign up?</h3>
-    <p>
-      There are three steps to signing up to the Research Resource.
-    </p>
-    <p>
-      Step 1: Give your consent to take part, including allowing us to access to your clinical records.
-  The consent form includes a description of each of the types of activity you might be invited to take part in. It is up to you which ones you consent to.
-  As part of this process we will request access to relevant information from your medical records. This access has been approved by a committee, which reviews and monitors access to clinical records.
-    </p>
-    <p>
-      Specifically, we will request information on the details of your treatment within Southwark Psychological Therapies Service. This will include your answers to the questionnaires that you completed during therapy and also the responses made by your therapist.
-    </p>
-    <p>
-      We will combine this data with other data you provide us with so that we can begin to look at the factors that predict how well people respond to psychological treatment.
-    </p>
-    <p>
-      Step 2: Questionnaire data.
-  We will ask you to complete some questions which will ask about your demographics (e.g. age, gender, and employment situation), emotional wellbeing, personality and experiences of treatment. This will take around 20-30 minutes to complete.
-    </p>
-    <p>
-      All of your responses will be stored against a unique participant ID number so that your answers remain anonymous.
-    </p>
-    <p>
-      As part of signing up to the Talking Therapies Research Resource, you will also be asked if you would like to join the BioResource. Please click here to find out more about joining the BioResource.
-    </p>
-    <p>
-      The BioResource for Mental Health team will look after your saliva sample and DNA and will undertake any genetic analyses. The BioResource for Mental Health is part of a national NHS sponsored network
-    </p>
-    <p>
-      Step 3 involves providing a saliva sample and joining the BioResource.
-    </p>
-    <p>
-      Step 3: Saliva sample
-  We will ask you to provide a saliva sample by spitting into a specially designed collection tube. This will be sent to you at home and you can send it back to us using a freepost envelope which we will provide.
-    </p>
-    <p>
-      We will extract DNA (i.e. genetic material) from this sample, and use this in analyses to identify whether genetic factors influence the development and treatment of anxiety and/or depression.
-  Your saliva sample and the extracted DNA will be labelled using your unique ID number so that they remain anonymous but can be linked to your other data.
-    </p>
-    <p>
-      In all instances, the list that links ID numbers from one source of data (e.g. DNA) to another (e.g. medical records) will be kept locked separately from the data.
-    </p>
-    <p>
-      Once you are a member of the resource, you will be able to see information about a number of research studies that you are eligible to take part in. if you choose to do so, you can sign up to be a participant in any number of these studies.
-    </p>
-  </div>
-
-  <div class="w-50 pa2">
-    <h3>5. What are the possible benefits?</h3>
-    <p>
-      There may be no immediate benefit to you in terms of treatment but you will contribute to knowledge about which factors influence how likely someone is to respond to psychological therapy. This knowledge may lead to better treatment guidelines and improve future care for patients.
-    </p>
-    <p>
-      The Talking Therapies Research Resource is an information resource for members as well as researchers. With this in mind, you will have access to pages dedicated to providing useful information to members. This will include:
-    </p>
-    <ul>
-      <li>Links to information sources</li>
-      <li>Details of local and online support networks</li>
-      <li>Links to online forums</li>
-      <li>Updates about relevant research</li>
-    </ul>
-    <p>
-      By becoming part of the Talking Therapies Research Resource, you will be involved in a community of members and researchers dedicated to investigating which treatments might work best for different people, and striving to give back to the participants that have made their research possible.
-    </p>
-  </div>
-
-  <div class="w-50 pa2">
-    <h3>6. What are the possible disadvantages and risks of taking part?</h3>
-    <p>
-      Some of the questionnaires ask about topics which some people might find sensitive, and about experiences of anxiety and/or depression. Most of the questions will be very similar to those you complete during your treatment. You do not have to complete any questions that you do not wish to. Providing a saliva sample is a very low risk procedure but some people find it unpleasant.
-    </p>
-    <p>
-      Your participation is strictly confidential and the risk of identifiable information being accidentally disclosed is extremely low.
-    </p>
-  </div>
-
-  <div class="w-50 pa2">
-    <h3>7. What should I do if I want to be part of the resource?</h3>
-    <p>
-      If you decide to take part in the resource, you will need to fill in an online consent form.
-  You will then be asked to provide questionnaire data and a saliva sample before being able to sign up for any of the research studies available.
-    </p>
-  </div>
-
-  <div class="w-50 pa2">
-    <h3>8. What is consent and how does it work?</h3>
-    <p>
-      It is essential that all participants in the Talking Therapies Research Resource agree to take part of their own volition, and indicate that they fully understand what signing up will mean. There is no obligation to sign up. Once you have provided consent you can unsubscribe at any time.
-  Signing up to the resource means you are consenting to the following:
-    </p>
-    <ul>
-      <li>Overall consent to collect and store data about your personal circumstances (according to the information you provided) and access to your medical records</li>
-      <li>Consent to be contacted about other research studies</li>
-      <li>Joining the BioResource means you are also consenting to:</li>
-      <li>Overall consent to collect and store your genetic data (via a saliva sample)</li>
-    </ul>
-  </div>
-
-  <div class="w-50 pa2">
-    <h3>Supporting Information</h3>
-    <p>
-      How have patients and the public been involved in this project?
-    </p>
-    <p>
-      During the design of the Talking Therapies Research Resource we consulted several service user panels. We have taken into account patient opinions on the tests we will carry out, remuneration and how best to approach patients about participation.
-    </p>
-  </div>
-</div>
-
-<div class="bg-near-white pa4" id="request-call-footer">
-  <div class="mw9 center cf">
-    <div class="fl w-100 w-third-ns pa3">
-      <div class="bg-white h5">
-        <div class="bb pa2 b--light-gray">
-          <h4 class="blue">DOWNLOAD THE INFORMATION SHEET</h4>
-        </div>
-        <div class="ph4 pv1">
-          <p class="ph3 pv1">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
-          </p>
-          <a href="#" class="blue no-underline">DOWNLOAD</a>
+  <div class="bg-lightest-blue pa4" id="request-call-footer">
+    <div class="mw9 center cf">
+      <div class="fl-ns w-100 w-third-ns pa3">
+        <div class="bg-white">
+          <div class="bb pa2 b--lightest-blue">
+            <h4 class="dark-blue">DOWNLOAD THE INFORMATION SHEET</h4>
+          </div>
+          <div class="ph4 pv3">
+            <p class="ph3 pv1">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+            </p>
+            <a href="#" class="blue no-underline">DOWNLOAD</a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="fl w-100 w-two-thirds-ns pa3">
-      <div class="bg-white h5">
-        <div class="bb pa2 b--light-gray">
-          <h4 class="blue">REQUEST A CALLBACK</h4>
-        </div>
-        <div class="ph4 pv1">
-          <p>
-            We aim to give you a call within 24 hours of your request.
-          </p>
-          <div class="pv3">
-            <div class="w-40 dib">
-              <%= label :call_back, :name, "Name", class: "db" %>
-              <%= text_input :call_back, :name %>
+      <div class="fl-ns w-100 w-two-thirds-ns pa3">
+        <div class="bg-white">
+          <div class="bb pa2 b--lightest-blue">
+            <h4 class="dark-blue">REQUEST A CALLBACK</h4>
+          </div>
+          <%= form_for @conn, contact_path(@conn, :create), [as: :callback], fn callback -> %>
+            <div class="ph4 pv1">
+              <p>
+                We aim to give you a call within 24 hours of your request.
+              </p>
+              <div class="pv3">
+                <div class="w-40-ns dib-ns">
+                  <%= label :callback, :name, "Name", class: "db" %>
+                  <%= text_input :callback, :name, class: "mb2 w-80 db ba br2 pa2 montreal tracked dark-blue" %>
+                </div>
+                <div class="w-40-ns dib-ns">
+                  <%= label :callback, :time, "Best Time to Call", class: "db" %>
+                  <%= select :callback, :time, ["Morning", "Afternoon", "Evening"], class: "mb2 w-80 db ba br2 pa2 montreal tracked dark-blue h2" %>
+                </div>
+              </div>
+              <div class="w-40-ns dib-ns">
+                <%= label :callback, :phone, "Phone Number", class: "db" %>
+                <%= telephone_input :callback, :phone, class: "mb2 w-80 db ba br2 pa2 montreal tracked dark-blue" %>
+              </div>
+              <div class="w-40-ns dib-ns">
+                <%= component "button_ok", value: "Request Call back" %>
+              </div>
             </div>
-            <div class="w-40 dib">
-              <%= label :call_back, :time, "Best Time to Call", class: "db" %>
-              <%= select :call_back, :time, ["Morning", "Afternoon", "Evening"] %>
-            </div>
-          </div>
-          <div class="w-40 dib">
-            <%= label :call_back, :tel, "Phone Number", class: "db" %>
-            <%= telephone_input :call_back, :tel %>
-          </div>
-          <div class="w-40 dib">
-            <%= submit "Request Call back", class: "bn br-pill ph3 pv2 blue bg-near-white pointer" %>
-          </div>
+          <% end %>
         </div>
       </div>
     </div>

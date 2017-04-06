@@ -15,7 +15,8 @@ config :research_resource,
   qualtrics_survey_id: System.get_env("QUALTRICS_SURVEY_ID"),
   qualtrics_distribution_id: System.get_env("QUALTRICS_DISTRIBUTION_ID"),
   id_prefix: "TTRR",
-  email: "tt.research.resource@gmail.com"
+  email: "tt.research.resource@gmail.com",
+  contact_email: "tt.research.resource@gmail.com"
 
 # Configures the endpoint
 config :research_resource, ResearchResource.Endpoint,

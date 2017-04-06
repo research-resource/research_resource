@@ -32,5 +32,6 @@ defmodule ResearchResource.Router do
     resources "/qualtrics", QualtricsController, only: [:new]
     resources "/account", AccountController, only: [:index, :update]
     resources "/change_password", ChangePasswordController, only: [:index, :update]
+    resources "/contact", ContactController, only: [:index, :create]
   end
 end

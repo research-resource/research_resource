@@ -1,0 +1,32 @@
+<div class="cf montreal">
+    <div class="fl-ns w-50-ns pv2 ph6-ns ph2 h-100">
+      <h2 class="mb4">Contact Us</h2>
+      <p>Call us for free: 020789123</p>
+      <p class="mb4">Email us: ttrr@example.com</p>
+      <h3>Request a Call Back</h3>
+      <p class="mb4">We aim to give you a call within 24 hours of your request.</p>
+      <%= form_for @conn, contact_path(@conn, :create), [as: :callback], fn callback -> %>
+        <%= label :callback, :name, "Name", class: "db" %>
+        <%= text_input :callback, :name, class: "mb3 w-50 db ba br2 pa2 montreal tracked dark-blue" %>
+        <%= label :callback, :time, "Best Time to Call", class: "db" %>
+        <%= select :callback, :time, ["Morning", "Afternoon", "Evening"], class: "mb3 w-50 db ba br2 pa2 montreal tracked dark-blue h2" %>
+        <%= label :callback, :phone, "Phone Number", class: "db" %>
+        <%= telephone_input :callback, :phone, class: "mb4 w-50 db ba br2 pa2 montreal tracked dark-blue" %>
+        <%= component "button_ok", value: "Request Call Back" %>
+      <% end %>
+    </div>
+    <div class="fl-ns w-50-ns pv2 ph6-ns ph2 bg-lightest-blue">
+      <h2>Send A Message</h2>
+      <%= form_for @conn, contact_path(@conn, :create), [as: :message], fn message -> %>
+        <%= label :message, :name, "Name", class: "db" %>
+        <%= text_input :message, :name, class: "mb3 w-50 db ba br2 pa2 montreal tracked dark-blue" %>
+        <%= label :message, :email, "Email Address", class: "db" %>
+        <%= email_input :message, :email, class: "mb3 w-50 db ba br2 pa2 montreal tracked dark-blue" %>
+        <%= label :message, :phone, "Phone Number", class: "db" %>
+        <%= telephone_input :message, :phone, class: "mb3 w-50 db ba br2 pa2 montreal tracked dark-blue" %>
+        <%= label :message, :message, "Message", class: "db" %>
+        <%= textarea :message, :message, class: "mb3 w-80 db ba br2 pa2 montreal tracked dark-blue", rows: 10 %>
+        <%= component "button_ok", value: "Send Message" %>
+      <% end %>
+    </div>
+</div>

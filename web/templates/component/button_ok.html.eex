@@ -1,1 +1,1 @@
-<%= submit @value, class: "montreal-bold mr3 bn f16 link dim br-pill ph3 pv2 mb2 white bg-blue pointer ttu #{@class}", id: @id %>
+<%= submit @value, class: "montreal-bold mr3 ba bw1 f16 link br-pill ph3 pv2 mb2 white bg-green hover-bg-white b--green hover-green pointer ttu #{assigns[:class]}", id: assigns[:id] %>
