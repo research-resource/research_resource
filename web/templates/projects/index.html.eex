@@ -30,10 +30,11 @@
       </p>
     </div>
 
-  <div class="mw9 center ph5-ns cf">
-    <%= for project <- @projects[:current] do %>
-      <%= component "project", conn: @conn, project: project %>
-    <% end %>
+    <div class="mw9 center ph5-ns cf">
+      <%= for project <- @projects[:current] do %>
+        <%= component "project", conn: @conn, project: project %>
+      <% end %>
+    </div>
   </div>
 
   <div class="pa4 bg-near-white">
@@ -44,10 +45,11 @@
       </p>
     </div>
 
-  <div class="mw9 center ph5-ns cf">
-    <%= for project <- @projects[:archived] do %>
-      <%= component "project", conn: @conn, project: project %>
-    <% end %>
+    <div class="mw9 center ph5-ns cf">
+      <%= for project <- @projects[:archived] do %>
+        <%= component "project", conn: @conn, project: project %>
+      <% end %>
+    </div>
   </div>
 
   <%= component "signing_up", conn: @conn %>
