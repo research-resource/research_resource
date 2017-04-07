@@ -103,3 +103,14 @@
 .close-faq:checked ~ div label .close {
   display: block;
 }
+
+/* Link styling */
+
+a, a:visited {
+  color: #215968;
+  overflow-wrap: break-word;
+}
+
+a:hover {
+  text-decoration: none;
+}

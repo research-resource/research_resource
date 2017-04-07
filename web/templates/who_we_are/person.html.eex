@@ -1,0 +1,27 @@
+<div class="db mt4 w-100 tc tl-ns">
+  <div class="dib v-mid mr3">
+    <div class="br-100 h4 w4 bg-light-gray"></div>
+  </div>
+  <div class="dib v-mid w-60-ns w-100">
+    <h4>
+      <%= @team_member["name"] %>
+      <%= if @team_member["title"] != "" do %> - <%=@team_member["title"]%><% end %>
+    </h4>
+    <p>
+      <%= @team_member["description"] %>
+      <ul class="list pl1">
+        <%= for link <- @team_member["links"] do %>
+        <li>
+          <a href="<%= link["url"] %>">
+            <%= if link["name"] do %>
+            <%= link["name"] %>
+            <%= else %>
+            <%= link["url"] %>
+            <% end %>
+          </a>
+        </li>
+        <% end %>
+      </ul>
+    </p>
+  </div>
+</div>
