@@ -16,7 +16,7 @@
       <%= component "menu_item", item_value: "Projects", item_link: projects_path(@conn, :index) %>
       <%= component "menu_item", item_value: "Who we are", item_link: who_we_are_path(@conn, :index) %>
       <%= component "menu_item", item_value: "FAQs", item_link: faqs_path(@conn, :index) %>
-      <%= component "menu_item", item_value: "Resources", item_link: "#" %>
+      <%= component "menu_item", item_value: "Resources", item_link: resources_path(@conn, :index) %>
     </div>
   </nav>
 </header>

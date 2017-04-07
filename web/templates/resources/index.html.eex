@@ -1,0 +1,37 @@
+<div class="montreal dark-blue">
+  <div class="mw9 center ph5-ns ph4 pt4">
+    <h2 class="ttu mb4">Resources</h2>
+    <h3 class="ttu">Links to information sources</h3>
+    <ul>
+      <li>Southwark Talking Therapies: <%= link "https://slam-iapt.nhs.uk/southwark/welcome-to-southwark-psychological-therapies-service/", to: "https://slam-iapt.nhs.uk/southwark/welcome-to-southwark-psychological-therapies-service/" %></li>
+      <li>Mind Lambeth and Southwark: <%= link "http://lambethandsouthwarkmind.org.uk/", to: "http://lambethandsouthwarkmind.org.uk/" %></li>
+      <li>Mind Information and Support: <%= link "http://mind.org.uk/information-support/", to: "http://mind.org.uk/information-support/" %></li>
+    </ul>
+
+    <h3 class="ttu">Upcoming local support groups</h3>
+    <ul>
+      <li><%= link "https://slam-iapt.nhs.uk/southwark/news-and-events/", to: "https://slam-iapt.nhs.uk/southwark/news-and-events/" %></li>
+      <li>Lambeth and Southwark peer support group: <%= link "http://lambethandsouthwarkmind.org.uk/how-we-can-help-you/peer-support/", to: "http://lambethandsouthwarkmind.org.uk/how-we-can-help-you/peer-support/" %></li>
+    </ul>
+
+    <h3 class="ttu">Online therapy resources</h3>
+    <ul>
+      <li><%= link "https://slam-iapt.nhs.uk/southwark/welcome-to-southwark-psychological-therapies-service/resources/", to: "https://slam-iapt.nhs.uk/southwark/welcome-to-southwark-psychological-therapies-service/resources/" %></li>
+    </ul>
+
+    <h3 class="ttu">Understanding Anxiety</h3>
+    <ul>
+      <li><%= link "https://slam-iapt.nhs.uk/problems-we-help-with/anxiety/", to: "https://slam-iapt.nhs.uk/problems-we-help-with/anxiety/" %></li>
+    </ul>
+
+    <h3 class="ttu">Understanding Depression</h3>
+    <ul>
+      <li><%= link "https://slam-iapt.nhs.uk/problems-we-help-with/depression/", to: "https://slam-iapt.nhs.uk/problems-we-help-with/depression/" %></li>
+    </ul>
+
+    <h3 class="ttu">Understanding Panic</h3>
+    <ul>
+      <li><%= link "https://slam-iapt.nhs.uk/problems-we-help-with/panic/", to: "https://slam-iapt.nhs.uk/problems-we-help-with/panic/" %></li>
+    </ul>
+  </div>
+</div>
