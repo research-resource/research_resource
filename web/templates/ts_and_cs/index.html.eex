@@ -1,0 +1,56 @@
+<div class="montreal dark-blue">
+  <div class="mw9 center ph5-ns ph4 pt4">
+    <h2 class="ttu">Terms and Conditions</h2>
+    <div class="w-60-ns">
+      <p>
+        "IoPPN" means The Institute of Psychiatry, Psychology and Neuroscience, King’s College London a university with charitable status, established under royal charter and having its registered office at Strand, London WC2R 2LS, United Kingdom;
+      </p>
+      <p>
+        By accessing this website you accept and agree to the following terms and conditions:
+      </p>
+      <p>
+        IoPPN gives no warranty as to the accuracy of the information or guidance for any specific purpose. The information and guidance contained on the website does not constitute legal or professional advice. All implied warranties and conditions are excluded, to the maximum extent permitted by law.
+      </p>
+      <p>
+        IoPPN is in no way responsible or liable for any damage or loss whatsoever arising from viewing or downloading information from this website and from the use of, or reliance on, the information and guidance on this website, although this does not affect claims in respect of death or personal injury caused by negligence.
+      </p>
+      <p>
+        Any links to third parties websites are provided for convenience only. IoPPN has no control over such websites and accepts no liability for their content.
+      </p>
+      <p>
+        IoPPN reserves the right at all times to vary, change, alter, amend or remove any of these terms. By browsing the website you accept that you are bound by the current terms and conditions and notices, and we therefore recommend that you check these each time you revisit the site.
+      </p>
+      <p>
+        You must not use this website, and/or any interactive facilities which are available through it to:
+      </p>
+      <ul>
+        <li>commit or encourage unlawful acts or in breach of these terms of use;</li>
+        <li>misrepresent your identity;</li>
+        <li>hack, or attempt to hack, any part of the website or any system used to run it;</li>
+        <li>store personal data derived from the website;</li>
+        <li>post material that is obscene, offensive, or otherwise unlawful;</li>
+        <li>technically harm the website and/or its systems (including, without limitation, computer viruses or malicious software or harmful data).</li>
+      </ul>
+      <p>
+        While IoPPN tries to make this website available 24 hours a day, it reserves the right to suspend or withdraw access, without notice, to either the whole or part of the website, for any reason.
+      </p>
+      <h3 class="ttu">Copyright</h3>
+      <p>
+        This site and its content are protected by copyright. The content of this website may be viewed, printed or downloaded for personal, non-commercial use only. It is not to be modified, reproduced, transmitted, published or otherwise made available in whole or in part without the prior written consent of the Institute of Psychiatry, Psychology and Neuroscience, King’s College London.
+      </p>
+      <p>
+        In no event shall any user of this website use the name or logo of King’s College London or any of its trademarks, other than with the express written consent of an authorised representative of King’s College London.
+      </p>
+      <h3 class="ttu">Complaints</h3>
+      <p>
+        Any complaint made about any material available on the PROTECT Study website or information relating to the study contained on external Internet sites will be addressed as soon as possible.
+      </p>
+      <p>
+        Please use our <%= link "feedback form", to: contact_path(@conn, :index) %> to contact us.
+      </p>
+      <p>
+        These terms and condition represent the entire agreement between the parties in regard to the use of the website. IoPPN in its sole discretion is entitled to alter or amend the website and the terms and conditions without notice. Information contained on the website may be subject to conditions and/or disclaimers as indicated. English law governs these terms and your use of this website and you submit to the non-exclusive jurisdiction of the English courts.
+      </p>
+    </div>
+  </div>
+</div>
