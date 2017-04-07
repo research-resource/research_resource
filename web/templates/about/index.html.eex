@@ -4,3 +4,4 @@
     <%= component "sign_up", conn: @conn, current_user: @current_user %>
   </div>
 <% end %>
+<%= render ResearchResource.AboutView, "request_call_footer.html", conn: @conn %>
