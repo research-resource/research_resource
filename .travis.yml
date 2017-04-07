@@ -1,6 +1,10 @@
 language: elixir
 elixir:
   - 1.4.1
+cache:
+  directories:
+    - _build
+    - deps
 addons:
   postgresql: '9.4'
 env:
