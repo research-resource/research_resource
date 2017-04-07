@@ -1,86 +1,39 @@
 <div class="montreal dark-blue">
-  <div class="mw9 center ph5 pt4">
-    <div class="dib w-40 mr7 v-mid pa2">
+  <div class="mw9 center ph5 pt4-ns">
+    <div class="dib w-60-ns v-mid pa2">
       <h2 class="ttu">FAQs</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
     </div>
 
-    <div class="dib w-20 pa2 v-mid">
+    <div class="dn dib-ns w-30 center pa2 v-mid">
       <%= if !@current_user do %>
-      <div class="bg-near-white pa4">
+      <div class="bg-lightest-blue pa3 w-60 center br1">
         <%= link "Sign Up to the Research Resource", to: user_path(@conn, :new), class: "blue no-underline ttu" %>
       </div>
       <%= end %>
     </div>
   </div>
 
-  <div class="bg-near-white mb1">
-    <input id="close-1" class="close-faq dn" type="checkbox"/>
-    <div class="ph6 pv4 bb b--white">
-      <h3 class="dib ma0">Question Lorem Ipsum?</h3>
-      <label for="close-1" class="fr dib br-100 h2 w2 bg-white tc relative pointer">
-        <img class="plus dn" src="/images/plus.svg" />
-        <img class="close dn" src="/images/close.svg" />
-      </label>
+  <%= for { q, i } <- Enum.with_index @faqs do %>
+    <div class="bg-lightest-blue bb b--white">
+      <input id="<%= "close-#{i}" %>" class="close-faq dn" type="checkbox"/>
+      <div class="pl4 ph6-ns pv4 bb b--white">
+        <h3 class="dib w-80 ma0"><%= q["question"] %></h3>
+        <label for="<%= "close-#{i}" %>" class="fr-ns dib br-100 h2 w2 bg-white tc relative pointer">
+          <img class="plus dn" src="/images/plus.svg" />
+          <img class="close dn" src="/images/close.svg" />
+        </label>
+      </div>
+      <div class="pl6-ns pl4 pv3 w-80 ques">
+        <p>
+          <%= raw(q["answer"]) %>
+        </p>
+      </div>
     </div>
-    <div class="pl6 pv3 w-50 ques">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
-      </p>
-    </div>
-  </div>
-
-  <div class="bg-near-white mb1">
-    <input id="close-2" class="close-faq dn" type="checkbox"/>
-    <div class="ph6 pv4 bb b--white">
-      <h3 class="dib ma0">Question Lorem Ipsum?</h3>
-      <label for="close-2" class="fr dib br-100 h2 w2 bg-white tc relative pointer">
-        <img class="plus dn" src="/images/plus.svg" />
-        <img class="close dn" src="/images/close.svg" />
-      </label>
-    </div>
-    <div class="pl6 pv3 w-50 ques">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
-      </p>
-    </div>
-  </div>
-
-  <div class="bg-near-white mb1">
-    <input id="close-3" class="close-faq dn" type="checkbox"/>
-    <div class="ph6 pv4 bb b--white">
-      <h3 class="dib ma0">Question Lorem Ipsum?</h3>
-      <label for="close-3" class="fr dib br-100 h2 w2 bg-white tc relative pointer">
-        <img class="plus dn" src="/images/plus.svg" />
-        <img class="close dn" src="/images/close.svg" />
-      </label>
-    </div>
-    <div class="pl6 pv3 w-50 ques">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
-      </p>
-    </div>
-  </div>
-
-  <div class="bg-near-white mb1">
-    <input id="close-4" class="close-faq dn" type="checkbox"/>
-    <div class="ph6 pv4 bb b--white">
-      <h3 class="dib ma0">Question Lorem Ipsum?</h3>
-      <label for="close-4" class="fr dib br-100 h2 w2 bg-white tc relative pointer">
-        <img class="plus dn" src="/images/plus.svg" />
-        <img class="close dn" src="/images/close.svg" />
-      </label>
-    </div>
-    <div class="pl6 pv3 w-50 ques">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
-      </p>
-    </div>
-  </div>
+  <% end %>
 
   <%= if !@current_user do %>
-  <div class="bg-near-white ph5 pt3 pb5 mw9 center">
-    <h3 class="ttu">Sign Up</h3>
+  <div class="ph5 pt3 pb5 mw9 center">
     <%= component "sign_up", conn: @conn, current_user: @current_user %>
   </div>
   <% end %>

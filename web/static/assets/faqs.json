@@ -1,0 +1,91 @@
+{
+  "faqs": [
+    {
+      "question": "What is the Talking Therapies Research Resource (TTRR)?",
+      "answer": "The Talking Therapies Research Resource is a website that anyone who has been referred to an NHS Talking Therapies service can become a member of. Members are asked to provide access to their medical records, complete a questionnaire and, if they are happy to do so, provide a saliva sample. The researchers running the website will combine these three sources of data in order to identify why some treatments work well for some people, and not for others. We also hope the Research Resource will work as a recruitment platform for studies investigating similar questions. Members will be able to see information about and sign up for other relevant research projects if they wish to."
+    },
+    {
+      "question": "What is the NIHR BRC BioResource?",
+      "answer": "The Talking Therapies Research Resource is part of a project called the BioResource. The BioResource is a national NHS project to build up a central library of information (or “BioBank)” about people's health. It will be used in scientific/medical research to help us better understand why different mental illnesses happen and how we can develop better treatments for them. We aim to collect:<br>
+•	Biological samples – for example, saliva for genetic testing.<br>
+•	Clinical data - Examinations by doctors, family information, your response to treatment etc.<br>
+Some of this data will only be kept locally while some information and samples from this resource may also be made available to other scientists working in biomedical and healthcare research that may include the participation of commercial companies.<br>
+By becoming a member of the Talking Therapies Research Resource, you will become part of the BioResource for Mental Health. The BioResource team will look after your data and saliva sample, and will undertake any genetic analyses."
+    },
+    {
+      "question": "Can I take part in the Talking Therapies Research Resource (TTRR)?",
+      "answer": "You can sign up for the TTRR if you are aged 18 or over, have been referred to Southwark Talking Therapies Service and have started, or about to start, a course of psychological therapies offered within the Increasing Access to Psychological Therapies (IAPT) service. We won’t contact you if you have previously stated that you do not wish to be involved in research (part of the C4C initiative). You are free to sign-up at any time during or after your treatment."
+    },
+    {
+      "question": "How do I participate in the Talking Therapies Research Resource (TTRR)?",
+      "answer": "To participate in the TTRR, you will need to create an account by signing up on the homepage or using the sign-up option on the top right hand side of the page. This requires your name, email address and phone number. We will then ask you to read the TTRR information sheet and complete a consent form to indicate that you are happy to be part of the resource. You will be asked to fill in some questionnaires and given the option to provide a saliva sample for genetic analyses which will require a postal address."
+    },
+    {
+      "question": "How is my personal information and biological data kept secure?",
+      "answer": "Keeping your information secure is our highest priority. There are a number of regulations and policies that the Talking Therapies Research Resource complies with to ensure data is protected and that biological samples are stored correctly.<br>
+Storage and work on personal data or biological data will always be in accordance with the current ethical guidelines, and the conditions of the consent you have provided. In the event that ethical guidelines are modified, the project will be further evaluated for ethical approval. All data will be stored at Kings College London and partner sites in accordance with the Data Protection Act. Data will not be passed on to any third parties including your doctor, your insurance company or your employer.<br>
+All data will be used in an anonymised linked format with personal information being accessible only by the lead investigators and project co-ordinator. Identifiable volunteer information will only be available to the recruitment team as well as clinical staff who have DBS clearance and are bound to confidentiality by their University/NHS contract. Each member of the recruitment team and collaborating clinical staff will complete mandatory training as set out by King's College London and the NHS to ensure policies and procedures for managing confidential data are upheld. These staff members are aware that any breach of such procedures could result in disciplinary and or dismissal from the team/service. Personal data will be stored on a secure database and securely located within the Kings College London firewall in compliance with KCL data security policy.<br>
+Laboratory staff at King’s College London will ensure that genetic samples are processed in accordance with strict health and safety guidelines and under the requirements of the Human Tissue Act (HTA) 2004. King's College London holds a HTA license (License number: 12293). The link between the participant ID and de-identified data will be kept in a secure database accessible only to the lead investigators and senior researchers.<br><br>
+Useful links for more information about use of personal and biological data:<br>
+Data Protection Act 1998<br>
+<a href=\"https://www.gov.uk/data-protection/the-data-protection-act\">https://www.gov.uk/data-protection/the-data-protection-act</a><br>
+The Data Protection Act was developed to ensure that personal data is processed and used fairly and lawfully. This means that data is collected for limited, specifically stated purposes, is kept no longer than necessary and is stored securely.<br>
+King’s College London Data Protection Policy <a href=\"http://www.kcl.ac.uk/governancezone/GovernanceLegal/Data-Protection-Policy.aspx\">http://www.kcl.ac.uk/governancezone/GovernanceLegal/Data-Protection-Policy.aspx</a><br>
+This policy outlines King’s College London’s policy for protecting personal information in compliance with the Data Protection Act 1998 (DPA). The university has procedures aiming to ensure that all staff, students, and agents of the university who have access to personal data are aware of their duties and responsibilities under the DPA.<br>
+Human Tissue Act 2004<br>
+<a href=\"https://www.hta.gov.uk/policies/human-tissue-act-2004\">https://www.hta.gov.uk/policies/human-tissue-act-2004</a><br>
+If you provide the Talking Therapies Research Resource with a saliva sample, your biological sample is protected by the Human Tissue Act 2004. The Act regulates the removal, storage and use of human tissue and ensures all samples are collected appropriately."
+    },
+    {
+      "question": "What happens to my saliva sample?",
+      "answer": "It will be analysed and then stored in a secure laboratory at King’s College London. Access to your anonymised sample may be made available to other scientists under strict and confidential data-sharing agreements. We want to know how genes influence response to psychological treatment. Genes are made out of DNA. We will isolate analyse and store a sample of your DNA from your donated tissue sample and using advanced laboratory techniques we will determine your genetic makeup. This may include determining the sequence of all or part of your genetic code. Data will not be passed on to any third parties including your doctor, your insurance company or your employer. Your stored samples can only be linked to you by authorised individuals and only when we intend to invite you to participate in follow-up studies. Your DNA sample will be stored for use in this and future ethically approved research aimed at better understanding the development and treatment of a range of health conditions."
+    },
+    {
+      "question": "Will my data be using by commercial companies?",
+      "answer": "Your data may be accessed by commercial companies but this will be in an anonymised format so that it cannot be traced back to your identifiable data. Those applying to access to data will be under strict and confidential data-sharing agreements. All applications to access data will be thoroughly reviewed by a panel of senior researchers from the TTRR."
+    },
+    {
+      "question": "Do I have to sign up for other projects on the TTRR?",
+      "answer": "No, you do not have to take part in any other studies advertised on the TTRR. The information you provide will only be used in TTRR-specific research."
+    },
+    {
+      "question": "Why do you need to access relevant sections of my medical records?",
+      "answer": "By combining information from your medical records, questionnaire data (and DNA information if providing a saliva sample), we are able to identify studies you may be eligible for. Combining these types of data can provide much more information for researchers to use in a wide range of investigations. We will only access relevant sections of your medical records – for example, we will request information on the details of your treatment within the Talking Therapies service, including answers to questionnaires you completed and therapist responses. We will not be able to access what you discussed with your therapist during your sessions as this is confidential information."
+    },
+    {
+      "question": "What are the benefits of taking part in the Talking Therapies Research Resource (TTRR)?",
+      "answer": "There may be no immediate benefit to you in terms of treatment but you will contribute to knowledge about which factors influence how likely someone is to respond to psychological therapy. This knowledge may lead to better treatment guidelines and improve future care for patients.<br>
+The Talking Therapies Research Resource is an information resource for members as well as researchers. With this in mind, you will have access to pages dedicated to providing useful information to members. This will include:<br>
+•	Links to information sources<br>
+•	Details of local and online support networks<br>
+•	Links to online forums<br>
+•	Updates about relevant research<br>
+By becoming part of the Talking Therapies Research Resource, you will be involved in a community of members and researchers dedicated to investigating which treatments might work best for different people, and striving to give back to the participants that have made their research possible."
+    },
+    {
+      "question": "Will I find out more about my DNA?",
+      "answer": "You will usually not be given any individual feedback on risk for medical conditions from these analyses. The results are general for research purposes only and not for clinical diagnosis or treatment. In the very rare instance that we do find something that is of known clinical importance, we will write to your GP recommending further investigation."
+    },
+    {
+      "question": "Are there any disadvantages to taking part in the Talking Therapies Research Resource (TTRR)?",
+      "answer": "Some of the questionnaires ask about topics which some people might find sensitive, and about experiences of anxiety and/or depression. Most of the questions will be very similar to those you complete during your treatment. You do not have to complete any questions that you do not wish to. Providing a saliva sample is a very low risk procedure but some people find it unpleasant.<br>
+Your participation is strictly confidential and the risk of identifiable information being accidentally disclosed is extremely low."
+    },
+    {
+      "question": "What if I change my mind about taking part in the Talking Therapies Research Resource (TTRR)?",
+      "answer": "Taking part is entirely voluntary and you can change your mind at a later stage. You do not need to give a reason. If you would like to withdraw from the project, we would ask you to contact us on FREEPHONE 0800 995 1999 so we can get any feedback you may have of using the TTRR and to register your withdrawal on our systems.<br>
+If you decide to withdraw from the resource, then we will remove your data from our electronic databases and destroy your saliva sample. If you have provided a saliva sample, you can choose whether you would like this to remain as an anonymised sample in the BioResource or whether you would like it to be destroyed."
+    },
+    {
+      "question": "Who do I speak to if I have more questions about the Talking Therapies Research Resource?",
+      "answer": "If you find your question can’t be answered on this page, please contact the Talking Therapies Research Resource team at ttrr@kcl.ac.uk or phoning 0207 848 5381 or FREEPHONE 0800 995 1999"
+    },
+    {
+      "question": "Who can I speak to if I need support with how I am feeling?",
+      "answer": "If you feel you need any further help with the issues raised in TTRR, we recommend talking it through with someone you trust, including your GP.<br>
+You could ask your GP to make a referral to Southwark Talking Therapies, or refer yourself via <a href=\"https://slam-iapt.nhs.uk/southwark/welcome-to-southwark-psychological-therapies-service/\">https://slam-iapt.nhs.uk/southwark/welcome-to-southwark-psychological-therapies-service/</a>.<br>
+You can contact MIND at www.mind.org.uk<br>
+If you are very upset or do not feel safe, please contact someone as soon as possible, such as Samaritans on 08457 909090 or http://www.samaritans.org/"
+    }
+  ]
+}
