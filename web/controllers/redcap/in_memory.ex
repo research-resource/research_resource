@@ -23,10 +23,10 @@ defmodule ResearchResource.Redcap.InMemory do
   end
 
   def get_projects() do
-    %{
-      current: [%{name: "project 1", description: "description of the project 1", id_project: "id_project_1"}],
-      archived: [%{name: "project 2", description: "description of the project 2", id_project: "id_project_2"}]
-    }
+      [
+        %{name: "project 1", description: "description of the project 1", id_project: "id_project_1"},
+        %{name: "project 2", description: "description of the project 2", id_project: "id_project_2"}
+      ]
   end
 
   def get_project(_id_project) do

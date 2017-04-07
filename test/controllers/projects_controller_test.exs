@@ -6,7 +6,13 @@ defmodule ResearchResource.ProjectsControllerTest do
 
   test "GET /projects", %{conn: conn} do
     conn = get conn, "/projects"
-    assert html_response(conn, 200) =~ "Projects"
+    assert html_response(conn, 200) =~ "Current Projects"
+  end
+
+  @tag login_as: "me@test.com"
+  test "GET /projects - logged in", %{conn: conn} do
+    conn = get conn, "/projects"
+    assert html_response(conn, 200) =~ "My Projects"
   end
 
   test "GET /projects/project_1 - not logged in", %{conn: conn} do

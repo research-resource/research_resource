@@ -62,10 +62,6 @@ defmodule ResearchResource.Redcap.HTTPClient do
     ]}, %{})
     {:ok, data} = Poison.Parser.parse(res.body)
     projects = filter_projects(data)
-    %{
-      current: Enum.filter(projects, fn(project) -> project[:status] != "archived" end),
-      archived: Enum.filter(projects, fn(project) -> project[:status] == "archived" end)
-    }
   end
 
   def get_project(id_project) do
