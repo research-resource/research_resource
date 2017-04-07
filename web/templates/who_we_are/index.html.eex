@@ -23,20 +23,7 @@
         These are the research assistants that support the running of the TTRR website. They are the people you are most likely to speak to if you call with any queries or questions.
       </p>
       <%= for team_member <- @support_team do %>
-        <div class="db mt4 w-100 tc tl-ns">
-          <div class="dib v-mid mr3">
-            <div class="br-100 h4 w4 bg-light-gray"></div>
-          </div>
-          <div class="dib v-mid w-60-ns">
-            <h4>
-              <%= team_member["name"] %>
-              <%= if team_member["title"] != "" do %> - <%=team_member["title"]%><% end %>
-            </h4>
-            <p>
-              <%= team_member["description"] %>
-            </p>
-          </div>
-        </div>
+        <%= render ResearchResource.WhoWeAreView, "person.html", team_member: team_member %>
       <% end %>
     </div>
   </div>
@@ -48,20 +35,7 @@
         Below is the team of researchers that set up the TTRR, a collaboration between Kings’ College London, the BRC BioResource and IAPT. They are interested in researching common mental health disorders and what treatments may work best for them.
       </p>
       <%= for team_member <- @investigators do %>
-        <div class="db mt4 w-100 tc tl-ns">
-          <div class="dib v-mid mr3">
-            <div class="br-100 h4 w4 bg-light-gray"></div>
-          </div>
-          <div class="dib-ns v-mid w-60-ns">
-            <h4>
-              <%= team_member["name"] %>
-              <%= if team_member["title"] != "" do %> - <%=team_member["title"]%><% end %>
-            </h4>
-            <p>
-              <%= team_member["description"] %>
-            </p>
-          </div>
-        </div>
+        <%= render ResearchResource.WhoWeAreView, "person.html", team_member: team_member %>
       <% end %>
     </div>
   </div>
