@@ -34,7 +34,14 @@ defmodule ResearchResource.UserController do
 
   defp send_registration_email(user) do
     subject = "Welcome to Research Resource"
-    message = "Welcome to Research Resource, #{user.first_name}"
+    message = """
+    Dear #{user.first_name},
+    Thank you for signing up to the Talking Therapies Research Resource.
+    Once you have completed an initial questionnaire, and decided if you are happy to provide a saliva sample, you will be able to sign up to our current projects. It is up to you how many you take part in.
+    For more information, please visit our FAQs page. If you still have any questions, you can contact the team by replying to this email, or on FREEPHONE 0800 955 199.
+    Kind regards,
+    The Talking Therapies Research Resource Team
+    """
     ResearchResource.Email.send_email(user.email, subject, message)
     |> ResearchResource.Mailer.deliver_now()
   end
