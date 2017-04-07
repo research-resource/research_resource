@@ -2,6 +2,8 @@ defmodule ResearchResource.ProjectsController do
   use ResearchResource.Web, :controller
   alias ResearchResource.Redcap.RedcapHelpers
   @redcap_api Application.get_env(:research_resource, :redcap_api)
+  @qualtrics_api Application.get_env(:research_resource, :qualtrics_api)
+  @qualtrics_survey_id Application.get_env(:research_resource, :qualtrics_survey_id)
 
   def index(conn, _params) do
     projects = @redcap_api.get_projects()
@@ -28,9 +30,20 @@ defmodule ResearchResource.ProjectsController do
       applied = %{applied: complete?(user_data[id_project <> "_complete"])}
       project = Map.merge(project, applied)
       consent_answers = user_data
-      render conn, "show.html", project: project, consent_answers: consent_answers
+      registration_complete = registration_complete?(conn.assigns.current_user)
+      render conn, "show.html", project: project, consent_answers: consent_answers, registration_complete: registration_complete
     else
       render conn, "show.html", project: project
+    end
+  end
+
+  defp registration_complete?(user) do
+    if user.ttrr_consent do
+      {:ok, qualtics_contact} = @qualtrics_api.get_contact(user.qualtrics_id)
+      response_survey = Enum.find(qualtics_contact["responseHistory"], &(&1["surveyId"] == @qualtrics_survey_id))
+      response_survey["finishedSurvey"]
+    else
+      false
     end
   end
 
