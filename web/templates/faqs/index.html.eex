@@ -1,8 +1,7 @@
 <div class="montreal dark-blue">
-  <div class="mw9 center ph5 pt4-ns">
-    <div class="dib w-60-ns v-mid pa2">
+  <div class="mw9 center ph5-ns ph4 pv4">
+    <div class="dib w-60-ns v-mid pa2-ns">
       <h2 class="ttu">FAQs</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
     </div>
 
     <div class="dn dib-ns w-30 center pa2 v-mid">
@@ -33,8 +32,8 @@
   <% end %>
 
   <%= if !@current_user do %>
-  <div class="ph5 pt3 pb5 mw9 center">
-    <%= component "sign_up", conn: @conn, current_user: @current_user %>
-  </div>
+    <div class="ph5 pt3 pb5 mw9 center">
+      <%= component "sign_up", conn: @conn, current_user: @current_user %>
+    </div>
   <% end %>
 </div>
