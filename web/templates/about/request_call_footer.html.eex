@@ -1,0 +1,48 @@
+<div class="bg-lightest-blue pa4" id="request-call-footer">
+  <div class="mw9 center cf">
+    <div class="fl-ns w-100 w-third-ns pa3">
+      <div class="bg-white">
+        <div class="bb pa2 b--lightest-blue">
+          <h4 class="dark-blue">DOWNLOAD THE INFORMATION SHEET</h4>
+        </div>
+        <div class="ph4 pv3">
+          <p class="ph3 pv1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+          </p>
+          <a href="#" class="blue no-underline">DOWNLOAD</a>
+        </div>
+      </div>
+    </div>
+    <div class="fl-ns w-100 w-two-thirds-ns pa3">
+      <div class="bg-white">
+        <div class="bb pa2 b--lightest-blue">
+          <h4 class="dark-blue">REQUEST A CALLBACK</h4>
+        </div>
+        <%= form_for @conn, contact_path(@conn, :create), [as: :callback], fn callback -> %>
+          <div class="ph4 pv1">
+            <p>
+              We aim to give you a call within 24 hours of your request.
+            </p>
+            <div class="pv3">
+              <div class="w-40-ns dib-ns">
+                <%= label :callback, :name, "Name", class: "db" %>
+                <%= text_input :callback, :name, class: "mb2 w-80 db ba br2 pa2 montreal tracked dark-blue" %>
+              </div>
+              <div class="w-40-ns dib-ns">
+                <%= label :callback, :time, "Best Time to Call", class: "db" %>
+                <%= select :callback, :time, ["Morning", "Afternoon", "Evening"], class: "mb2 w-80 db ba br2 pa2 montreal tracked dark-blue h2" %>
+              </div>
+            </div>
+            <div class="w-40-ns dib-ns">
+              <%= label :callback, :phone, "Phone Number", class: "db" %>
+              <%= telephone_input :callback, :phone, class: "mb2 w-80 db ba br2 pa2 montreal tracked dark-blue" %>
+            </div>
+            <div class="w-40-ns dib-ns">
+              <%= component "button_ok", value: "Request Call back" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
