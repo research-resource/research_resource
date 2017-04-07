@@ -59,7 +59,7 @@ defmodule ResearchResource.ConsentControllerTest do
   @tag login_as: "me@test.com"
   test "GET /consent/view", %{conn: conn} do
     conn = get conn, "/consent/view"
-    assert html_response(conn, 200) =~ "My Consent"
+    assert html_response(conn, 200) =~ "These are the items you have consented to"
   end
 
   @tag login_as: "me@test.com"
