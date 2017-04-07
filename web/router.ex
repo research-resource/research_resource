@@ -26,6 +26,7 @@ defmodule ResearchResource.Router do
     get "/who", WhoWeAreController, :index
     get "/faqs", FaqsController, :index
     get "/terms_and_conditions", TsAndCsController, :index
+    get "/resources", ResourcesController, :index
 
     resources "/sessions", SessionController, only: [:new, :create, :delete]
     resources "/users", UserController, only: [:show, :new, :create]
