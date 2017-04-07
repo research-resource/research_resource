@@ -18,4 +18,19 @@ defmodule ResearchResource.Qualtrics.InMemory do
       "0" -> false
     end
   end
+
+  def get_contact(_contact_id) do
+    {:ok, %{
+      "email" => "email@email.com",
+      "emailHistory" => [],
+      "embeddedData" => nil,
+      "externalDataReference" => "TTRRID",
+      "firstName" => "Bob",
+      "id" => "idqualtrics",
+      "language" => "en-gb",
+      "lastName" => "Bob",
+      "responseHistory" => [],
+      "unsubscribed" => false}}
+  end
+
 end
