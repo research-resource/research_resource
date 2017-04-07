@@ -1,9 +1,52 @@
 <div class="mw9 center ph5-ns ph4 pt4 montreal dark-blue">
   <div class="dib w-60-ns v-mid pa2-ns">
-    <h2 class="ttu">My Consent</h2>
+    <h2>Hi, <%= @current_user.first_name %></h2>
+    <p>
+      These are the items you have consented to:
+    </p>
   </div>
 </div>
 
 <%= for { question, i } <- Enum.with_index @consent_questions do %>
   <%= component "consent_question", question: question, i: i, consent_answers: @consent_answers %>
 <% end %>
+
+<div class="montreal dark-blue bg-lightest-blue ph5 pv3">
+  <p>
+    If you wish to withdraw your consent from any of the above items, please contact the team:
+  </p>
+  <div class="pv1">
+    <p>
+      Call us for free: 0800 955 199
+    </p>
+    <p>
+      Email us: <a href="mailto:ttrr@example.com">ttrr@example.com</a>
+    </p>
+    <p>
+      <%= link "Read the FAQs", to: faqs_path(@conn, :index) %>
+    </p>
+  </div>
+  <div class="pv2">
+    <h3 class="ttu">Request a Call Back</h3>
+    <p>
+      We aim to give you a call within 24 hours of your request.
+    </p>
+    <%= form_for @conn, contact_path(@conn, :create), [as: :callback], fn callback -> %>
+      <div class="dib-ns w-20-ns">
+        <%= label callback, :name, "Name", class: "db" %>
+        <%= text_input callback, :name, class: "w-80 mb2 db ba br2 pa2 montreal tracked dark-blue" %>
+      </div>
+      <div class="dib-ns w-20-ns">
+        <%= label callback, :time, "Best Time to Call", class: "db" %>
+        <%= select callback, :time, ["Morning", "Afternoon", "Evening"], class: "w-80 mb2 db ba br2 pa2 montreal tracked dark-blue h2" %>
+      </div>
+      <div class="dib-ns w-20-ns">
+        <%= label callback, :phone, "Phone Number", class: "db" %>
+        <%= telephone_input callback, :phone, class: "w-80 mb4 mb2-ns db ba br2 pa2 montreal tracked dark-blue" %>
+      </div>
+      <div class="dib-ns">
+        <%= component "button_ok", value: "Request Call back" %>
+      </div>
+    <% end %>
+  </div>
+</div>
