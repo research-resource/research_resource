@@ -45,6 +45,8 @@ defmodule ResearchResource.ProjectsController do
     |> Map.merge(%{String.to_atom(complete_field) => 2})
     |> @redcap_api.save_record
 
+    send_project_email(conn.assigns.current_user, consent["id_project"])
+
     conn
     |> put_flash(:error, "Thanks for participating to the project!")
     |> redirect(to: projects_path(conn, :index))
@@ -55,6 +57,17 @@ defmodule ResearchResource.ProjectsController do
       "2" -> true
       _ -> false
     end
+  end
+
+  @contact_email Application.get_env(:research_resource, :contact_email)
+  defp send_project_email(user, project) do
+    subject = "New project application"
+    message = """
+    Hello,
+    #{user.first_name} - #{user.ttrrid} has applied for the following project: #{project}
+    """
+    ResearchResource.Email.send_email(@contact_email, subject, message)
+    |> ResearchResource.Mailer.deliver_now()
   end
 
 end
