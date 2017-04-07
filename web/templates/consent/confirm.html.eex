@@ -1,0 +1,10 @@
+<div class="montreal">
+  <div class="pa4 w-60 dib">
+    <p>
+      Thank you for requesting your saliva sample kit, you should receive it in the post shortly
+    </p>
+    <div class="pt4">
+      <%= link "Continue", to: "/qualtrics/new", class: "montreal-bold mr3 ba bw1 f16 link br-pill ph3 pv2 mb2 white bg-green hover-bg-white b--green hover-green pointer ttu" %>
+    </div>
+  </div>
+</div>
