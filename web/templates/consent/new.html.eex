@@ -1,5 +1,5 @@
 <div class="montreal dark-blue">
-  <div class="pa4 w-60 dib">
+  <div class="pa4 w-60-ns dib">
     <h2>Welcome To Research Resource, <%=String.capitalize @current_user.first_name%></h2>
     <p>
       The Talking Therapies Research Resource (TTRR) is one branch of the SLaM NIHR BioResource, and is a way for those who have received a talking therapy within IAPT to join the Bioresource for Mental Health. The Talking Therapies Research Resource Team refers to the group of researchers working on this project within the BioResource.
@@ -14,8 +14,8 @@
     </div>
   </div>
 
-  <div class="dib w-30 v-mid">
-    <div class="w-90 dn-m center">
+  <div class="dib dn-ns w-30 v-mid">
+    <div class="w-90 db-ns dn center">
       <%= component "request_call", conn: @conn %>
     </div>
   </div>
@@ -25,10 +25,10 @@
   <%= component "consent_question", question: question, i: i, f: f %>
   <% end %>
   <div class="pa4 bg-light-blue">
-    <div class="dib v-mid mr5 ph5">
+    <div class="dib v-mid ph5-ns">
       <h3>Please provide your details so that we can send you a saliva kit.</h3>
       <span>You should receive your kit within XX days.</span>
-      <div class="w-40 mt4">
+      <div class="w-40-ns mt4">
         <%= text_input f, :name, placeholder: "Name", class: "ba br2 pa2 montreal tracked dark-blue w-70 mb2" %>
         <%= text_input f, :postcode, placeholder: "Postcode", class: "ba br2 pa2 montreal tracked dark-blue w-70 mb2" %>
         <%= text_input f, :address_1, placeholder: "Address Line 1", class: "ba br2 pa2 montreal tracked dark-blue w-70 mb2" %>
@@ -39,7 +39,7 @@
     </div>
   </div>
   <div class="ph4">
-    <div class="pa3 ph5">
+    <div class="mt3 ph5-ns">
       <%= component "button_ok", class: "dn", value: "Next", id: "next-active" %>
       <%= component "button_error", class: nil, value: "You cannot complete registration", id: "next-inactive" %>
     </div>

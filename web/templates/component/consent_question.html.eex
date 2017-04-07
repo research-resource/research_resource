@@ -1,7 +1,7 @@
 <div class="pa4 montreal">
-  <span class="ph5"><%= @i + 1 %>.</span>
+  <span class="ph5-ns"><%= @i + 1 %>.</span>
   <div>
-    <div class="dib v-mid w-80 mr2 ph5">
+    <div class="dib-ns v-mid w-80-ns mr2 ph5-ns">
       <p>
         <%= @question["field_label"] %>
       </p>

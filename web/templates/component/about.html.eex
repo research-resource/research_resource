@@ -5,7 +5,7 @@
     </div>
 
     <div class="absolute right-2 dib w-30 pa2 v-mid">
-      <div class="w-25 fixed right-3 db-ns dn-ns dn" id="request-call-about">
+      <div class="w-25 fixed right-3 db-ns dn" id="request-call-about">
         <%= component "request_call", conn: @conn %>
       </div>
     </div>
