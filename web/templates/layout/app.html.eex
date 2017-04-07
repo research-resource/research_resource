@@ -23,7 +23,7 @@
       </main>
       <footer>
         <div class="center w-100 tc pa4 montreal">
-          <%= link "Ts & Cs", to: "#", class: "mh3 tc ttu no-underline dark-blue" %>
+          <%= link "Ts & Cs", to: ts_and_cs_path(@conn, :index), class: "mh3 tc ttu no-underline dark-blue" %>
           <%= link "FAQS", to: faqs_path(@conn, :index), class: "mh3 tc ttu no-underline dark-blue" %>
           <%= link "Contact Us", to: contact_path(@conn, :index), class: "mh3 tc no-underline dark-blue" %>
         </div>
