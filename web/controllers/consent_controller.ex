@@ -3,7 +3,7 @@ defmodule ResearchResource.ConsentController do
 
   alias ResearchResource.{Redcap.RedcapHelpers, Qualtrics.QualtricsHelpers, User}
 
-  plug :authenticate_user when action in [:new, :create, :view]
+  plug :authenticate_user when action in [:new, :create, :view, :confirm]
 
   @redcap_api Application.get_env(:research_resource, :redcap_api)
   @qualtrics_api Application.get_env(:research_resource, :qualtrics_api)
@@ -25,9 +25,14 @@ defmodule ResearchResource.ConsentController do
         conn
         |> create_user_redcap(consent)
         |> update_consent
-        |> send_saliva_email(consent)
         |> create_user_qualtrics
-        |> redirect(to: qualtrics_path(conn, :new))
+        |> send_saliva_email(consent)
+        |> case do
+          {:ok, :sent} ->
+            redirect(conn, to: consent_path(conn, :confirm))
+          {:ok, :not_sent} ->
+            redirect(conn, to: qualtrics_path(conn, :new))
+        end
       false ->
         conn
         |> put_flash(:error, "You must consent to the required questions")
@@ -102,7 +107,11 @@ defmodule ResearchResource.ConsentController do
   end
 
   def send_saliva_email(conn, user_details) do
-    if (user_details["name"]) do
+    if (Map.has_key?(user_details, "name") and
+      Map.has_key?(user_details, "address_1") and
+      user_details["name"] != "" and
+      user_details["address_1"] != ""
+    ) do
       subject = "Saliva Kit Requested"
       message = "The following user has requested a saliva kit:\n
       Name: #{user_details["name"]}\n
@@ -115,7 +124,14 @@ defmodule ResearchResource.ConsentController do
 
       ResearchResource.Email.send_email(@contact_email, subject, message)
       |> ResearchResource.Mailer.deliver_now()
+
+      {:ok, :sent}
+    else
+      {:ok, :not_sent}
     end
-    conn
+  end
+
+  def confirm(conn, _params) do
+    render conn, "confirm.html"
   end
 end

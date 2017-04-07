@@ -106,7 +106,7 @@
 
 /* Link styling */
 
-a, a:visited {
+a:not(.link), a:visited:not(.link) {
   color: #215968;
   overflow-wrap: break-word;
 }

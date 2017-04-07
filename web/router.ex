@@ -22,6 +22,7 @@ defmodule ResearchResource.Router do
     # /about/consent is used to display the about page after a user signup, see #106
     get "/about/consent", AboutController, :about
     get "/consent/view", ConsentController, :view
+    get "/consent/confirm", ConsentController, :confirm
     get "/who", WhoWeAreController, :index
     get "/faqs", FaqsController, :index
     get "/terms_and_conditions", TsAndCsController, :index
