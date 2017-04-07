@@ -6,18 +6,20 @@
 <%= if @current_user do %>
 
   <%= if !@project[:applied] do %>
-    <%= form_for @conn, projects_path(@conn, :create), [as: :consent], fn f -> %>
-      <%= hidden_input f, :id_project, value: @project[:id_project] %>
-      <%= for { question, i } <- Enum.with_index @project[:consents] do %>
-        <%= component "consent_question", question: question, i: i, f: f , error_message: error_message_consent()%>
-      <% end %>
+    <%= if @project[:status] != "archived" do %>
+      <%= form_for @conn, projects_path(@conn, :create), [as: :consent], fn f -> %>
+        <%= hidden_input f, :id_project, value: @project[:id_project] %>
+        <%= for { question, i } <- Enum.with_index @project[:consents] do %>
+          <%= component "consent_question", question: question, i: i, f: f , error_message: error_message_consent()%>
+        <% end %>
 
-      <div class="ph4">
-        <div class="pa3 ph5">
-          <%= component "button_ok", class: "dn", value: "Apply", id: "next-active" %>
-          <%= component "button_error", class: nil, value: "You cannot complete application", id: "next-inactive" %>
+        <div class="ph4">
+          <div class="pa3 ph5">
+            <%= component "button_ok", class: "dn", value: "Apply", id: "next-active" %>
+            <%= component "button_error", class: nil, value: "You cannot complete application", id: "next-inactive" %>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   <%= else %>
     <%= for { question, i } <- Enum.with_index @project[:consents] do %>
