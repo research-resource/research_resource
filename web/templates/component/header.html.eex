@@ -1,16 +1,31 @@
-<header class="header bg-light-blue pt3 pb3">
+<header class="header bg-light-blue pt3 pb3-ns">
   <nav role="navigation relative">
-    <img src="/images/elixir.png" class="db w3 center" alt="logo talking therapies reasearch resource" />
-    <%= if @current_user do %>
-        <div class="absolute-ns top-1 right-1 tc tracked dark-blue">
-          <span><%=String.capitalize @current_user.first_name%></span>
-          <span>|</span>
-          <%= link "My Account", to: account_path(@conn, :index), class: "no-underline dark-blue" %>
-        </div>
-    <% else %>
-      <a class="absolute montreal-bold top-1 right-1 f5 tracked-mega link ba bw1 hover-bg-white br-pill ph3 pv2 mb2 dib white hover-green bg-green b--green" href="<%=session_path(@conn, :new)%>">SIGN UP / LOG IN</a>
-    <% end %>
-    <div class="dt dt--fixed mw8 center pt5-ns">
+    <input type="checkbox" id="hamburger" class="dn"/>
+    <label class="w-20 ph3 dib dn-ns absolute top-2" for="hamburger">
+      <i class="fa fa-bars dark-blue f2"></i>
+    </label>
+    <div class="db tc w-100">
+      <img src="/images/elixir.png" class="h3" alt="logo talking therapies reasearch resource" />
+    </div>
+    <div class="dn db-ns">
+      <%= if @current_user do %>
+      <div class="absolute-ns top-1 right-1 tc tracked dark-blue">
+        <span><%=String.capitalize @current_user.first_name%></span>
+        <span>|</span>
+        <%= link "My Account", to: account_path(@conn, :index), class: "no-underline dark-blue" %>
+      </div>
+      <% else %>
+      <a class="absolute-ns montreal-bold top-1 right-1 f5 tracked-mega link ba bw1 hover-bg-white br-pill ph3 pv2 mb2 dib white hover-green bg-green b--green" href="<%=session_path(@conn, :new)%>">SIGN UP / LOG IN</a>
+      <% end %>
+    </div>
+    <div class="menu dt-ns dt--fixed-ns mw8 center pt5-ns pt4 pl0-ns pl3">
+      <div class="dn-ns">
+        <%= if @current_user do %>
+          <%= component "menu_item", item_value: "My Account", item_link: account_path(@conn, :index) %>
+        <% else %>
+          <%= component "menu_item", item_value: "Sign Up/Log In", item_link: session_path(@conn, :new) %>
+        <% end %>
+      </div>
       <%= component "menu_item", item_value: "Home", item_link: page_path(@conn, :index) %>
       <%= component "menu_item", item_value: "About", item_link: about_path(@conn, :index) %>
       <%= component "menu_item", item_value: "Projects", item_link: projects_path(@conn, :index) %>

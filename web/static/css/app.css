@@ -114,3 +114,15 @@ a:not(.link), a:visited:not(.link) {
 a:hover {
   text-decoration: none;
 }
+
+/* Hamburger Menu */
+
+.menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s;
+}
+
+#hamburger:checked ~ .menu {
+  max-height: 100vh;
+}
