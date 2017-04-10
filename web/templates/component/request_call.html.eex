@@ -17,7 +17,7 @@
       <%= label :callback, :phone, "Phone Number", class: "db" %>
       <%= telephone_input :callback, :phone, class: "mb2 w-100 db ba br2 pa2 montreal tracked dark-blue" %>
       <%= label :callback, :time, "Best Time to Call", class: "db" %>
-      <%= select :callback, :time, ["Morning", "Afternoon", "Evening"], class: "mb2 w-100 db ba br2 pa2 montreal tracked dark-blue h2" %>
+      <%= select :callback, :time, ["Morning", "Afternoon", "Evening"], class: "mb2 w-100 db ba br2 montreal tracked dark-blue h2" %>
       <div class="tc">
         <%= component "button_ok", value: "Request Call back" %>
       </div>
