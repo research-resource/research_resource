@@ -26,6 +26,12 @@ defmodule ResearchResource.ProjectsControllerTest do
     assert html_response(conn, 200) =~ "project 1"
   end
 
+  @tag login_as: "nottrrid@nottrrid.com"
+  test "GET /projects/project_1 - registration incomplete", %{conn: conn} do
+    conn = get conn, "/projects/project_1"
+    assert html_response(conn, 200) =~ "project 1"
+  end
+
   @tag login_as: "me@test.com"
   test "Post /project/create", %{conn: conn} do
     consent = %{

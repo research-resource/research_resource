@@ -105,7 +105,7 @@ defmodule ResearchResource.ConsentController do
     end
   end
 
-  def send_saliva_email(conn, user_details) do
+  def send_saliva_email(_conn, user_details) do
     if (Map.has_key?(user_details, "name") and
       Map.has_key?(user_details, "address_1") and
       user_details["name"] != "" and

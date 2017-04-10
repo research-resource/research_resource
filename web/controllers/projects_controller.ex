@@ -41,9 +41,9 @@ defmodule ResearchResource.ProjectsController do
     if user.ttrr_consent do
       {:ok, qualtics_contact} = @qualtrics_api.get_contact(user.qualtrics_id)
       response_survey = Enum.find(qualtics_contact["responseHistory"], &(&1["surveyId"] == @qualtrics_survey_id))
-      response_survey["finishedSurvey"]
+      response_survey["finishedSurvey"] && %{complete: true, step: nil} || %{commplete: false, step: "qualtrics"}
     else
-      false
+      %{complete: false, step: "primary_consent"}
     end
   end
 
