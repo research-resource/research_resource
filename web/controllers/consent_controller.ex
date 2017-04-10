@@ -50,7 +50,6 @@ defmodule ResearchResource.ConsentController do
 
     consent
     |> Enum.filter(fn {key, _} -> String.starts_with?(key, "consent") end)
-    |> Enum.map(fn {key, val} -> {Regex.replace(~r/_[yn]\b/, key, ""), val} end)
     |> RedcapHelpers.consent_to_record
     |> Map.merge(user_data)
     |> Map.merge(%{user_details_complete: 2, consent_complete: 2})

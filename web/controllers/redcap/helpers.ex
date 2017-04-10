@@ -19,13 +19,18 @@ defmodule ResearchResource.Redcap.RedcapHelpers do
   @doc """
   convert the value of a map from "Yes" or "No" to 1 or 0
   ## Example
-    iex> ResearchResource.Redcap.Helpers.consent_to_record(%{"consent_1" => "Yes", "consent_2" => "No"})
+    iex> ResearchResource.Redcap.Helpers.consent_to_record([%{"consent_1" => "Yes", "consent_2" => "No"}])
     %{"consent_1" => 1, "consent_2" => 0}
   """
   def consent_to_record(consent) do
+
     Map.new(consent,
       fn {k, v} ->
-        {k, v == "Yes" && 1 || 0}
+        if Regex.match?(~r/_[yn]\b/, k) do
+          {Regex.replace(~r/_[yn]\b/, k, ""), v == "Yes" && 1 || 0}
+        else
+          {k, v}
+        end
       end
     )
   end
