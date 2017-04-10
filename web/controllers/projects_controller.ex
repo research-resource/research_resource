@@ -77,7 +77,7 @@ defmodule ResearchResource.ProjectsController do
     subject = "New project application"
     message = """
     Hello,
-    #{user.first_name} - #{user.ttrrid} has applied for the following project: #{project}
+    #{user.first_name} - #{user.ttrrid} has consented to the following project: #{project}
     """
     ResearchResource.Email.send_email(@contact_email, subject, message)
     |> ResearchResource.Mailer.deliver_now()
