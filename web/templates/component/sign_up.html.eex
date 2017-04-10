@@ -1,33 +1,33 @@
 <p class="f3 montreal tracked-mega dark-blue tc">SIGN UP  TO <span class="montreal-bold">RESEARCH RESOURCE</span></p>
-<p class="center tc montreal tracked mw7 dark-blue">
+<p class="center tc montreal tracked mw7 dark-blue pa3">
   To begin signing up you just need to provide your name, email address and a password. You will be sent a notification email to check we have the best way of contacting you
 </p>
 <%= form_for create_user_changeset(assigns[:changeset]), user_path(@conn, :create), fn f -> %>
   <div class="mw7 center tc">
-      <div class="dib w-40 pa2">
+      <div class="dib-ns w-60 w-40-ns center pa2">
         <%= error_tag f, :first_name %>
         <%= text_input f, :first_name, placeholder: "First name", class: "ba br2 pa2 montreal tracked dark-blue w-100" %>
       </div>
 
-      <div class="dib w-40 pa2">
+      <div class="dib-ns w-60 w-40-ns center pa2">
         <%= error_tag f, :last_name %>
         <%= text_input f, :last_name, placeholder: "Last name", class: "ba br2 pa2 montreal tracked dark-blue w-100" %>
       </div>
 
-      <div class="dib w-40 pa2">
+      <div class="dib-ns w-60 w-40-ns center pa2">
         <%= error_tag f, :email %>
         <%= email_input f, :email, placeholder: "Email address", class: "ba br2 pa2 montreal tracked dark-blue w-100" %>
       </div>
 
-      <div class="dib w-40 pa2">
+      <div class="dib-ns w-60 w-40-ns center pa2">
         <%= error_tag f, :password %>
         <%= password_input f, :password, placeholder: "Password", class: "ba br2 pa2 montreal tracked dark-blue w-100" %>
       </div>
-      <span class="db center tc montreal tracked dark-blue">
+      <span class="db center tc montreal tracked dark-blue pa2">
         You can withdraw from the Resource at any time
       </span>
-      <%= submit "Sign Up", class: "pointer ttu montreal-bold top-1 right-1 f5 tracked-mega link ba bw1 hover-bg-white br-pill ph3 pv2 mt4 dib white hover-green bg-green b--green"%>
-      <span class="db center tc montreal tracked dark-blue">
+      <%= submit "Sign Up", class: "pointer ttu montreal-bold top-1 right-1 f5 tracked-mega link ba bw1 hover-bg-white br-pill ph3 pv2 mt2 dib white hover-green bg-green b--green"%>
+      <span class="db center tc montreal tracked dark-blue pt3">
         <%= link "Already have an account?", to: session_path(@conn, :new) %>
       </span>
   </div>
