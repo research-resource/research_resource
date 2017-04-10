@@ -1,11 +1,11 @@
 <div class="montreal dark-blue">
   <div class="mw9 center ph5 pt4">
-    <div class="dib w-40 mr7 v-mid pa2">
+    <div class="dib w-40-ns mr7-ns v-mid pa2">
       <h2 class="ttu">Log in</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
     </div>
 
-    <div class="dib w-20 pa2 v-mid">
+    <div class="dib-ns w-20-ns pa2 v-mid mb3 mb0-ns">
       <div class="bg-lightest-blue br1 pa3">
         <p>
           Haven't registered yet? <%= link "Sign up here", to: user_path(@conn, :new), class: "blue no-underline" %>
@@ -16,15 +16,15 @@
 
   <div class="bg-lightest-blue pa5">
     <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
-    <div class="dib mr3 w-20">
-      <%= email_input f, :email, placeholder: "Email", class: "ba br2 pa2 montreal tracked dark-blue w-100" %>
-    </div>
+      <div class="dib-ns mr3 mb3 mb0-ns w-20-ns">
+        <%= email_input f, :email, placeholder: "Email", class: "ba br2 pa2 montreal tracked dark-blue w-100" %>
+      </div>
 
-    <div class="dib mr3 w-20">
-      <%= password_input f, :password, placeholder: "Password", class: "ba br2 pa2 montreal tracked dark-blue w-100"  %>
-    </div>
+      <div class="dib-ns mr3 mb3 mb0-ns w-20-ns">
+        <%= password_input f, :password, placeholder: "Password", class: "ba br2 pa2 montreal tracked dark-blue w-100"  %>
+      </div>
 
-    <%= component "button_ok", value: "Log in", class: "mr3 bn f6 link dim br-pill ph3 pv2 mb2 white bg-blue" %>
+      <%= component "button_ok", value: "Log in", class: "mr3 bn f6 link dim br-pill ph3 pv2 mb2 mb0-ns white bg-blue" %>
     <% end %>
   </div>
 </div>

@@ -1,6 +1,6 @@
 <div class="montreal dark-blue">
-  <div class="mw9 center ph5 pv4">
-    <div class="dib w-40 mr7 pa2 v-mid">
+  <div class="mw9 center ph5-ns ph4 pt4">
+    <div class="dib w-40-ns pa2-ns v-mid">
       <h2 class="ttu">Our Projects</h2>
       <p>
         Here are some examples of the research studies that members can take part in. Some of these studies are designed to give us a better understand of what treatments work for whom, and why. Others explore the characteristics of those for whom treatment has not worked, or have a broader goal around understanding what leads to the development of disorders such as anxiety and depression.
@@ -15,15 +15,15 @@
 
     <div class="dib w-20 pa2 v-mid">
       <%= if !@current_user do %>
-      <div class="bg-near-white pa4">
+      <div class="bg-near-white pa4 db-ns dn">
         <%= link "Sign Up to the Research Resource", to: user_path(@conn, :new), class: "blue no-underline ttu" %>
       </div>
       <%= end %>
     </div>
   </div>
   <%= if @current_user do %>
-    <div class="pa4 bg-near-white">
-      <div class="mw9 center ph5">
+    <div class="pa4 bg-lightest-blue">
+      <div class="mw9 center ph5-ns">
         <h3 class="ttu ph3">My Projects</h3>
         <p class="ph3">
           These are the projects that you have already applied to:
@@ -36,8 +36,8 @@
       </div>
     </div>
 
-    <div class="pa4 bg-near-white">
-      <div class="mw9 center ph5">
+    <div class="pa4 bg-lightest-blue">
+      <div class="mw9 center ph5-ns">
         <h3 class="ttu ph3">Other Projects</h3>
         <p class="ph3">
           These are projects that you can still apply for:
@@ -50,8 +50,8 @@
       </div>
     </div>
   <% else %>
-    <div class="pa4 bg-near-white">
-      <div class="mw9 center ph5">
+    <div class="pa4 bg-lightest-blue">
+      <div class="mw9 center ph5-ns">
         <h3 class="ttu ph3">Current Projects</h3>
         <p class="ph3">
           These are projects that you can sign up to be a part of:
@@ -64,8 +64,8 @@
       </div>
     </div>
 
-    <div class="pa4 bg-near-white">
-      <div class="mw9 center ph5">
+    <div class="pa4 bg-lightest-blue">
+      <div class="mw9 center ph5-ns">
         <h3 class="ttu ph3">Archived Projects</h3>
         <p class="ph3">
           These are projects that have already finished. You can find out about the results here:
@@ -79,12 +79,12 @@
     </div>
   <% end %>
 
-  <%= component "signing_up", conn: @conn %>
-
   <%= if !@current_user do %>
-  <div class="bg-near-white ph5 pt3 pb5 mw9 center">
-    <h3 class="ttu">Sign Up</h3>
-    <%= component "sign_up", conn: @conn, current_user: @current_user %>
-  </div>
+    <%= component "signing_up", conn: @conn %>
   <% end %>
+
 </div>
+
+<%= if !@current_user do %>
+  <%= component "sign_up", conn: @conn, current_user: @current_user %>
+<% end %>
