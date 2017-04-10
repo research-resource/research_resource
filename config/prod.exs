@@ -15,11 +15,10 @@ config :research_resource, ResearchResource.Endpoint,
   http: [port: {:system, "PORT"}],
   url: [scheme: "https", host: "tt-research-resource.herokuapp.com", port: 443],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
-  cache_static_manifest: "priv/static/manifest.json",
-  debug_errors: true
+  cache_static_manifest: "priv/static/manifest.json"
 
 # Do not print debug messages in production
-config :logger, level: :debug
+config :logger, level: :info
 
 config :research_resource, ResearchResource.Repo,
   adapter: Ecto.Adapters.Postgres,
