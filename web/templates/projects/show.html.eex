@@ -7,7 +7,7 @@
 
 
     <%= if @current_user do %>
-      <%= if !@registration_complete do %>
+      <%= if @registration_complete[:complete] do %>
         <%= if !@project[:applied] do %>
           <%= if @project[:status] != "archived" do %>
             <%= form_for @conn, projects_path(@conn, :create), [as: :consent], fn f -> %>
@@ -31,9 +31,17 @@
           <% end %>
         <% end %>
       <% else %>
-      <p>
-        You must complete the <%= link "Qualtrics questionnaire", to: qualtrics_path(@conn, :new) %> to be able to apply to the project!
-      </p>
+        <%= if @registration_complete[:step] == "primary_consent" do %>
+          <p>
+            You must complete the <%= link "Talking Therapies Research Resource consents", to: consent_path(@conn, :new) %> before you can consent to this project
+          </p>
+        <% end %>
+
+        <%= if @registration_complete[:step] == "qualtrics" do %>
+          <p>
+            You must complete the <%= link "questionnaire about your experiences", to: qualtrics_path(@conn, :new) %> before you can consent to this project
+          </p>
+        <% end %>
       <% end %>
     <% end %>
   </div>
