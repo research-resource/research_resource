@@ -19,8 +19,8 @@
       <div class="pl4 ph6-ns pv4 bb b--white">
         <h3 class="dib w-80 ma0"><%= q["question"] %></h3>
         <label for="<%= "close-#{i}" %>" class="fr-ns dib br-100 h2 w2 bg-white tc relative pointer">
-          <img class="plus dn" src="/images/plus.svg" />
-          <img class="close dn" src="/images/close.svg" />
+          <i class="fa fa-plus plus dn pt1 f3"></i>
+          <i class="fa fa-close close dn pt1 f3"></i>
         </label>
       </div>
       <div class="pl6-ns pl4 pv3 w-80 ques">
