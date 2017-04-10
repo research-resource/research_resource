@@ -50,9 +50,9 @@ defmodule ResearchResource.ProjectsController do
   def create(conn, %{"consent" => consent}) do
     user_data = RedcapHelpers.user_to_record(conn.assigns.current_user)
     complete_field = consent["id_project"] <> "_complete"
+
     consent
     |> Enum.filter(fn {key, _} -> String.starts_with?(key, "consent") end)
-    |> Enum.map(fn {key, val} -> {Regex.replace(~r/_[yn]\b/, key, ""), val} end)
     |> RedcapHelpers.consent_to_record
     |> Map.merge(user_data)
     |> Map.merge(%{String.to_atom(complete_field) => 2})
@@ -61,7 +61,7 @@ defmodule ResearchResource.ProjectsController do
     send_project_email(conn.assigns.current_user, consent["id_project"])
 
     conn
-    |> put_flash(:error, "Thanks for participating to the project!")
+    |> put_flash(:error, "Thanks for applying to the project!")
     |> redirect(to: projects_path(conn, :index))
   end
 

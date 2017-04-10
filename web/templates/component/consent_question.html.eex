@@ -8,21 +8,33 @@
     </div>
     <%= if !assigns[:consent_answers] do %>
       <div class="dib v-mid">
-        <%= radio_button @f, question_name(@question["field_name"], @question["required_field"]), "Yes", class: "yes-consent", id: "yes-consent-#{@i+1}" %>
-        <%= label @f, question_name(@question["field_name"], @question["required_field"]), "Yes" %>
-        <%= radio_button @f, question_name(@question["field_name"], @question["required_field"]), "No", class: "no-consent", id: "no-consent-#{@i+1}" %>
-        <%= label @f, question_name(@question["field_name"], @question["required_field"]), "No" %>
-        <%= radio_button @f, question_name(@question["field_name"], @question["required_field"]), "Unselected", checked: true, class: "dn" %>
+        <%= if @question["field_type"] == "text" do %>
+          <%= text_input @f, String.to_atom(@question["field_name"]), class: "ba br2 pa2 montreal tracked dark-blue w-100" %>
+        <% end %>
+
+        <%= if @question["field_type"] == "yesno" do %>
+          <%= radio_button @f, question_name(@question["field_name"], @question["required_field"]), "Yes", class: "yes-consent", id: "yes-consent-#{@i+1}" %>
+          <%= label @f, question_name(@question["field_name"], @question["required_field"]), "Yes" %>
+          <%= radio_button @f, question_name(@question["field_name"], @question["required_field"]), "No", class: "no-consent", id: "no-consent-#{@i+1}" %>
+          <%= label @f, question_name(@question["field_name"], @question["required_field"]), "No" %>
+          <%= radio_button @f, question_name(@question["field_name"], @question["required_field"]), "Unselected", checked: true, class: "dn" %>
+        <% end %>
       </div>
     <% else %>
       <div class="dib v-mid">
-        <%= radio_button :disabled, question_name(@question["field_name"], @question["required_field"]),
-        "Yes", class: "yes-consent", id: "yes-consent-#{@i+1}", disabled: true, checked: get_checked_yes(@consent_answers[@question["field_name"]]) %>
-        <%= label :disabled, question_name(@question["field_name"], @question["required_field"]), "Yes" %>
+        <%= if @question["field_type"] == "text" do %>
+          <span> <%= @consent_answers[@question["field_name"]] %> </span>
+        <% end %>
 
-        <%= radio_button :disabled, question_name(@question["field_name"], @question["required_field"]),
-        "No", class: "no-consent", id: "no-consent-#{@i+1}", disabled: true, checked: get_checked_no(@consent_answers[@question["field_name"]]) %>
-        <%= label :disabled, question_name(@question["field_name"], @question["required_field"]), "No" %>
+        <%= if @question["field_type"] == "yesno" do %>
+          <%= radio_button :disabled, question_name(@question["field_name"], @question["required_field"]),
+          "Yes", class: "yes-consent", id: "yes-consent-#{@i+1}", disabled: true, checked: get_checked_yes(@consent_answers[@question["field_name"]]) %>
+          <%= label :disabled, question_name(@question["field_name"], @question["required_field"]), "Yes" %>
+
+          <%= radio_button :disabled, question_name(@question["field_name"], @question["required_field"]),
+          "No", class: "no-consent", id: "no-consent-#{@i+1}", disabled: true, checked: get_checked_no(@consent_answers[@question["field_name"]]) %>
+          <%= label :disabled, question_name(@question["field_name"], @question["required_field"]), "No" %>
+        <% end %>
       </div>
     <% end %>
     <div id="error-consent-<%= @i+1 %>" class="pl3 mh5 dn ba b--red bg-red-10 w-80 br-pill">
