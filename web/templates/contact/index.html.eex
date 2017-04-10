@@ -1,8 +1,8 @@
 <div class="cf montreal dark-blue">
     <div class="fl-ns w-50-ns pv2 ph6-ns ph2 h-100">
       <h2 class="mb4">Contact Us</h2>
-      <p>Call us for free: 020789123</p>
-      <p class="mb4">Email us: ttrr@example.com</p>
+      <p>Call us for free: 0800 955 199</p>
+      <p class="mb4">Email us: <a href="mailto:ttrr@kcl.ac.uk">ttrr@kcl.ac.uk</a></p>
       <h3>Request a Call Back</h3>
       <p class="mb4">We aim to give you a call within 24 hours of your request.</p>
       <%= form_for @conn, contact_path(@conn, :create), [as: :callback], fn callback -> %>

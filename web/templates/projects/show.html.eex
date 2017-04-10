@@ -39,7 +39,7 @@
 
         <%= if @registration_complete[:step] == "qualtrics" do %>
           <p>
-            You must complete the <%= link "questionnaire about your experiences", to: qualtrics_path(@conn, :new) %> before you can consent to this project
+            You must complete the <%= link "TTRR sign-up questionnaire", to: qualtrics_path(@conn, :new) %> before you can consent to this project
           </p>
         <% end %>
       <% end %>

@@ -7,9 +7,9 @@
         </div>
         <div class="ph4 pv3">
           <p class="ph3 pv1">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+            If you would like to download a PDF version of the Talking Therapies Research Resource Information Sheet, please click here
           </p>
-          <a href="#" class="blue no-underline">DOWNLOAD</a>
+          <%= link "DOWNLOAD", to: about_path(@conn, :download) %>
         </div>
       </div>
     </div>

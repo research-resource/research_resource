@@ -20,4 +20,9 @@ defmodule ResearchResource.AboutControllerTest do
     conn = get conn, "/about/consent"
     assert html_response(conn, 200) =~ "About"
   end
+
+  test "GET /about/download", %{conn: conn} do
+    conn = get conn, "/about/download"
+    assert conn.status == 200
+  end
 end

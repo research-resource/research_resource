@@ -10,4 +10,11 @@ defmodule ResearchResource.AboutController do
   def about(conn, _params) do
     render conn, "about.html"
   end
+
+  def download(conn, _params) do
+    filename = Path.expand("web/static/assets/participant_information_sheet.pdf")
+    conn
+    |> put_resp_header("content-disposition", ~s(attachment; filename="participant_information_sheet.pdf"))
+    |> send_file(200, filename)
+  end
 end
