@@ -1,8 +1,20 @@
+<div class="hero montreal">
+  <div class="splash">
+    <div class="splash-image tc pt4">
+      <h1 class="montreal-bold white tc center relative-ns w-40-ns ph2">
+        <span class="lemon-tuesday db">Welcome to</span><span>TALKING THERAPIES RESEARCH RESOURCE</span>
+      </h1>
+      <p class="white tc center relative-ns w-60-ns lh-copy-ns ph4">
+        This is an exciting  opportunity to get involved in a major UK research study about psychological wellbeing and talking therapies. You are eligible if you have recently been referred to a talking therapies (IAPT) service within Croydon, Lambeth, Lewisham or Southwark.
+      </p>
+    </div>
+  </div>
+</div>
 <%= if !@current_user do %>
   <%= component "sign_up", conn: @conn %>
 <% end %>
-<div class="more bg-light-blue">
-  <p class="f3 montreal tracked-mega dark-blue tc pt4 pt5-ns">MORE ABOUT <span class="montreal-bold">RESEARCH RESOURCE</span></p>
+<div class="more bg-lightest-blue">
+  <p class="f3 montreal tracked-mega dark-blue tc pt4 pt5-ns mt0">MORE ABOUT <span class="montreal-bold">RESEARCH RESOURCE</span></p>
   <div class="w-80-ns center tc pa5-ns pa4">
     <div class="dib-ns w-30-ns">
       <a class="w-80 w-70-ns ttu montreal-bold top-1 right-1 f5 tracked-mega link ba bw1 hover-bg-white br-pill ph3 pv2 mb2 dib white hover-green bg-green b--green" href="/about">About</a>

@@ -1,3 +1,34 @@
+/* Homepage */
+
+.hero {
+  background-image: url("/images/home-page-background.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 75vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  margin-bottom: 10%;
+}
+
+.splash-image {
+  background-image: url("/images/home-page-splash.png");
+  background-size: 100% 90%;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -40%;
+  left: -15%;
+  padding-right: 10em;
+}
+
+.splash p, h1 {
+  left: 25%;
+  top: 15%;
+}
+
 /* Phoenix flash messages */
 .alert:empty {
   display: none;
@@ -125,4 +156,25 @@ a:hover {
 
 #hamburger:checked ~ .menu {
   max-height: 100vh;
+}
+
+/* Large Screens */
+
+@media (min-width: 1600px) {
+    body {
+      font-size: 25px;
+    }
+}
+
+@media (max-width: 800px) {
+  .hero, .splash-image {
+    background-image: none;
+    position: static;
+    padding-right: 0;
+    height: auto;
+  }
+
+  .splash-image h1, .splash-image p {
+    color: #215968;
+  }
 }
