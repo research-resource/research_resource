@@ -8,6 +8,7 @@
     <meta name="author" content="">
 
     <title>Talking Therapies Research Resource</title>
+    <script src="https://use.fontawesome.com/62d12c3585.js"></script>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
