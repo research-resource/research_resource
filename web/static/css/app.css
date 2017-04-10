@@ -157,3 +157,24 @@ a:hover {
 #hamburger:checked ~ .menu {
   max-height: 100vh;
 }
+
+/* Large Screens */
+
+@media (min-width: 1600px) {
+    body {
+      font-size: 25px;
+    }
+}
+
+@media (max-width: 800px) {
+  .hero, .splash-image {
+    background-image: none;
+    position: static;
+    padding-right: 0;
+    height: auto;
+  }
+
+  .splash-image h1, .splash-image p {
+    color: #215968;
+  }
+}
