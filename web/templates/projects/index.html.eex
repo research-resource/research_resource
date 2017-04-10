@@ -79,10 +79,6 @@
     </div>
   <% end %>
 
-  <%= if !@current_user do %>
-    <%= component "signing_up", conn: @conn %>
-  <% end %>
-
 </div>
 
 <%= if !@current_user do %>
