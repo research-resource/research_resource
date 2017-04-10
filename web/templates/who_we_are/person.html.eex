@@ -1,6 +1,10 @@
 <div class="db mt4 w-100 tc tl-ns">
   <div class="dib v-mid mr3">
-    <div class="br-100 h4 w4 bg-light-gray"></div>
+    <%=  if @team_member["image"] != "" do %>
+      <img src="/images/ttrr_team/<%=  @team_member["image"]%>" class="br-100 h4 w4" alt="avatar">
+    <% else %>
+      <div class="br-100 h4 w4 bg-light-gray"></div>
+    <% end %>
   </div>
   <div class="dib v-mid w-60-ns w-100">
     <h4>

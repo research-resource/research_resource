@@ -4,19 +4,22 @@
       "name": "Alice Coulson",
       "title": "Lead Research Worker",
       "description": "Alice is the Research Worker responsible for the day-to-day running of the TTRR. Her role is to help potential and current members with any questions they may have about the Research Resource, BioResource or the research projects advertised.",
-      "links": []
+      "links": [],
+      "image": ""
     },
     {
       "name": "Katie White",
       "title": "PhD Student",
       "description": "Katie’s role is to assist with the running of the TTRR. She is also conducting research into what factors influence how people respond to psychological treatment.",
-      "links": []
+      "links": [],
+      "image": ""
     },
     {
       "name": "Shivani Parikh",
       "title": "Placement Student",
       "description": "As well as being on hand to help any members with questions about the TTRR, the students working on the website help to ensure that all the information shown is up-to-date and accurate.",
-      "links": []
+      "links": [],
+      "image": ""
     }
   ],
   "investigators": [
@@ -40,7 +43,8 @@
           "name": "Twitter",
           "url": "https://twitter.com/thaliaeley?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
         }
-      ]
+      ],
+      "image": "thalia.jpg"
     },
     {
       "name": "Dr Gerome Breen",
@@ -50,7 +54,8 @@
         {
           "url": "https://kclpure.kcl.ac.uk/portal/gerome.breen.html"
         }
-      ]
+      ],
+      "image": "gerome.jpg"
     },
     {
       "name": "Dr Janet Wingrove",
@@ -60,7 +65,8 @@
         {
           "url": "https://kclpure.kcl.ac.uk/portal/en/persons/janet-wingrove(d0c7837c-17fa-4d49-84df-b93cd0a698c6).html"
         }
-      ]
+      ],
+      "image": ""
     },
     {
       "name": "Prof Antony Cleare",
@@ -70,7 +76,8 @@
         {
           "url": "https://kclpure.kcl.ac.uk/portal/anthony.cleare.html"
         }
-      ]
+      ],
+      "image": ""
     },
     {
       "name": "Dr Katharine Rimes",
@@ -80,7 +87,8 @@
         {
           "url": "https://kclpure.kcl.ac.uk/portal/katharine.rimes.html"
         }
-      ]
+      ],
+      "image": "kate.jpg"
     },
     {
       "name": "Dr Kimberly Goldsmith",
@@ -90,7 +98,8 @@
         {
           "url": "https://kclpure.kcl.ac.uk/portal/kimberley.goldsmith.html"
         }
-      ]
+      ],
+      "image": "kim.jpg"
     },
     {
       "name": "Prof Allan Young",
@@ -100,7 +109,8 @@
         {
           "url": "https://kclpure.kcl.ac.uk/portal/allan.young.html"
         }
-      ]
+      ],
+      "image": ""
     },
     {
       "name": "Prof Matthew Hotopf",
@@ -110,7 +120,8 @@
         {
           "url": "https://kclpure.kcl.ac.uk/portal/matthew.hotopf.html"
         }
-      ]
+      ],
+      "image": ""
     },
     {
       "name": "Prof Carmine Pariante",
@@ -120,7 +131,8 @@
         {
           "url": "https://kclpure.kcl.ac.uk/portal/carmine.pariante.html"
         }
-      ]
+      ],
+      "image": ""
     }
   ]
 }
