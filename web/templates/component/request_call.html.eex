@@ -2,10 +2,10 @@
   <div class="bb b--white pv3 ph4">
     <h3 class="ma0">Need some help?</h3>
       <p>
-        Call us for free: 020 789123
+        Call us for free: 0800 955 199
       </p>
       <p>
-        Email us: <a href="mailto:ttrr@example.com">ttrr@example.com</a>
+        Email us: <a href="mailto:ttrr@kcl.ac.uk">ttrr@kcl.ac.uk</a>
       </p>
       <%= link "Read the FAQs", to: faqs_path(@conn, :index) %>
   </div>
