@@ -13,9 +13,9 @@
 
 .splash-image {
   background-image: url("/images/home-page-splash.png");
-  background-size: 100% 90%;
+  background-size: 100% 100%;
   width: 100%;
-  height: 100%;
+  height: 30em;
   background-position: center center;
   background-repeat: no-repeat;
   position: absolute;
@@ -176,10 +176,27 @@ a:hover {
 
 /* Large Screens */
 
-@media (min-width: 1600px) {
+@media (min-width: 1500px) {
     body {
       font-size: 25px;
     }
+}
+
+@media (max-width: 1000px) {
+  .splash-image {
+    width: 100%;
+    height: 25em;
+    padding: 0;
+  }
+
+  .splash p, h1 {
+    left: 15%;
+    top: 10%;
+  }
+
+  body {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 800px) {
@@ -188,9 +205,12 @@ a:hover {
     position: static;
     padding-right: 0;
     height: auto;
+    width: auto;
   }
 
   .splash-image h1, .splash-image p {
     color: #215968;
+    left: 0;
+    top: 0;
   }
 }
