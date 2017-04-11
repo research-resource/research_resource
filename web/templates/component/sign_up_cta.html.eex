@@ -1,5 +1,5 @@
 <div class="db dib-ns w-30-ns center pa2 v-mid">
   <div class="bg-lightest-blue pa3 w-60 center br1 tc">
-    <%= link "Sign Up to the Research Resource", to: user_path(@conn, :new), class: "blue no-underline ttu" %>
+    <%= link "Sign Up to the Research Resource", to: user_path(@conn, :new), class: "no-underline ttu" %>
   </div>
 </div>
