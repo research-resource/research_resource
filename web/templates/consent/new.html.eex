@@ -1,8 +1,9 @@
 <div class="montreal dark-blue">
   <div class="pa4 w-60-ns dib">
-    <h2>Welcome To Research Resource, <%=String.capitalize @current_user.first_name%></h2>
+    <h2>GENERAL ADULT CONSENT FORM</h2>
+    <h3>Name of Principal Investigators: Prof. Thalia Eley and Dr Gerome Breen</h3>
     <p>
-      The Talking Therapies Research Resource (TTRR) is one branch of the SLaM NIHR BioResource, and is a way for those who have received a talking therapy within IAPT to join the Bioresource for Mental Health. The Talking Therapies Research Resource Team refers to the group of researchers working on this project within the BioResource.
+      The Talking Therapies Research Resource (TTRR) is a branch of the SLaM NIHR BioResource for Mental Health. It is a way for those who have received a talking therapy within IAPT to participate in research aimed at understanding how these treatments work and the causes of anxiety and depression. Within the BioResource, the Talking Therapies Research Resource team is responsible for the project.
     </p>
     <p>
       The animation below illustrates the key steps involved in signing up to the BioResource through the TTRR.
@@ -20,6 +21,7 @@
     </div>
   </div>
 
+  <h3 class="ph5">Consent items for the Talking Therapies Research Resource</h3>
   <%= form_for @conn, consent_path(@conn, :create), [as: :consent], fn f -> %>
   <%= for { question, i } <- Enum.with_index @consent_questions do %>
   <%= component "consent_question", question: question, i: i, f: f %>
