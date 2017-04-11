@@ -5,8 +5,8 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
     </div>
 
-    <div class="dib-ns w-20-ns pa2 v-mid mb3 mb0-ns">
-      <div class="bg-lightest-blue br1 pa3">
+    <div class="db dib-ns w-30-ns center pa2 v-mid">
+      <div class="bg-lightest-blue pa3-ns pa2 mb3 w-60-ns w-75 center br1 tc">
         <p>
           Haven't registered yet? <%= link "Sign up here", to: user_path(@conn, :new), class: "blue no-underline" %>
         </p>

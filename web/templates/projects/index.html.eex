@@ -1,6 +1,6 @@
 <div class="montreal dark-blue">
-  <div class="mw9 center ph5-ns ph4 pt4">
-    <div class="dib w-40-ns pa2-ns v-mid">
+  <div class="mw9 center ph5-ns ph4 pv4">
+    <div class="dib w-60-ns pa2-ns v-mid">
       <h2 class="ttu">Our Projects</h2>
       <p>
         Here are some examples of the research studies that members can take part in. Some of these studies are designed to give us a better understand of what treatments work for whom, and why. Others explore the characteristics of those for whom treatment has not worked, or have a broader goal around understanding what leads to the development of disorders such as anxiety and depression.
@@ -13,13 +13,9 @@
       </p>
     </div>
 
-    <div class="dib w-20 pa2 v-mid">
-      <%= if !@current_user do %>
-      <div class="bg-near-white pa4 db-ns dn">
-        <%= link "Sign Up to the Research Resource", to: user_path(@conn, :new), class: "blue no-underline ttu" %>
-      </div>
-      <%= end %>
-    </div>
+    <%= if !@current_user do %>
+      <%= component "sign_up_cta", conn: @conn %>
+    <%= end %>
   </div>
   <%= if @current_user do %>
     <div class="pa4 bg-lightest-blue">
