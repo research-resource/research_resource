@@ -77,6 +77,10 @@
   color: #215968;
 }
 
+.dark-green {
+  color: #19A974;
+}
+
 .light-blue {
   color: #B7DEE8;
 }
@@ -98,12 +102,20 @@
   border-color: #99C937;
 }
 
+.b--dark-green {
+  border-color: #19A974;
+}
+
 .b--red {
   border-color: #A70042;
 }
 
 .bg-dark-blue {
   background-color: #215968;
+}
+
+.bg-dark-green {
+  background-color: #19A974;
 }
 
 .bg-light-blue {
@@ -120,6 +132,10 @@
 
 .bg-red-10 {
   background-color: rgba(167,00,42,0.1);
+}
+
+.bg-dark-green-10 {
+  background-color: rgba(25,169,116,0.1);
 }
 
 /* Consent Alert CSS */

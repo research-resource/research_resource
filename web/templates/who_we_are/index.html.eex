@@ -7,13 +7,9 @@
       </p>
     </div>
 
-    <div class="dn dib-ns w-30 center pa2 v-mid">
-      <%= if !@current_user do %>
-      <div class="bg-lightest-blue pa3 w-60 center br1">
-        <%= link "Sign Up to the Research Resource", to: user_path(@conn, :new), class: "blue no-underline ttu" %>
-      </div>
-      <%= end %>
-    </div>
+    <%= if !@current_user do %>
+      <%= component "sign_up_cta", conn: @conn %>
+    <%= end %>
   </div>
 
   <div class="bg-lightest-blue pa4">
