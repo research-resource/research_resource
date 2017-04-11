@@ -1,3 +1,3 @@
 <div class="dtc-ns tc-ns db f3 f5-ns mb2 <%=assigns[:class]%>">
-  <a href="<%=@item_link%>" class="no-underline montreal dark-blue pointer"><%=@item_value%></a>
+  <a href="<%=@item_link%>" class="no-underline dark-blue pointer <%= @item_link == @conn.request_path && "montreal-bold" || "montreal" %>"><%=@item_value%></a>
 </div>
