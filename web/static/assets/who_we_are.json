@@ -119,6 +119,26 @@
       "links": [
         {
           "url": "https://kclpure.kcl.ac.uk/portal/matthew.hotopf.html"
+        },
+        {
+          "name": "IMPARTS Website",
+          "url": "http://www.kcl.ac.uk/ioppn/depts/pm/events/IMPARTS.aspx"
+        },
+        {
+          "name": "BRC Website",
+          "url": "http://www.maudsleybrc.nihr.ac.uk/"
+        },
+        {
+          "name": "RADAR CNS website",
+          "url": "http://www.radar-cns.org/"
+        },
+        {
+          "name": "Follow Matthew on Twitter",
+          "url": "https://twitter.com/MatthewHotopf"
+        },
+        {
+          "name": "Linkedin",
+          "url": "https://www.linkedin.com/in/matthew-hotopf-401282b2/"
         }
       ],
       "image": "matthew.jpg"
@@ -130,6 +150,18 @@
       "links": [
         {
           "url": "https://kclpure.kcl.ac.uk/portal/carmine.pariante.html"
+        },
+        {
+          "name": "Visit our new Facebook Page",
+          "url": "https://www.facebook.com/SPILabKCL/"
+        },
+        {
+          "name": "Follow us on Twitter",
+          "url": "https://twitter.com/ParianteSPILab https://twitter.com/SPILabKCL"
+        },
+        {
+          "name": "My last blog on the Huffington Post: Do antidepressants save lives?",
+          "url": "http://www.huffingtonpost.co.uk/carmine-pariante/do-antidepressants-save-l_b_14616018.html"
         }
       ],
       "image": "carmine.jpg"
