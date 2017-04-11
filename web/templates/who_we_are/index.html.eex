@@ -37,7 +37,7 @@
   </div>
 
   <%= if !@current_user do %>
-  <div class="ph5 pt3 pb5 mw9 center">
+  <div class="ph5-ns pt3 pb5 mw9 center">
     <%= component "sign_up", conn: @conn, current_user: @current_user %>
   </div>
   <% end %>

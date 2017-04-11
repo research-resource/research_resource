@@ -1,5 +1,6 @@
-<h1>TTRR Sign-Up Questionnaire</h1>
-<div class="aspect-ratio aspect-ratio--1x1 h100 w100">
-  <iframe src="<%= @survey_link %>" class="aspect-ratio--object" frameborder="0"></iframe>
+<div class="pa4 montreal">  
+  <h1>TTRR Sign-Up Questionnaire</h1>
+  <div class="aspect-ratio aspect-ratio--1x1 h100 w100">
+    <iframe src="<%= @survey_link %>" class="aspect-ratio--object" frameborder="0"></iframe>
+  </div>
 </div>
-
