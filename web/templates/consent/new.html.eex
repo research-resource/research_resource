@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <div class="dib dn-ns w-30 v-mid">
+  <div class="dib-ns dn w-30 v-mid">
     <div class="w-90 db-ns dn center">
       <%= component "request_call", conn: @conn %>
     </div>
