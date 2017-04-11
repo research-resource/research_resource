@@ -8,7 +8,7 @@
     <div class="db dib-ns w-30-ns center pa2 v-mid">
       <div class="bg-lightest-blue pa3-ns pa2 mb3 w-60-ns w-75 center br1 tc">
         <p>
-          Haven't registered yet? <%= link "Sign up here", to: user_path(@conn, :new), class: "blue no-underline" %>
+          Haven't registered yet? <%= link "Sign up here", to: user_path(@conn, :new), class: "blue underline" %>
         </p>
       </div>
     </div>

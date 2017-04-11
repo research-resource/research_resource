@@ -1,10 +1,11 @@
 <div class="montreal dark-blue">
   <div class="mw9 center ph5-ns ph4 pt4">
-    <h1> <%= @project[:name] %> </h1>
-    <p>
-      <%= @project[:description] %>
-    </p>
-
+    <div class="dib w-60-ns pa2-ns v-mid">
+      <h1> <%= @project[:name] %> </h1>
+      <p>
+        <%= @project[:description] %>
+      </p>
+    </div>
 
     <%= if @current_user do %>
       <%= if @registration_complete[:complete] do %>
