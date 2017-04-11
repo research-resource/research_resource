@@ -15,7 +15,7 @@
       <%= @team_member["description"] %>
       <ul class="list pl1">
         <%= for link <- @team_member["links"] do %>
-        <li>
+        <li class="mb2">
           <a href="<%= link["url"] %>">
             <%= if link["name"] do %>
             <%= link["name"] %>
