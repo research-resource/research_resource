@@ -5,7 +5,7 @@
       <i class="fa fa-bars dark-blue f2"></i>
     </label>
     <div class="db tc w-100">
-      <img src="/images/elixir.png" class="h3" alt="logo talking therapies reasearch resource" />
+      <img src="/images/RR_Logo.svg" class="h3 bg-white pa1 br2" alt="logo talking therapies reasearch resource" />
     </div>
     <div class="dn db-ns">
       <%= if @current_user do %>
