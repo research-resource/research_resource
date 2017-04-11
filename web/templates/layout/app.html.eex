@@ -16,8 +16,8 @@
     <div class="">
       <%= component "header", conn: @conn, current_user: @current_user %>
 
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+      <p class="alert alert-info bg-dark-green-10 b--dark-green ba w-90 center br3 dark-green pa1 montreal" role="alert"><%= get_flash(@conn, :info) %></p>
+      <p class="alert alert-danger bg-red-10 b--red ba w-90 center br3 red pa1 montreal" role="alert"><%= get_flash(@conn, :error) %></p>
 
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
