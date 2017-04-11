@@ -21,17 +21,17 @@
     <div class="menu dt-ns dt--fixed-ns mw8 center pt5-ns pt4 pl0-ns pl3">
       <div class="dn-ns">
         <%= if @current_user do %>
-          <%= component "menu_item", item_value: "My Account", item_link: account_path(@conn, :index) %>
+          <%= component "menu_item", item_value: "My Account", item_link: account_path(@conn, :index), conn: @conn %>
         <% else %>
-          <%= component "menu_item", item_value: "Sign Up/Log In", item_link: session_path(@conn, :new) %>
+          <%= component "menu_item", item_value: "Sign Up/Log In", item_link: session_path(@conn, :new), conn: @conn %>
         <% end %>
       </div>
-      <%= component "menu_item", item_value: "Home", item_link: page_path(@conn, :index) %>
-      <%= component "menu_item", item_value: "About", item_link: about_path(@conn, :index) %>
-      <%= component "menu_item", item_value: "Projects", item_link: projects_path(@conn, :index) %>
-      <%= component "menu_item", item_value: "Who we are", item_link: who_we_are_path(@conn, :index) %>
-      <%= component "menu_item", item_value: "FAQs", item_link: faqs_path(@conn, :index) %>
-      <%= component "menu_item", item_value: "Resources", item_link: resources_path(@conn, :index) %>
+      <%= component "menu_item", item_value: "Home", item_link: page_path(@conn, :index), conn: @conn %>
+      <%= component "menu_item", item_value: "About", item_link: about_path(@conn, :index), conn: @conn %>
+      <%= component "menu_item", item_value: "Projects", item_link: projects_path(@conn, :index), conn: @conn %>
+      <%= component "menu_item", item_value: "Who we are", item_link: who_we_are_path(@conn, :index), conn: @conn %>
+      <%= component "menu_item", item_value: "FAQs", item_link: faqs_path(@conn, :index), conn: @conn %>
+      <%= component "menu_item", item_value: "Resources", item_link: resources_path(@conn, :index), conn: @conn %>
     </div>
   </nav>
 </header>
