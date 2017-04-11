@@ -37,11 +37,11 @@
         <% end %>
       </div>
     <% end %>
-    <div id="error-consent-<%= @i+1 %>" class="pl3 mh5 dn ba b--red bg-red-10 w-80 br-pill">
-      <div class="v-mid dib br-100 h3 w3 bg-white tc pt1">
-        <span class="f1">!</span>
+    <div id="error-consent-<%= @i+1 %>" class="pl3-ns mh5-ns dn ba b--red bg-red-10 w-100 w-80-ns br-pill mt0-ns mt3">
+      <div class="v-mid dib-ns center br-100 h3-ns w3-ns h2 w2 tc pt1">
+        <span class="f1-ns f2">!</span>
       </div>
-      <div class="dib v-mid ph4 pv1">
+      <div class="dib v-mid ph4-ns ph4 pv1 tl-ns tc f6">
         <p>
           <%= if assigns[:error_message] do %>
             <%=  @error_message %>
@@ -50,7 +50,7 @@
           <% end %>
         </p>
         <p>
-          If you are unsure, why not give us a call to talk it through: 020 123 456 - or <a href="#">request a call back</a>
+          If you are unsure, why not give us a call to talk it through: 0800 955 199 - or <a href="/contact">request a call back</a>
         </p>
       </div>
     </div>
