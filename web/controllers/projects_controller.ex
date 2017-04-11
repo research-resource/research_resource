@@ -61,7 +61,7 @@ defmodule ResearchResource.ProjectsController do
     send_project_email(conn.assigns.current_user, consent["id_project"])
 
     conn
-    |> put_flash(:error, "Thanks for applying to the project!")
+    |> put_flash(:info, "Thanks for consenting to the project!")
     |> redirect(to: projects_path(conn, :index))
   end
 
