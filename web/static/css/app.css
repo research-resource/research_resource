@@ -1,39 +1,3 @@
-/* Homepage */
-
-.hero {
-  background-image: url("/images/home-page-background.jpg");
-  background-size: cover;
-  width: 100%;
-  height: 75vh;
-  background-position: center center;
-  background-repeat: no-repeat;
-  position: relative;
-  margin-bottom: 10%;
-}
-
-.splash-image {
-  background-image: url("/images/home-page-splash.png");
-  background-size: 100% 100%;
-  width: 100%;
-  height: 30em;
-  background-position: center center;
-  background-repeat: no-repeat;
-  position: absolute;
-  bottom: -40%;
-  left: -15%;
-  padding-right: 10em;
-}
-
-.splash p, h1 {
-  left: 25%;
-  top: 15%;
-}
-
-/* Phoenix flash messages */
-.alert:empty {
-  display: none;
-}
-
 /* Fonts */
 @font-face {
     font-family: "Montreal";
@@ -138,6 +102,47 @@
   background-color: rgba(25,169,116,0.1);
 }
 
+/* Style Guide */
+p {
+  font-family: 'Montreal', sans-serif;
+  font-size: 16px;
+}
+
+/* Homepage */
+.hero {
+  background-image: url("/images/home-page-background.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 75vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  margin-bottom: 10%;
+}
+
+.splash-image {
+  background-image: url("/images/home-page-splash.png");
+  background-size: 100% 100%;
+  width: 100%;
+  height: 30em;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -40%;
+  left: -15%;
+  padding-right: 10em;
+}
+
+.splash p, h1 {
+  left: 25%;
+  top: 15%;
+}
+
+/* Phoenix flash messages */
+.alert:empty {
+  display: none;
+}
+
 /* Consent Alert CSS */
 .close-faq:not(:checked) ~ div.ques {
   display: none;
@@ -152,7 +157,6 @@
 }
 
 /* Link styling */
-
 a:not(.link), a:visited:not(.link) {
   color: #215968;
   overflow-wrap: break-word;
@@ -163,7 +167,6 @@ a:hover {
 }
 
 /* Hamburger Menu */
-
 .menu {
   max-height: 0;
   overflow: hidden;
@@ -174,8 +177,7 @@ a:hover {
   max-height: 100vh;
 }
 
-/* Large Screens */
-
+/* Media Queries */
 @media (min-width: 1500px) {
     body {
       font-size: 25px;

@@ -10,17 +10,17 @@
   </div>
 
   <%= for { q, i } <- Enum.with_index @faqs do %>
-    <div class="bg-lightest-blue bb b--white">
+    <div class="bb b--white">
       <input id="<%= "close-#{i}" %>" class="close-faq dn" type="checkbox"/>
-      <div class="pl4 ph6-ns pv4 bb b--white">
-        <h3 class="dib w-80 ma0"><%= q["question"] %></h3>
-        <label for="<%= "close-#{i}" %>" class="fr-ns dib br-100 h2 w2 bg-white tc relative pointer">
+      <div class="bg-lightest-blue ph5 pv4 bb b--white">
+        <h3 class="dib w-80 ma0 pa2"><%= q["question"] %></h3>
+        <label for="<%= "close-#{i}" %>" class="fr-ns dib br-100 h2 w2 bg-white tc relative pointer mr3">
           <i class="fa fa-plus plus dn pt1 f3"></i>
           <i class="fa fa-close close dn pt1 f3"></i>
         </label>
       </div>
-      <div class="pl6-ns pl4 pv3 w-80 ques">
-        <p>
+      <div class="bg-white pl5-ns pl4 pv3 w-80 ques">
+        <p class="ph2">
           <%= raw(q["answer"]) %>
         </p>
       </div>

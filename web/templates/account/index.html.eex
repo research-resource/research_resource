@@ -1,27 +1,21 @@
 <div class="montreal dark-blue">
   <div class="mw9 center ph5 pv4">
-    <div class="dib-ns w-60-ns pa2-ns v-mid">
+    <div class="dib-ns w-60-ns pv4-ns ph2-ns v-mid">
       <h2>Welcome To Research Resource, <%=String.capitalize @current_user.first_name%></h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
-      </p>
     </div>
     <div class="dib-ns fr-ns v-mid">
-      <ul class="list pl0 pl">
+      <ul class="list pl0">
         <li class="mb1">
-          Edit my details
-        </li>
-        <li class="mb1">
-          <%= link "Complete Questionnaire", to: qualtrics_path(@conn, :new), class: "blue no-underline" %>
+          <%= link "Complete Questionnaire", to: qualtrics_path(@conn, :new), class: "underline" %>
         </li>
         <li class="mb1">
           Request Saliva Kit
         </li>
         <li class="mb1">
-          <%= link "My Consent", to: consent_path(@conn, :view), class: "blue no-underline" %>
+          <%= link "My Consent", to: consent_path(@conn, :view), class: "underline" %>
         </li>
         <li class="mb1">
-          <%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete", class: "blue no-underline" %>
+          <%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete", class: "underline" %>
         </li>
       </ul>
     </div>
@@ -39,7 +33,7 @@
         <%= email_input f, :email, value: @user_details[:email], class: "ba br2 pa2 montreal tracked dark-blue mb3 w-40-ns" %>
         <%= label :disabled, :password, "Password", class: "db" %>
         <%= password_input :disabled, :password, disabled: true, value: "********", class: "ba br2 pa2 montreal tracked dark-blue mb3 w-40-ns" %>
-        <%= link "Change Password", to: change_password_path(@conn, :index), class: "blue no-underline" %>
+        <%= link "Change Password", to: change_password_path(@conn, :index), class: "underline" %>
       </div>
     </div>
 
