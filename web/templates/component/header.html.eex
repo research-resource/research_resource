@@ -15,7 +15,7 @@
         <%= link "My Account", to: account_path(@conn, :index), class: "no-underline dark-blue" %>
       </div>
       <% else %>
-      <a class="absolute-ns montreal-bold top-1 right-1 f5 tracked-mega link ba bw1 hover-bg-white br-pill ph3 pv2 mb2 dib white hover-green bg-green b--green" href="<%=session_path(@conn, :new)%>">SIGN UP / LOG IN</a>
+      <a class="absolute-ns montreal-bold top-1 right-1 w5 ba bw1 f16 link br-pill ph3 pv2 tc mb2 white bg-green hover-bg-white b--green hover-green pointer ttu" href="<%=session_path(@conn, :new)%>">SIGN UP / LOG IN</a>
       <% end %>
     </div>
     <div class="menu dt-ns dt--fixed-ns mw8 center pt5-ns pt4 pl0-ns pl3">

@@ -11,21 +11,23 @@
   </div>
 </div>
 <%= if !@current_user do %>
-  <%= component "sign_up", conn: @conn %>
+  <div class="pt1">
+    <%= component "sign_up", conn: @conn %>
+  </div>
 <% end %>
 <div class="more bg-lightest-blue">
   <p class="f3 montreal tracked-mega dark-blue tc pt4 pt5-ns mt0">MORE ABOUT <span class="montreal-bold">RESEARCH RESOURCE</span></p>
-  <div class="w-80-ns center tc pa5-ns pa4">
-    <div class="dib-ns w-30-ns">
-      <a class="w-80 w-70-ns ttu montreal-bold top-1 right-1 f5 tracked-mega link ba bw1 hover-bg-white br-pill ph3 pv2 mb2 dib white hover-green bg-green b--green" href="/about">About</a>
+  <div class="center tc pa5-ns pa4">
+    <div class="dib-l w-30-l">
+      <a class="w5 ttu montreal-bold top-1 right-1 f5 tracked-mega link ba bw1 hover-bg-white br-pill ph3 pv2 mb2 dib white hover-green bg-green b--green" href="/about">About</a>
     </div>
 
-    <div class="dib-ns w-30-ns">
-      <a class="w-80 w-70-ns ttu montreal-bold top-1 right-1 f5 tracked-mega link ba bw1 hover-bg-white br-pill ph3 pv2 mb2 dib white hover-green bg-green b--green" href="/who">Meet the team</a>
+    <div class="dib-l w-30-l">
+      <a class="w5 ttu montreal-bold top-1 right-1 f5 tracked-mega link ba bw1 hover-bg-white br-pill ph3 pv2 mb2 dib white hover-green bg-green b--green" href="/who">Meet the team</a>
     </div>
 
-    <div class="dib-ns w-30-ns">
-      <a class="w-80 w-70-ns ttu montreal-bold top-1 right-1 f5 tracked-mega link ba bw1 hover-bg-white br-pill ph3 pv2 mb2 dib white hover-green bg-green b--green" href="/projects">Projects</a>
+    <div class="dib-l w-30-l">
+      <a class="w5 ttu montreal-bold top-1 right-1 f5 tracked-mega link ba bw1 hover-bg-white br-pill ph3 pv2 mb2 dib white hover-green bg-green b--green" href="/projects">Projects</a>
     </div>
   </div>
 </div>
