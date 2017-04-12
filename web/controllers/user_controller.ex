@@ -1,6 +1,6 @@
 defmodule ResearchResource.UserController do
   use ResearchResource.Web, :controller
-  alias ResearchResource.User
+  alias ResearchResource.{User, Auth, Email, Mailer}
 
   @id_prefix Application.get_env(:research_resource, :id_prefix)
 
@@ -16,7 +16,7 @@ defmodule ResearchResource.UserController do
         send_registration_email(user)
         conn
         |> create_ttrrid(user)
-        |> ResearchResource.Auth.login(user)
+        |> Auth.login(user)
         |> redirect(to: about_path(conn, :about))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -44,7 +44,7 @@ defmodule ResearchResource.UserController do
     """
 
     user.email
-    |> ResearchResource.Email.send_email(subject, message)
-    |> ResearchResource.Mailer.deliver_now()
+    |> Email.send_email(subject, message)
+    |> Mailer.deliver_now()
   end
 end

@@ -1,6 +1,9 @@
 defmodule ResearchResource.User do
   use ResearchResource.Web, :model
 
+  alias Ecto.Changeset
+  alias Comeonin.Bcrypt
+
   schema "users" do
     field :ttrrid, :string
     field :qualtrics_id, :string
@@ -38,8 +41,8 @@ defmodule ResearchResource.User do
 
   defp put_pass_hash(changeset) do
     case changeset do
-      %Ecto.Changeset{valid?: true, changes: %{password: pass}} ->
-        put_change(changeset, :password_hash, Comeonin.Bcrypt.hashpwsalt(pass))
+      %Changeset{valid?: true, changes: %{password: pass}} ->
+        put_change(changeset, :password_hash, Bcrypt.hashpwsalt(pass))
       _ ->
         changeset
     end

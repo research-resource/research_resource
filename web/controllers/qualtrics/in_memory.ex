@@ -32,5 +32,4 @@ defmodule ResearchResource.Qualtrics.InMemory do
       "responseHistory" => [],
       "unsubscribed" => false}}
   end
-
 end

@@ -1,7 +1,8 @@
 defmodule ResearchResource.ConsentController do
   use ResearchResource.Web, :controller
 
-  alias ResearchResource.{Redcap.RedcapHelpers, Qualtrics.QualtricsHelpers, User}
+  alias ResearchResource.{Redcap.RedcapHelpers, Qualtrics.QualtricsHelpers,
+                          User, Email, Mailer}
 
   plug :authenticate_user when action in [:new, :create, :view, :confirm]
 
@@ -117,8 +118,8 @@ defmodule ResearchResource.ConsentController do
       #{user_details["postcode"]}"
 
       @contact_email
-      |> ResearchResource.Email.send_email(subject, message)
-      |> ResearchResource.Mailer.deliver_now()
+      |> Email.send_email(subject, message)
+      |> Mailer.deliver_now()
 
       {:ok, :sent}
     else

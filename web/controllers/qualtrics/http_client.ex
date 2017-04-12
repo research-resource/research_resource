@@ -1,4 +1,6 @@
 defmodule ResearchResource.Qualtrics.HTTPClient do
+  alias Poison.Parser
+
   @qualtrics_token Application.get_env(:research_resource, :qualtrics_token)
   @qualtrics_mailinglist_id Application.get_env(:research_resource, :qualtrics_mailinglist_id)
   @qualtrics_survey_id Application.get_env(:research_resource, :qualtrics_survey_id)
@@ -11,7 +13,7 @@ defmodule ResearchResource.Qualtrics.HTTPClient do
     url = "#{@qualtrics_url}/mailinglists/#{@qualtrics_mailinglist_id}/contacts"
     case HTTPoison.post(url, payload, @qualtrics_headers) do
       {:ok, res} ->
-        {:ok, data} = Poison.Parser.parse(res.body)
+        {:ok, data} = Parser.parse(res.body)
         {:ok, data["result"]["id"]}
       {:error, _res} ->
         {:error, "Error create Qualtrics contact"}
@@ -27,7 +29,7 @@ defmodule ResearchResource.Qualtrics.HTTPClient do
     url = "#{@qualtrics_url}/mailinglists/#{@qualtrics_mailinglist_id}/contacts/#{contact_id}"
     case HTTPoison.get(url, @qualtrics_headers) do
       {:ok, res} ->
-        {:ok, data} = Poison.Parser.parse(res.body)
+        {:ok, data} = Parser.parse(res.body)
         {:ok, data["result"]}
       {:error, _res} ->
         {:error, "Qualtrics contact not found"}
@@ -48,10 +50,13 @@ defmodule ResearchResource.Qualtrics.HTTPClient do
 
   defp get_distribution_link(url, external_data_reference) do
     {:ok, res} = HTTPoison.get(url, @qualtrics_headers)
-    {:ok, data} = Poison.Parser.parse(res.body)
+    {:ok, data} = Parser.parse(res.body)
     next_page = data["result"]["nextPage"]
     elements = data["result"]["elements"]
-    distribution_link = List.first(Enum.filter(elements, fn(elt) -> elt["externalDataReference"] == external_data_reference end))
+    distribution_link =
+      elements
+      |> Enum.filter(&(&1["externalDataReference"] == external_data_reference))
+      |> List.first
     cond do
       distribution_link ->
         {:ok, distribution_link["link"]}
@@ -61,5 +66,4 @@ defmodule ResearchResource.Qualtrics.HTTPClient do
         {:error, "no Qualtrics questionnaire found"}
     end
   end
-
 end

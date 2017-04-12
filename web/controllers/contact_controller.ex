@@ -1,6 +1,8 @@
 defmodule ResearchResource.ContactController do
   use ResearchResource.Web, :controller
 
+  alias ResearchResource.{Email, Mailer}
+
   @contact_email Application.get_env(:research_resource, :contact_email)
 
   def index(conn, _params) do
@@ -37,8 +39,8 @@ defmodule ResearchResource.ContactController do
     Best Time to Call: #{details["time"]}"
 
     @contact_email
-    |> ResearchResource.Email.send_email(subject, message)
-    |> ResearchResource.Mailer.deliver_now()
+    |> Email.send_email(subject, message)
+    |> Mailer.deliver_now()
 
     conn
   end
@@ -52,8 +54,8 @@ defmodule ResearchResource.ContactController do
     Message: #{details["message"]}"
 
     @contact_email
-    |> ResearchResource.Email.send_email(subject, message)
-    |> ResearchResource.Mailer.deliver_now()
+    |> Email.send_email(subject, message)
+    |> Mailer.deliver_now()
 
     conn
   end
