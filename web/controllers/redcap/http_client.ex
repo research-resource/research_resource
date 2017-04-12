@@ -84,7 +84,8 @@ defmodule ResearchResource.Redcap.HTTPClient do
   end
 
   defp info_project({id_project, values}) do
-    Map.new(values, fn %{"field_label" => label, "field_annotation" => annotation} ->
+    values
+    |> Map.new(fn %{"field_label" => label, "field_annotation" => annotation} ->
       {String.to_atom(label), annotation}
     end)
     |> Map.put(:id_project, id_project)

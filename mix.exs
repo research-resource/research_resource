@@ -44,7 +44,8 @@ defmodule ResearchResource.Mixfile do
      {:comeonin, "~> 3.0"},
      {:httpoison, "~> 0.11.1"},
      {:bamboo, "~> 0.8"},
-     {:bamboo_smtp, "~> 1.3.0"}]
+     {:bamboo_smtp, "~> 1.3.0"},
+     {:credo, "~> 0.7", only: :dev}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

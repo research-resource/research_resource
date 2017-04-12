@@ -42,7 +42,9 @@ defmodule ResearchResource.UserController do
     Kind regards,
     The Talking Therapies Research Resource Team
     """
-    ResearchResource.Email.send_email(user.email, subject, message)
+
+    user.email
+    |> ResearchResource.Email.send_email(subject, message)
     |> ResearchResource.Mailer.deliver_now()
   end
 end
