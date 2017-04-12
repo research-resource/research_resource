@@ -64,7 +64,7 @@ defmodule ResearchResource.ConsentController do
     case @qualtrics_api.create_contact(contact_qualtrics) do
       {:ok, id} ->
         # update user model and postgres data with qualtrics id
-        changeset = User.changeset(conn.assigns.current_user, %{"qualtrics_id" => id} )
+        changeset = User.changeset(conn.assigns.current_user, %{"qualtrics_id" => id})
         case Repo.update(changeset) do
           {:ok, user} ->
             conn
@@ -75,16 +75,11 @@ defmodule ResearchResource.ConsentController do
 
   defp check_consent(consent) do
     Enum.all?(consent, fn {k, v} ->
-      case String.last(k) do
-        "y" ->
-          if String.starts_with?(k, "consent") do
-            v == "Yes"
-          else
-            true
-          end
-        _ ->
-          true
-        end
+      if String.starts_with?(k, "consent") and String.last(k) == "y" do
+        v == "Yes"
+      else
+        true
+      end
     end)
   end
 
@@ -96,7 +91,7 @@ defmodule ResearchResource.ConsentController do
   end
 
   def update_consent(conn) do
-    changeset = User.changeset(conn.assigns.current_user, %{"ttrr_consent" => true} )
+    changeset = User.changeset(conn.assigns.current_user, %{"ttrr_consent" => true})
 
     case Repo.update(changeset) do
       {:ok, user} ->
@@ -121,7 +116,8 @@ defmodule ResearchResource.ConsentController do
       #{user_details["county"]}
       #{user_details["postcode"]}"
 
-      ResearchResource.Email.send_email(@contact_email, subject, message)
+      @contact_email
+      |> ResearchResource.Email.send_email(subject, message)
       |> ResearchResource.Mailer.deliver_now()
 
       {:ok, :sent}

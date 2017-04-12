@@ -56,6 +56,6 @@ defmodule ResearchResource.AccountController do
     # This will prevent the two databases from falling out of sync
     Multi.new
     |> Multi.update(:postgres, changeset)
-    |> Multi.run(:redcap, fn _changes_so_far -> @redcap_api.save_record(Map.merge(user_details, new_user_details)) end )
+    |> Multi.run(:redcap, fn _changes_so_far -> @redcap_api.save_record(Map.merge(user_details, new_user_details)) end)
   end
 end

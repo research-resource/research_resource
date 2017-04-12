@@ -25,7 +25,7 @@ defmodule ResearchResource.ProjectsController do
 
   def show(conn, %{"id" => id_project}) do
     project = Map.merge(@redcap_api.get_project(id_project), %{applied: false})
-    if (conn.assigns.current_user) do
+    if conn.assigns.current_user do
       user_data = @redcap_api.get_user_data(conn.assigns.current_user.ttrrid)
       applied = %{applied: complete?(user_data[id_project <> "_complete"])}
       project = Map.merge(project, applied)
@@ -79,7 +79,9 @@ defmodule ResearchResource.ProjectsController do
     Hello,
     #{user.first_name} - #{user.ttrrid} has consented to the following project: #{project}
     """
-    ResearchResource.Email.send_email(@contact_email, subject, message)
+
+    @contact_email
+    |> ResearchResource.Email.send_email(subject, message)
     |> ResearchResource.Mailer.deliver_now()
   end
 
