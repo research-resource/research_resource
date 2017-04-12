@@ -97,3 +97,69 @@ More detailed user data, including consent is stored in Redcap, to allow the TTR
 ### Tests
 
 We use [excoveralls](https://github.com/parroty/excoveralls) for test coverage. To see the current coverage run `mix coveralls`. To generate an html coverage report, run `mix coveralls.html`. This can then be found in the `cover` directory, and will show you exactly which lines of code are and aren't covered.
+
+### Editing Site Content
+
+The Contents for the 'Who We Are' page and the 'FAQs' page are stored in JSON files in the [`web/static/assets`](https://github.com/research-resource/research_resource/blob/master/web/static/assets/) directory. If you're not familiar with git, you can still edit these files directly on github:
+
+1. Visit the file you want to change:
+ - [Who We Are](https://github.com/research-resource/research_resource/blob/master/web/static/assets/who_we_are.json)
+ - [FAQs](https://github.com/research-resource/research_resource/blob/master/web/static/assets/faqs.json)
+
+2. Click the pencil (edit button) in the top right corner of the file:  
+<img src="https://cloud.githubusercontent.com/assets/8939909/24963401/675dfdd0-1f96-11e7-9da2-549682aff521.png" width="320">
+
+3. Edit or add the content. The format for a new team member is as follows:
+```
+{
+    "name": "Jane Doe",
+    "title": "TTRR Assistant",
+    "description": "Jane assists with TTRR",
+    "links": [
+      {
+        "name": "What the link will show as",
+        "url": "http://www.google.com"
+      },
+      {
+        "name": "A second link",
+        "url": "http://www.twitter.com"
+      }
+    ],
+    "image": "jane.jpg"
+}
+```
+The images are found in the [`web/static/assets/images/ttrr_team`](https://github.com/research-resource/research_resource/blob/master/web/static/assets/images/ttrr_team) directory.  
+The format for the faqs:
+```
+{
+  "question": "Is this the question?",
+  "answer": "Yes, and this is the answer"
+}
+```
+Each person's record in the file must be followed by a comma, unless it is the last one. The same is true of the links, and the faqs:
+```
+{
+    question: "Question 1",
+    answer: "Answer 1"
+},
+{
+    question: "Question 2",
+    answer: "Answer 2"
+}
+```
+To make sure the json file will work correctly, validate it by pasting it into: http://jsonlint.com/.  
+More info about JSON: http://www.elated.com/articles/json-basics/
+
+4. If the json is valid, and you're happy with it, propose the change by opening a pull request:  
+<img src="https://cloud.githubusercontent.com/assets/8939909/24964351/f6894580-1f98-11e7-84ab-972edc89dee1.png" width="320"/>  
+Make sure you check 'Create a new branch for this commit and start a pull request'. This will allow another member of the team to review the change before pushing it to the live site.
+
+5. If you are reviewing someone's change, you can view the changes by going to `Pull requests`:  
+<img src="https://cloud.githubusercontent.com/assets/8939909/24964915/725044ba-1f9a-11e7-9662-9bac58e96111.png" width="320"/>  
+Then going to `Files changed`:  
+<img src="https://cloud.githubusercontent.com/assets/8939909/24964941/82c2efbe-1f9a-11e7-9c28-2eadea87484b.png" width="320" />  
+If you are happy with the change, go back to `Conversation`:  
+<img src="https://cloud.githubusercontent.com/assets/8939909/24965007/b13fa40e-1f9a-11e7-8827-63b70636c30e.png" width="320"/>  
+And click 'Merge pull request'  
+<img src="https://cloud.githubusercontent.com/assets/8939909/24964968/95204bb6-1f9a-11e7-85e7-cc6ce83dfff3.png" width="320"/>  
+This will deploy the change to the site in a few minutes.
