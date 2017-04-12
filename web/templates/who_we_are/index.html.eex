@@ -12,8 +12,8 @@
     <%= end %>
   </div>
 
-  <div class="bg-lightest-blue pa4">
-    <div class="mw9 center ph2 ph5-ns cf">
+  <div class="bg-lightest-blue pa5">
+    <div class="mw9 center ph2 cf">
       <h3 class="ttu">The TTRR Support Team</h3>
       <p class="w-60-ns">
         These are the research assistants that support the running of the TTRR website. They are the people you are most likely to speak to if you call with any queries or questions.
@@ -24,8 +24,8 @@
     </div>
   </div>
 
-  <div class="pa4">
-    <div class="mw9 center ph2 ph5-ns cf">
+  <div class="pa5">
+    <div class="mw9 center ph2 cf">
       <h3 class="ttu">Investigators</h3>
       <p class="w-60-ns">
         Below is the team of researchers that set up the TTRR, a collaboration between Kings’ College London, the BRC BioResource and IAPT. They are interested in researching common mental health disorders and what treatments may work best for them.

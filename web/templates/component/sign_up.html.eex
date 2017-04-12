@@ -26,7 +26,7 @@
       <span class="db center tc montreal tracked dark-blue pa2">
         You can withdraw from the Resource at any time
       </span>
-      <%= submit "Sign Up", class: "pointer ttu montreal-bold top-1 right-1 f5 tracked-mega link ba bw1 hover-bg-white br-pill ph3 pv2 mt2 dib white hover-green bg-green b--green"%>
+      <%= component "button_ok", value: "Sign up", class: "mt4"%>
       <span class="db center tc montreal tracked dark-blue pv3">
         <%= link "Already have an account?", to: session_path(@conn, :new) %>
       </span>

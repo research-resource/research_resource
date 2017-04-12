@@ -1,5 +1,5 @@
 <%= component "about", conn: @conn, current_user: @current_user %>
 <div class="pa3 ph5 mb4 mt2">
-  <%= link "Next", to: "/consent/new", class: "montreal-bold mr3 ba bw1 f16 link br-pill ph3 pv2 mb2 white bg-green hover-bg-white b--green hover-green pointer ttu" %>
+  <%= link "Next", to: "/consent/new", class: "db tc montreal-bold w5 mr3 ba bw1 f16 link br-pill ph3 pv2 mb2 white bg-green hover-bg-white b--green hover-green pointer ttu" %>
 </div>
 <%= render ResearchResource.AboutView, "request_call_footer.html", conn: @conn %>

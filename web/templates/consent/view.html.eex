@@ -20,7 +20,7 @@
       Call us for free: 0800 955 199
     </p>
     <p>
-      Email us: <a href="mailto:ttrr@example.com">ttrr@example.com</a>
+      Email us: <a href="mailto:ttrr@kcl.ac.uk">ttrr@kcl.ac.uk</a>
     </p>
     <p>
       <%= link "Read the FAQs", to: faqs_path(@conn, :index) %>
@@ -29,7 +29,7 @@
   <div class="pv2">
     <h3 class="ttu">Request a Call Back</h3>
     <p>
-      We aim to give you a call within 24 hours of your request.
+      We aim to give you a call within 2 working days of your request.
     </p>
     <%= form_for @conn, contact_path(@conn, :create), [as: :callback], fn callback -> %>
       <div class="dib-ns w-20-ns">

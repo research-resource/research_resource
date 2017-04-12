@@ -4,7 +4,7 @@
       <p>Call us for free: 0800 955 199</p>
       <p class="mb4">Email us: <a href="mailto:ttrr@kcl.ac.uk">ttrr@kcl.ac.uk</a></p>
       <h3>Request a Call Back</h3>
-      <p class="mb4">We aim to give you a call within 24 hours of your request.</p>
+      <p class="mb4">We aim to give you a call within 2 working days of your request.</p>
       <%= form_for @conn, contact_path(@conn, :create), [as: :callback], fn callback -> %>
         <%= label callback, :name, "Name", class: "db" %>
         <%= text_input callback, :name, class: "mb3 w-50 db ba br2 pa2 montreal tracked dark-blue" %>
