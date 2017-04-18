@@ -102,12 +102,6 @@
   background-color: rgba(25,169,116,0.1);
 }
 
-/* Style Guide */
-p {
-  font-family: 'Montreal', sans-serif;
-  font-size: 16px;
-}
-
 /* Homepage */
 .hero {
   background-image: url("/images/home-page-background.jpg");
