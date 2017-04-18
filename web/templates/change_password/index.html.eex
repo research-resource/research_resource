@@ -2,18 +2,17 @@
   <div class="mw9 center ph5 pt4">
     <div class="dib w-40 mr7 v-mid pa2">
       <h2 class="ttu">Change Password</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
     </div>
   </div>
 
   <div class="bg-near-white pa5">
     <%= form_for @conn, change_password_path(@conn, :update, @current_user), [method: "put", as: :change_password], fn f -> %>
-    <div class="dib mr3 w-20">
+    <div class="dib-ns mr3 w-20-ns mb3">
       <%= label f, :email, "Old Password", class: "db" %>
       <%= password_input f, :old_password, class: "ba br2 pa2 montreal tracked dark-blue w-100" %>
     </div>
 
-    <div class="dib mr3 w-20">
+    <div class="dib-ns mr3 w-20-ns mb3">
       <%= label f, :password, "New Password", class: "db" %>
       <%= password_input f, :new_password, class: "ba br2 pa2 montreal tracked dark-blue w-100"  %>
     </div>

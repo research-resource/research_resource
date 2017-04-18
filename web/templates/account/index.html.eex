@@ -23,33 +23,33 @@
 
   <%= form_for @changeset, account_path(@conn, :update, @current_user), [method: "put", as: :account], fn f -> %>
     <div class="mw9 center ph5 pv4 bg-lightest-blue">
-      <div class="dib w-50 pa2 v-mid">
+      <div class="dib w-50-ns w-100 pa2 v-mid">
         <h3>Account Details</h3>
         <%= label :disabled, :first_name, "First Name", class: "db" %>
-        <%= text_input :disabled, :first_name, disabled: true, value: (String.capitalize @current_user.first_name), class: "ba br2 pa2 montreal tracked dark-blue mb3 w-40-ns" %>
+        <%= text_input :disabled, :first_name, disabled: true, value: (String.capitalize @current_user.first_name), class: "ba br2 pa2 montreal tracked dark-blue mb3 w-40-ns w-100" %>
         <%= label :disabled, :last_name, "Last Name", class: "db" %>
-        <%= text_input :disabled, :last_name, disabled: true, value: (String.capitalize @current_user.last_name), class: "ba br2 pa2 montreal tracked dark-blue mb3 w-40-ns" %>
+        <%= text_input :disabled, :last_name, disabled: true, value: (String.capitalize @current_user.last_name), class: "ba br2 pa2 montreal tracked dark-blue mb3 w-40-ns w-100" %>
         <%= label f, :email, "Email", class: "db" %>
-        <%= email_input f, :email, value: @user_details[:email], class: "ba br2 pa2 montreal tracked dark-blue mb3 w-40-ns" %>
+        <%= email_input f, :email, value: @user_details[:email], class: "ba br2 pa2 montreal tracked dark-blue mb3 w-40-ns w-100" %>
         <%= label :disabled, :password, "Password", class: "db" %>
-        <%= password_input :disabled, :password, disabled: true, value: "********", class: "ba br2 pa2 montreal tracked dark-blue mb3 w-40-ns" %>
-        <%= link "Change Password", to: change_password_path(@conn, :index), class: "underline" %>
+        <%= password_input :disabled, :password, disabled: true, value: "********", class: "ba br2 pa2 montreal tracked dark-blue mb3 w-40-ns w-100" %>
+        <%= link "Change Password", to: change_password_path(@conn, :index), class: "underline db dib-ns w-100" %>
       </div>
     </div>
 
     <div class="mw9 center ph5 pv4 bg-white">
-      <div class="dib w-50 pa2 v-mid">
+      <div class="dib w-50-ns w-100 pa2 v-mid">
         <h3>Contact Details</h3>
         <%= label f, :telephone, "Telephone Number", class: "db" %>
-        <%= telephone_input f, :telephone, value: @user_details[:telephone], class: "ba br2 pa2 montreal tracked dark-blue mb3 w-40-ns" %>
+        <%= telephone_input f, :telephone, value: @user_details[:telephone], class: "ba br2 pa2 montreal tracked dark-blue mb3 w-40-ns w-100" %>
         <%= label f, :address_1, "Address Line 1", class: "db" %>
-        <%= text_input f, :address_1, value: @user_details[:address_1], class: "ba br2 pa2 montreal tracked dark-blue mb3 w-40-ns" %>
+        <%= text_input f, :address_1, value: @user_details[:address_1], class: "ba br2 pa2 montreal tracked dark-blue mb3 w-40-ns w-100" %>
         <%= label f, :address_2, "Address Line 2", class: "db" %>
-        <%= text_input f, :address_2, value: @user_details[:address_2], class: "ba br2 pa2 montreal tracked dark-blue mb3 w-40-ns" %>
+        <%= text_input f, :address_2, value: @user_details[:address_2], class: "ba br2 pa2 montreal tracked dark-blue mb3 w-40-ns w-100" %>
         <%= label f, :county, "County", class: "db" %>
-        <%= text_input f, :county, value: @user_details[:county], class: "ba br2 pa2 montreal tracked dark-blue mb3 w-40-ns" %>
+        <%= text_input f, :county, value: @user_details[:county], class: "ba br2 pa2 montreal tracked dark-blue mb3 w-40-ns w-100" %>
         <%= label f, :postcode, "Postcode", class: "db" %>
-        <%= text_input f, :postcode, value: @user_details[:postcode], class: "ba br2 pa2 montreal tracked dark-blue mb3 w-40-ns"  %>
+        <%= text_input f, :postcode, value: @user_details[:postcode], class: "ba br2 pa2 montreal tracked dark-blue mb3 w-40-ns w-100"  %>
       </div>
     </div>
 
