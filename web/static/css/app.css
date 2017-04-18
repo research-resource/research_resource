@@ -195,7 +195,13 @@ a:hover {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
+  body {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 850px) {
   .hero, .splash-image {
     background-image: none;
     position: static;
