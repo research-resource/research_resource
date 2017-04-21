@@ -8,9 +8,11 @@
       <p>
         As a member, you do not have to sign up to any of these studies if you do not want to, only those that interest you. Once you are signed in, you will be able to see further details about the research, and what would be expected of you as a participant.
       </p>
-      <p>
-        <%= link "Sign up now", to: user_path(@conn, :new) %> to become a member and start getting involved in research
-      </p>
+      <%= if !@current_user do %>
+        <p>
+          <%= link "Sign up now", to: user_path(@conn, :new) %> to become a member and start getting involved in research
+        </p>
+      <%= end %>
     </div>
 
     <%= if !@current_user do %>
