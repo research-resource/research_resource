@@ -25,4 +25,10 @@ defmodule ResearchResource.AboutControllerTest do
     conn = get conn, "/about/download"
     assert conn.status == 200
   end
+
+  @tag login_as: "me@test.com"
+  test "GET /about/download - logged in", %{conn: conn} do
+    conn = get conn, "/about/download"
+    assert conn.status == 200
+  end
 end

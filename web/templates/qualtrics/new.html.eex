@@ -1,5 +1,14 @@
-<div class="pa4 montreal">  
-  <h1>TTRR Sign-Up Questionnaire</h1>
+<div class="pa4 montreal">
+  <div class="dib w-60-ns pa2-ns v-mid">
+    <h1>Sign-Up Questionnaire</h1>
+    <p>
+      Members are asked to complete these questions to help us understand more about their experiences, and to determine which projects they are eligible to sign up for.
+    </p>
+    <p>
+      The questionnaire takes 30 – 60 mins to complete. You are able to pause the questionnaire and close the website at any time. When you return to the website, visit your account and click the “Complete Questionnaire” link to resume answering the questions. You will only be able to sign up to research projects once your questionnaire is complete.
+    </p>
+  </div>
+
   <div class="aspect-ratio aspect-ratio--1x1 h100 w100">
     <iframe src="<%= @survey_link %>" class="aspect-ratio--object" frameborder="0"></iframe>
   </div>

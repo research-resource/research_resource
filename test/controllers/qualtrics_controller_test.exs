@@ -8,7 +8,7 @@ defmodule ResearchResource.QualtricsControllerTest do
   @tag login_as: "me@test.com"
   test "GET /qualtrics/new - found survey link", %{conn: conn} do
     conn = get conn, "/qualtrics/new"
-    assert html_response(conn, 200) =~ "TTRR Sign-Up Questionnaire"
+    assert html_response(conn, 200) =~ "Sign-Up Questionnaire"
   end
 
   @tag login_as: "not@found.com"
