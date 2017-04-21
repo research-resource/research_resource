@@ -2,7 +2,7 @@
   <div class="bb b--white pv3 ph4">
     <h3 class="ma0 mb3">Need some help?</h3>
       <p class="mv1">
-        Call us for free: 0800 955 199
+        Call us for free: <span class="nowrap">0800 955 199</span>
       </p>
       <p class="mv1">
         Email us: <a href="mailto:ttrr@kcl.ac.uk">ttrr@kcl.ac.uk</a>
