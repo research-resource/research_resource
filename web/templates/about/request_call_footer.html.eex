@@ -1,6 +1,6 @@
 <div class="bg-lightest-blue pa4 montreal dark-blue" id="request-call-footer">
   <div class="w-100 db tc">
-    <div class="bg-white db dib-ns w-30-ns w-90 center h5-ns v-mid-ns mb0-ns mb3 tl">
+    <div class="bg-white dib w-30-ns w-90 center mb0-ns mb3 tl v-mid">
       <div class="bb b--lightest-blue pa3 ph4">
         <h4 class="dark-blue ma0">DOWNLOAD THE INFORMATION SHEET</h4>
       </div>
@@ -11,7 +11,7 @@
         <%= link "DOWNLOAD", to: about_path(@conn, :download) %>
       </div>
     </div>
-    <div class="ml5-ns bg-white db dib-ns w-50-ns w-90 center h5-ns v-mid-ns tl">
+    <div class="ml5-ns bg-white dib w-50-ns w-90 center tl v-mid">
       <div class="bb b--lightest-blue pa3 ph4">
         <h4 class="dark-blue ma0">REQUEST A CALLBACK</h4>
       </div>
@@ -21,20 +21,20 @@
             We aim to give you a call within 2 working days of your request.
           </p>
           <div class="pv1">
-            <div class="w-40-ns dib-ns">
+            <div class="w-40-l dib-l">
               <%= label :callback, :name, "Name", class: "db" %>
               <%= text_input :callback, :name, class: "mb2 w-80 db ba br2 pa2 montreal tracked dark-blue" %>
             </div>
-            <div class="w-40-ns dib-ns">
+            <div class="w-40-l dib-l">
               <%= label :callback, :time, "Best Time to Call", class: "db" %>
               <%= select :callback, :time, ["Morning", "Afternoon", "Evening"], class: "mb2 w-80 db ba br2 montreal tracked dark-blue h2" %>
             </div>
           </div>
-          <div class="w-40-ns dib-ns">
+          <div class="w-40-l dib-l">
             <%= label :callback, :phone, "Phone Number", class: "db" %>
             <%= telephone_input :callback, :phone, class: "mb2 w-80 db ba br2 pa2 montreal tracked dark-blue" %>
           </div>
-          <div class="w-40-ns dib-ns">
+          <div class="w-40-ns dib-l">
             <%= component "button_ok", value: "Request Call back" %>
           </div>
         </div>
