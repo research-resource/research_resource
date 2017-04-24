@@ -172,6 +172,12 @@ a:hover {
 }
 
 /* Media Queries */
+@media (min-height: 1250px) {
+.splash-image {
+  bottom: -20%;
+}
+}
+
 @media (min-width: 1500px) {
     body {
       font-size: 25px;
