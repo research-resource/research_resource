@@ -172,6 +172,12 @@ a:hover {
 }
 
 /* Media Queries */
+@media (max-width: 700px) {
+  .link-header {
+    letter-spacing: 1px;
+  }
+}
+
 @media (min-height: 1250px) {
 .splash-image {
   bottom: -20%;
