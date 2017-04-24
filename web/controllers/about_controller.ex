@@ -12,9 +12,13 @@ defmodule ResearchResource.AboutController do
   end
 
   def download(conn, _params) do
-    filename = Path.expand("web/static/assets/participant_information_sheet.pdf")
+    if (conn.assigns.current_user) do
+      filename = Path.expand("web/static/assets/Information_Sheet_v9.180417_logged_in_user.pdf")
+    else
+      filename = Path.expand("web/static/assets/Information_Sheet_v9.180417_non_logged_in_user.pdf")
+    end
     conn
-    |> put_resp_header("content-disposition", ~s(attachment; filename="participant_information_sheet.pdf"))
+    |> put_resp_header("content-disposition", ~s(attachment; filename="Information_Sheet.pdf"))
     |> send_file(200, filename)
   end
 end

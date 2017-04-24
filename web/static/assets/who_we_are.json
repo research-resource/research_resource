@@ -29,18 +29,19 @@
       "description": "Thalia is the Chief Investigator for the TTRR. She runs the EDITlab, a group of researchers focusing on what factors may influence why people respond differently to life’s experiences. Specifically, she is interested in exploring which psychological treatments work best for different people and whether their genetics may play a part in how people respond. You can read more about Prof Eley’s past research here:",
       "links": [
         {
-          "url": "https://www.kcl.ac.uk/editlab"
-        },
-        {
-          "name": "EDITlab website",
+          "name": "More about Thalia",
           "url": "https://kclpure.kcl.ac.uk/portal/thalia.eley.html"
         },
         {
-          "name": "EDITlab blog",
-          "url": ""
+          "name": "EDITlab website",
+          "url": "https://www.kcl.ac.uk/editlab"
         },
         {
-          "name": "Twitter",
+          "name": "EDITlab blog",
+          "url": "http://blogs.kcl.ac.uk/editlab/"
+        },
+        {
+          "name": "Follow Thalia on Twitter",
           "url": "https://twitter.com/thaliaeley?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
         }
       ],
@@ -52,6 +53,7 @@
       "description": "Gerome is interested in the biological basis of common mental health disorders. He leads the BRC BioResource, facilitating numerous genetic studies investigating the influence of genes on mental health.",
       "links": [
         {
+          "name": "More about Gerome",
           "url": "https://kclpure.kcl.ac.uk/portal/gerome.breen.html"
         }
       ],
@@ -63,17 +65,19 @@
       "description": "Janet is the Clinical Director of Talking Therapies Southwark. As well as being a Consultant Clinical Psychologist, she assists research exploringtreatments for common mental health disorders.",
       "links": [
         {
+          "name": "More about Janet",
           "url": "https://kclpure.kcl.ac.uk/portal/en/persons/janet-wingrove(d0c7837c-17fa-4d49-84df-b93cd0a698c6).html"
         }
       ],
       "image": ""
     },
     {
-      "name": "Prof Antony Cleare",
+      "name": "Professor Antony Cleare",
       "title": "Clinical Academic Lead",
       "description": "Tony runs the National Affective Disorders Unit at the Maudsley Hospital, as well as leading the Affective Disorders Research Group at King’s College London. His group is part of the Centre for Affective Disorders, and investigate the biological basis of mood disorders (also called affective disorders) including clinical depression and bipolar disorder.",
       "links": [
         {
+          "name": "More about Tony",
           "url": "https://kclpure.kcl.ac.uk/portal/anthony.cleare.html"
         }
       ],
@@ -85,6 +89,7 @@
       "description": "Kate is a Consultant Clinical Psychologist at Southwark Psychological Therapies Service. Her research focuses on the psychological processes that underline common mental health disorders.",
       "links": [
         {
+          "name": "More about Kate",
           "url": "https://kclpure.kcl.ac.uk/portal/katharine.rimes.html"
         }
       ],
@@ -96,28 +101,31 @@
       "description": "Kim is an experienced data manager and statistician. Her research focuses on the effects of treatments in psychology.",
       "links": [
         {
+          "name": "More about Kim",
           "url": "https://kclpure.kcl.ac.uk/portal/kimberley.goldsmith.html"
         }
       ],
       "image": "kim.jpg"
     },
     {
-      "name": "Prof Allan Young",
+      "name": "Professor Allan Young",
       "title": "Clinical Academic Lead",
       "description": "Allan holds the Chair of Mood Disorders at King’s College London, where he is also the Director of the Centre for Affective Disorders. His research focuses on causes and treatments for severe mood disorders.",
       "links": [
         {
+          "name": "More about Allan",
           "url": "https://kclpure.kcl.ac.uk/portal/allan.young.html"
         }
       ],
       "image": "allan.jpg"
     },
     {
-      "name": "Prof Matthew Hotopf",
+      "name": "Professor Matthew Hotopf",
       "title": "Head of the BRC",
       "description": "Matthew is the Director of the SLaM National Institute of Health Research BRC. The BRC’s research aims to improve treatments for people with mental health disorders. The main focus of Prof Hotopf’s research is the interaction between mental and physical health.",
       "links": [
         {
+          "name": "More about Matthew",
           "url": "https://kclpure.kcl.ac.uk/portal/matthew.hotopf.html"
         },
         {
@@ -144,20 +152,21 @@
       "image": "matthew.jpg"
     },
     {
-      "name": "Prof Carmine Pariante",
+      "name": "Professor Carmine Pariante",
       "title": "Head of BRC ADIM",
       "description": "Carmine is the head of Affective Disorders and their Interface with Medicine (ADIM) within the BRC. His research investigates the role of stress in mental health disorders, focusing mainly on depression and fatigue.",
       "links": [
         {
+          "name": "More about Carmine",
           "url": "https://kclpure.kcl.ac.uk/portal/carmine.pariante.html"
         },
         {
-          "name": "Visit our new Facebook Page",
+          "name": "SPI Lab Facebook Page",
           "url": "https://www.facebook.com/SPILabKCL/"
         },
         {
-          "name": "Follow us on Twitter",
-          "url": "https://twitter.com/ParianteSPILab https://twitter.com/SPILabKCL"
+          "name": "Follow Carmine on Twitter",
+          "url": "https://twitter.com/ParianteSPILab"
         },
         {
           "name": "My last blog on the Huffington Post: Do antidepressants save lives?",
