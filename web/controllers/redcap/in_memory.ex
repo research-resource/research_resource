@@ -1,4 +1,6 @@
 defmodule ResearchResource.Redcap.InMemory do
+  alias Poison.Parser
+
   def save_record(data) do
     case data["email"] do
       "error@test.com" ->
@@ -18,7 +20,7 @@ defmodule ResearchResource.Redcap.InMemory do
   end
 
   def get_user_data(_id) do
-    {:ok, response} = Poison.Parser.parse "{\"telephone\": \"111\", \"record_id\": \"123\"}"
+    {:ok, response} = Parser.parse ~s({"telephone": "111", "record_id": "123"})
     response
   end
 

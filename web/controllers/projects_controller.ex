@@ -1,6 +1,8 @@
 defmodule ResearchResource.ProjectsController do
   use ResearchResource.Web, :controller
-  alias ResearchResource.Redcap.RedcapHelpers
+
+  alias ResearchResource.{Email, Mailer, Redcap.RedcapHelpers}
+
   @redcap_api Application.get_env(:research_resource, :redcap_api)
   @qualtrics_api Application.get_env(:research_resource, :qualtrics_api)
   @qualtrics_survey_id Application.get_env(:research_resource, :qualtrics_survey_id)
@@ -25,13 +27,14 @@ defmodule ResearchResource.ProjectsController do
 
   def show(conn, %{"id" => id_project}) do
     project = Map.merge(@redcap_api.get_project(id_project), %{applied: false})
-    if (conn.assigns.current_user) do
+    if conn.assigns.current_user do
       user_data = @redcap_api.get_user_data(conn.assigns.current_user.ttrrid)
       applied = %{applied: complete?(user_data[id_project <> "_complete"])}
       project = Map.merge(project, applied)
       consent_answers = user_data
       registration_complete = registration_complete?(conn.assigns.current_user)
-      render conn, "show.html", project: project, consent_answers: consent_answers, registration_complete: registration_complete
+      render conn, "show.html", project: project, consent_answers: consent_answers,
+                                registration_complete: registration_complete
     else
       render conn, "show.html", project: project
     end
@@ -40,7 +43,9 @@ defmodule ResearchResource.ProjectsController do
   defp registration_complete?(user) do
     if user.ttrr_consent do
       {:ok, qualtics_contact} = @qualtrics_api.get_contact(user.qualtrics_id)
-      response_survey = Enum.find(qualtics_contact["responseHistory"], &(&1["surveyId"] == @qualtrics_survey_id))
+      response_survey =
+        qualtics_contact["responseHistory"]
+        |> Enum.find(&(&1["surveyId"] == @qualtrics_survey_id))
       response_survey["finishedSurvey"] && %{complete: true, step: nil} || %{commplete: false, step: "qualtrics"}
     else
       %{complete: false, step: "primary_consent"}
@@ -79,8 +84,10 @@ defmodule ResearchResource.ProjectsController do
     Hello,
     #{user.first_name} - #{user.ttrrid} has consented to the following project: #{project}
     """
-    ResearchResource.Email.send_email(@contact_email, subject, message)
-    |> ResearchResource.Mailer.deliver_now()
+
+    @contact_email
+    |> Email.send_email(subject, message)
+    |> Mailer.deliver_now()
   end
 
 end

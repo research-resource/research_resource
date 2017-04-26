@@ -1,6 +1,8 @@
 defmodule ResearchResource.ContactController do
   use ResearchResource.Web, :controller
 
+  alias ResearchResource.{Email, Mailer}
+
   @contact_email Application.get_env(:research_resource, :contact_email)
 
   def index(conn, _params) do
@@ -8,7 +10,7 @@ defmodule ResearchResource.ContactController do
   end
 
   def create(conn,
-    %{ "callback" => %{"name" => name, "phone" => phone} = callback }
+    %{"callback" => %{"name" => name, "phone" => phone} = callback}
   ) when name != "" and phone != "" do
     conn
     |> send_callback_email(callback)
@@ -16,7 +18,7 @@ defmodule ResearchResource.ContactController do
     |> redirect(to: get_referer_path(conn))
   end
   def create(conn,
-    %{ "message" => %{"name" => name, "message" => message} = details }
+    %{"message" => %{"name" => name, "message" => message} = details}
   ) when name != "" and message != "" do
     conn
     |> send_message_email(details)
@@ -36,8 +38,9 @@ defmodule ResearchResource.ContactController do
     Phone Number: #{details["phone"]}
     Best Time to Call: #{details["time"]}"
 
-    ResearchResource.Email.send_email(@contact_email, subject, message)
-    |> ResearchResource.Mailer.deliver_now()
+    @contact_email
+    |> Email.send_email(subject, message)
+    |> Mailer.deliver_now()
 
     conn
   end
@@ -50,8 +53,9 @@ defmodule ResearchResource.ContactController do
     Phone Number: #{details["phone"]}
     Message: #{details["message"]}"
 
-    ResearchResource.Email.send_email(@contact_email, subject, message)
-    |> ResearchResource.Mailer.deliver_now()
+    @contact_email
+    |> Email.send_email(subject, message)
+    |> Mailer.deliver_now()
 
     conn
   end

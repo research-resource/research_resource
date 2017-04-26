@@ -3,7 +3,8 @@ defmodule ResearchResource.Auth do
   import Comeonin.Bcrypt, only: [checkpw: 2, dummy_checkpw: 0]
   import Phoenix.Controller
 
-  alias ResearchResource.Router.Helpers
+  alias ResearchResource.{User, Router.Helpers}
+  alias Plug.Conn
 
   def init(opts) do
     Keyword.fetch!(opts, :repo)
@@ -18,7 +19,7 @@ defmodule ResearchResource.Auth do
       # see Chapter 8 page 137 section Integration Tests of the Programmin Phoenix book
       user = conn.assigns[:current_user] ->
         put_current_user(conn, user)
-      user = user_id && repo.get(ResearchResource.User, user_id) ->
+      user = user_id && repo.get(User, user_id) ->
         put_current_user(conn, user)
       true ->
         assign(conn, :current_user, nil)
@@ -34,7 +35,7 @@ defmodule ResearchResource.Auth do
 
   def login_by_email_and_password(conn, email, given_pass, opts) do
     repo = Keyword.fetch!(opts, :repo)
-    user = repo.get_by(ResearchResource.User, email: email)
+    user = repo.get_by(User, email: email)
 
     cond do
       user && checkpw(given_pass, user.password_hash) ->
@@ -61,7 +62,7 @@ defmodule ResearchResource.Auth do
       conn
     else
       conn
-      |> Plug.Conn.put_session(:redirect_url, conn.request_path)
+      |> Conn.put_session(:redirect_url, conn.request_path)
       |> put_flash(:error, "You must be logged in to access that page")
       |> redirect(to: Helpers.session_path(conn, :new))
       |> halt()

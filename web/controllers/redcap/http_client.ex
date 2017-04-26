@@ -1,4 +1,6 @@
 defmodule ResearchResource.Redcap.HTTPClient do
+  alias Poison.Parser
+
   @redcap_url Application.get_env(:research_resource, :redcap_url)
   @redcap_token Application.get_env(:research_resource, :redcap_token)
 
@@ -33,7 +35,7 @@ defmodule ResearchResource.Redcap.HTTPClient do
   end
 
   defp filter_fields({:ok, res}, instrument) do
-    {:ok, data} = Poison.Parser.parse(res.body)
+    {:ok, data} = Parser.parse(res.body)
 
     Enum.filter(data, fn(question) -> question["form_name"] == instrument end)
   end
@@ -48,7 +50,7 @@ defmodule ResearchResource.Redcap.HTTPClient do
     ]
 
     {:ok, res} = HTTPoison.post(@redcap_url, {:form, body}, [])
-    case Poison.Parser.parse(res.body) do
+    case Parser.parse(res.body) do
       {:ok, []} -> nil
       {:ok, [data]} -> data
     end
@@ -60,14 +62,14 @@ defmodule ResearchResource.Redcap.HTTPClient do
       content: "metadata",
       format: "json"
     ]}, %{})
-    {:ok, data} = Poison.Parser.parse(res.body)
+    {:ok, data} = Parser.parse(res.body)
     projects = filter_projects(data)
   end
 
   def get_project(id_project) do
     fields = get_instrument_fields(id_project)
-    info = Enum.filter(fields, &(Enum.member?(~w(name description status), &1["field_label"])))
-    consents = Enum.filter(fields, &(!Enum.member?(~w(name description status), &1["field_label"])))
+    info = Enum.filter(fields, &(~w(name description status) in &1["field_label"]))
+    consents = Enum.filter(fields, &(~w(name description status) in &1["field_label"]))
     Map.merge(%{consents: consents}, info_project({id_project, info}))
   end
 
@@ -75,16 +77,17 @@ defmodule ResearchResource.Redcap.HTTPClient do
   Filter and convert a list of Redcap fields:
   [%{name: "project name", description: "description of the project"}, ...]
  """
-  defp filter_projects(data) do
+  def filter_projects(data) do
     data
-    |> Enum.filter(fn(question) -> question["form_name"] =~ ~r/^project/ end)
-    |> Enum.filter(fn(question) -> Enum.member?(~w(name description status), question["field_label"]) end)
-    |> Enum.group_by(fn(question) -> question["form_name"] end)
+    |> Enum.filter(&(&1["form_name"] =~ ~r/^project/))
+    |> Enum.filter(&(~w(name description status) in &1["field_label"]))
+    |> Enum.group_by(&(&1["form_name"]))
     |> Enum.map(&(info_project(&1)))
   end
 
   defp info_project({id_project, values}) do
-    Map.new(values, fn %{"field_label" => label, "field_annotation" => annotation} ->
+    values
+    |> Map.new(fn %{"field_label" => label, "field_annotation" => annotation} ->
       {String.to_atom(label), annotation}
     end)
     |> Map.put(:id_project, id_project)
